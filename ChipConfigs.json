@@ -1,0 +1,43 @@
+{
+    "configs": {
+        "If": {
+            "name": "If",
+            "description": "Executes one of two execution outputs based on the value of the input condition. If the condition is true, the top execution output will be used, and if the condition is false, the bottom execution output will be used.",
+            "beta": false,
+			"deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [
+				["Logic", "Flow Control"]
+			],
+            "ports": [
+                {
+                    "inputs": [
+                        {
+                            "name": "Run",
+                            "types": ["exec"],
+                            "description": "The execution input to trigger the condition check"
+                        },
+                        {
+                            "name": "Condition",
+                            "types": ["bool"],
+                            "description": "The condition to evaluate"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "True",
+                            "types": ["exec"],
+                            "description": "The execution output if the condition is true"
+                        },
+                        {
+                            "name": "False",
+                            "types": ["exec"],
+                            "description": "The execution output if the condition is false"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
