@@ -1,43 +1,1448 @@
 {
-    "configs": {
-        "If": {
-            "name": "If",
-            "description": "Executes one of two execution outputs based on the value of the input condition. If the condition is true, the top execution output will be used, and if the condition is false, the bottom execution output will be used.",
-            "beta": false,
-			"deprecated": false,
-            "hidden": false,
-            "dev": false,
-            "filterPaths": [
-				["Logic", "Flow Control"]
-			],
-            "ports": [
-                {
-                    "inputs": [
-                        {
-                            "name": "Run",
-                            "types": ["exec"],
-                            "description": "The execution input to trigger the condition check"
-                        },
-                        {
-                            "name": "Condition",
-                            "types": ["bool"],
-                            "description": "The condition to evaluate"
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "True",
-                            "types": ["exec"],
-                            "description": "The execution output if the condition is true"
-                        },
-                        {
-                            "name": "False",
-                            "types": ["exec"],
-                            "description": "The execution output if the condition is false"
-                        }
-                    ]
-                }
+  "configs": {
+    "If": {
+      "name": "If",
+      "description": "Executes one of two execution outputs based on the value of the input condition. If the condition is true, the top execution output will be used, and if the condition is false, the bottom execution output will be used.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution input to trigger the condition check"
+              },
+              {
+                "name": "Condition",
+                "types": ["bool"],
+                "description": "The condition to evaluate"
+              }
             ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "True",
+                "types": ["exec"],
+                "description": "The execution output if the condition is true"
+              },
+              {
+                "name": "False",
+                "types": ["exec"],
+                "description": "The execution output if the condition is false"
+              }
+            ]
+          }
         }
+      ]
+    },
+    "And": {
+      "name": "And",
+      "description": "Executes the output if all input conditions are true. If any condition is false, the output will not be executed.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Conditional Logic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["bool"],
+                "description": "The input value to be evaluated",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value if all conditions are true"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Or": {
+      "name": "Or",
+      "description": "Executes the output if any input condition is true. If all conditions are false, the output will not be executed.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Conditional Logic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["bool"],
+                "description": "The input value to be evaluated",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value if any condition is true"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Not": {
+      "name": "Not",
+      "description": "Inverts the input condition. If the input is true, the output will be false, and vice versa.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Conditional Logic"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["bool"],
+                "description": "The input value to be inverted"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value is the inverse of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Xor": {
+      "name": "Xor",
+      "description": "Executes the output if exactly one input condition is true. If none or more than one condition is true, the output will not be executed.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Conditional Logic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["bool"],
+                "description": "The input value to be evaluated",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value if exactly one condition is true"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Nand": {
+      "name": "Nand",
+      "description": "Executes the output if not all input conditions are true. If all conditions are true, the output will not be executed.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Conditional Logic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["bool"],
+                "description": "The input value to be evaluated",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value if not all conditions are true"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Add": {
+      "name": "Add",
+      "description": "Executes the output by adding all input values. The result is the sum of all input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input value to be added",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int", "vector3"],
+                "description": "The output value which is the sum of all input values"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Subtract": {
+      "name": "Subtract",
+      "description": "Executes the output by subtracting all input values. The result is the difference of all input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input value to be subtracted",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int", "vector3"],
+                "description": "The output value which is the difference of all input values"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Multiply": {
+      "name": "Multiply",
+      "description": "Executes the output by multiplying all input values. The result is the product of all input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input value to be multiplied",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int", "vector3"],
+                "description": "The output value which is the product of all input values"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Divide": {
+      "name": "Divide",
+      "description": "Executes the output by dividing all input values. The result is the quotient of all input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input value to be divided",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int", "vector3"],
+                "description": "The output value which is the quotient of all input values"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Modulo": {
+      "name": "Modulo",
+      "description": "Executes the output by calculating the remainder of the division of all input values. The result is the remainder of the division of all input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["int"],
+                "description": "The input value to be divided",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the remainder of the division of all input values"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Clamp": {
+      "name": "Clamp",
+      "description": "Executes the output by clamping the input value between a minimum and maximum value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float", "int", "vector3"],
+                "description": "The value to be clamped"
+              },
+              {
+                "name": "Min",
+                "types": ["float", "int", "vector3"],
+                "description": "The minimum value to clamp to"
+              },
+              {
+                "name": "Max",
+                "types": ["float", "int", "vector3"],
+                "description": "The maximum value to clamp to"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int", "vector3"],
+                "description": "The output value which is the clamped value between the minimum and maximum"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Abs": {
+      "name": "Abs",
+      "description": "Executes the output by calculating the absolute value of the input. The result is the absolute value of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float", "int"],
+                "description": "The input value to calculate the absolute value for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int"],
+                "description": "The output value which is the absolute value of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Sin": {
+      "name": "Sin",
+      "description": "Executes the output by calculating the sine of the input. The result is the sine of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the sine for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the sine of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Cos": {
+      "name": "Cos",
+      "description": "Executes the output by calculating the cosine of the input. The result is the cosine of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the cosine for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the cosine of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Tan": {
+      "name": "Tan",
+      "description": "Executes the output by calculating the tangent of the input. The result is the tangent of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the tangent for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the tangent of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Asin": {
+      "name": "Asin",
+      "description": "Executes the output by calculating the arcsine of the input. The result is the arcsine of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the arcsine for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the arcsine of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Acos": {
+      "name": "Acos",
+      "description": "Executes the output by calculating the arccosine of the input. The result is the arccosine of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the arccosine for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the arccosine of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Atan": {
+      "name": "Atan",
+      "description": "Executes the output by calculating the arctangent of the input. The result is the arctangent of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the arctangent for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the arctangent of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Atan2": {
+      "name": "Atan2",
+      "description": "Executes the output by calculating the arctangent of the input. The result is the arctangent of the input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Trigonometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["float"],
+                "description": "The input value to calculate the arctangent for"
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the arctangent of the input"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Equals": {
+      "name": "Equals",
+      "description": "Executes the output by comparing two input values for equality. The result is true if the inputs are equal, false otherwise.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3", "bool", "block", "player"],
+                "description": "The input to define the value to compare against. All inputs will be compared to each other for equality",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value which is true if the inputs are equal, false otherwise"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Not Equals": {
+      "name": "Not Equals",
+      "description": "Executes the output by comparing two input values for inequality. The result is true if the inputs are not equal, false otherwise.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3", "bool", "block", "player"],
+                "description": "The input to define the value to compare against. All inputs will be compared to each other for inequality",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value which is true if the inputs are not equal, false otherwise"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Greater Than": {
+      "name": "Greater Than",
+      "description": "Executes the output by comparing two input values. The result is true if the first input is greater than the second input, false otherwise.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value which is true if the first input is greater than the second input, false otherwise"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Less Than": {
+      "name": "Less Than",
+      "description": "Executes the output by comparing two input values. The result is true if the first input is less than the second input, false otherwise.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than' condition",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value which is true if the first input is less than the second input, false otherwise"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Greater Than Or Equal": {
+      "name": "Greater Than Or Equal",
+      "description": "Executes the output by comparing two input values. The result is true if the first input is greater than or equal to the second input, false otherwise.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than or equal' condition",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value which is true if the first input is greater than or equal to the second input, false otherwise"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Less Than Or Equal": {
+      "name": "Less Than Or Equal",
+      "description": "Executes the output by comparing two input values. The result is true if the first input is less than or equal to the second input, false otherwise.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Input",
+                "types": ["float", "int", "vector3"],
+                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than or equal' condition",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output value which is true if the first input is less than or equal to the second input, false otherwise"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Delay": {
+      "name": "Delay",
+      "description": "Delays the execution of the output by a specified amount of time.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Exec",
+                "types": ["exec"],
+                "description": "The execution input to trigger the delay."
+              },
+              {
+                "name": "Ticks",
+                "types": ["int"],
+                "description": "The number of ticks to delay the execution of the output."
+              },
+              {
+                "name": "Cancel",
+                "types": ["exec"],
+                "description": "The execution input to cancel the delay."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution output triggered when the delay starts."
+              },
+              {
+                "name": "After Delay",
+                "types": ["exec"],
+                "description": "The execution output triggered after the delay has completed."
+              },
+              {
+                "name": "Cancel",
+                "types": ["exec"],
+                "description": "The execution output triggered when the delay is canceled."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Floor": {
+      "name": "Floor",
+      "description": "Rounds down the input value to the nearest integer.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Rounding"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The input value to be rounded down."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the input value rounded down to the nearest integer."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Ceil": {
+      "name": "Ceil",
+      "description": "Rounds up the input value to the nearest integer.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Rounding"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The input value to be rounded up."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the input value rounded up to the nearest integer."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Round": {
+      "name": "Round",
+      "description": "Rounds the input value to the nearest integer.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Rounding"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The input value to be rounded."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the input value rounded to the nearest integer."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Min": {
+      "name": "Min",
+      "description": "Returns the minimum value among the inputs.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Value",
+                "types": ["float", "int"],
+                "description": "The input value to be compared.",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int"],
+                "description": "The output value which is the minimum value among the inputs."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Max": {
+      "name": "Max",
+      "description": "Returns the maximum value among the inputs.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Arithmetic"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Value",
+                "types": ["float", "int"],
+                "description": "The input value to be compared.",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "int"],
+                "description": "The output value which is the maximum value among the inputs."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Lerp": {
+      "name": "Lerp",
+      "description": "Linearly interpolates between two values based on a given factor.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Interpolation"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Start",
+                "types": ["float", "color", "vector3"],
+                "description": "The starting value for interpolation."
+              },
+              {
+                "name": "End",
+                "types": ["float", "color", "vector3"],
+                "description": "The ending value for interpolation."
+              },
+              {
+                "name": "Progress",
+                "types": ["float"],
+                "description": "The interpolation factor between 0 and 1."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "color", "vector3"],
+                "description": "The output value which is the interpolation factor based on the given value."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Inverse Lerp": {
+      "name": "Inverse Lerp",
+      "description": "Calculates the interpolation factor between two values based on a given value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Interpolation"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Start",
+                "types": ["float", "color", "vector3"],
+                "description": "The starting value for interpolation."
+              },
+              {
+                "name": "End",
+                "types": ["float", "color", "vector3"],
+                "description": "The ending value for interpolation."
+              },
+              {
+                "name": "Value",
+                "types": ["float", "color", "vector3"],
+                "description": "The value for which to calculate the interpolation factor."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "color", "vector3"],
+                "description": "The output value which is the interpolation factor based on the given value."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Lerp Unclamped": {
+      "name": "Lerp Unclamped",
+      "description": "Linearly interpolates between two values based on a given factor without clamping the factor between 0 and 1.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Interpolation"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Start",
+                "types": ["float", "color", "vector3"],
+                "description": "The starting value for interpolation."
+              },
+              {
+                "name": "End",
+                "types": ["float", "color", "vector3"],
+                "description": "The ending value for interpolation."
+              },
+              {
+                "name": "Progress",
+                "types": ["float"],
+                "description": "The interpolation factor."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float", "color", "vector3"],
+                "description": "The output value which is the interpolation factor based on the given value."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Distance": {
+      "name": "Distance",
+      "description": "Calculates the distance between two values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Input",
+                "types": ["vector3"],
+                "description": "The starting value for distance calculation."
+              },
+              {
+                "name": "Input",
+                "types": ["vector3"],
+                "description": "The ending value for distance calculation."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Distance",
+                "types": ["float"],
+                "description": "The output value which is the distance between the two input values."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Vector3 Create": {
+      "name": "Vector3 Create",
+      "description": "Creates a Vector3 value from individual components.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "X",
+                "types": ["float"],
+                "description": "The X component of the Vector3."
+              },
+              {
+                "name": "Y",
+                "types": ["float"],
+                "description": "The Y component of the Vector3."
+              },
+              {
+                "name": "Z",
+                "types": ["float"],
+                "description": "The Z component of the Vector3."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Vector3",
+                "types": ["vector3"],
+                "description": "The output Vector3 value created from the input components."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Vector3 Split": {
+      "name": "Vector3 Split",
+      "description": "Splits a Vector3 value into individual components.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Vector3",
+                "types": ["vector3"],
+                "description": "The input Vector3 value to be split into individual components."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "X",
+                "types": ["float"],
+                "description": "The X component of the input Vector3 value."
+              },
+              {
+                "name": "Y",
+                "types": ["float"],
+                "description": "The Y component of the input Vector3 value."
+              },
+              {
+                "name": "Z",
+                "types": ["float"],
+                "description": "The Z component of the input Vector3 value."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Vector3 Normalize": {
+      "name": "Vector3 Normalize",
+      "description": "Normalises a Vector3 value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Vector3",
+                "types": ["vector3"],
+                "description": "The input Vector3 value to be normalized."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Results",
+                "types": ["vector3"],
+                "description": "The normalized Vector3 value."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Vector3 Dot": {
+      "name": "Vector3 Dot",
+      "description": "Calculates the dot product of two Vector3 values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "LHS",
+                "types": ["vector3"],
+                "description": "The left-hand side Vector3 value for the dot product."
+              },
+              {
+                "name": "RHS",
+                "types": ["vector3"],
+                "description": "The right-hand side Vector3 value for the dot product."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The dot product of the two input Vector3 values."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Vector3 Cross": {
+      "name": "Vector3 Cross",
+      "description": "Calculates the cross product of two Vector3 values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "LHS",
+                "types": ["vector3"],
+                "description": "The left-hand side Vector3 value for the cross product."
+              },
+              {
+                "name": "RHS",
+                "types": ["vector3"],
+                "description": "The right-hand side Vector3 value for the cross product."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["vector3"],
+                "description": "The cross product of the two input Vector3 values."
+              }
+            ]
+          }
+        }
+      ]
     }
+  }
 }
