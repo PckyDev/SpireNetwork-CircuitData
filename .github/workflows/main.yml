@@ -1,0 +1,238 @@
+name: OpenAI Discord Commit Notification
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  notify-discord:
+    if: ${{ !github.event.deleted && github.event.head_commit != null }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      OPENAI_API_URL: https://api.openai.com/v1/responses
+      OPENAI_MODEL: gpt-5.4-mini
+      REPO_NAME: ${{ github.event.repository.name }}
+      REPO_FULL_NAME: ${{ github.repository }}
+      COMMIT_SHA: ${{ github.sha }}
+      GITHUB_API_URL: ${{ github.api_url }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Verify required secrets
+        shell: pwsh
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:OPENAI_API_KEY)) {
+            throw "Missing OPENAI_API_KEY secret."
+          }
+
+          if ([string]::IsNullOrWhiteSpace($env:DISCORD_WEBHOOK_URL)) {
+            throw "Missing DISCORD_WEBHOOK_URL secret."
+          }
+
+      - name: Summarize commit and post to Discord
+        shell: pwsh
+        run: |
+          $githubHeaders = @{
+            Authorization = "Bearer $env:GITHUB_TOKEN"
+            Accept = "application/vnd.github+json"
+            "X-GitHub-Api-Version" = "2022-11-28"
+          }
+
+          $commitUri = "$($env:GITHUB_API_URL)/repos/$($env:REPO_FULL_NAME)/commits/$($env:COMMIT_SHA)"
+          $commit = Invoke-RestMethod -Method Get -Uri $commitUri -Headers $githubHeaders
+
+          if ($commit.author -and $commit.author.login) {
+            $commitAuthor = $commit.author.login
+          }
+          elseif ($commit.commit -and $commit.commit.author -and $commit.commit.author.name) {
+            $commitAuthor = $commit.commit.author.name
+          }
+          else {
+            $commitAuthor = "Unknown author"
+          }
+
+          if ($env:COMMIT_SHA.Length -gt 7) {
+            $shortSha = $env:COMMIT_SHA.Substring(0, 7)
+          }
+          else {
+            $shortSha = $env:COMMIT_SHA
+          }
+
+          $commitMessage = ""
+          if ($commit.commit -and $commit.commit.message) {
+            $commitMessage = $commit.commit.message.Trim()
+          }
+
+          $changedFileCount = 0
+          if ($commit.files) {
+            $changedFileCount = @($commit.files).Count
+          }
+
+          if ($commit.stats) {
+            $commitStats = "Files changed: $changedFileCount, line additions: $($commit.stats.additions), line deletions: $($commit.stats.deletions), total changed lines: $($commit.stats.total)"
+          }
+          else {
+            $commitStats = "Stats unavailable."
+          }
+
+          $fileLines = @()
+          if ($commit.files) {
+            foreach ($file in ($commit.files | Select-Object -First 25)) {
+              if ($file.status) {
+                $status = $file.status
+              }
+              else {
+                $status = "modified"
+              }
+
+              if ($null -ne $file.additions) {
+                $additions = "+$($file.additions)"
+              }
+              else {
+                $additions = "+0"
+              }
+
+              if ($null -ne $file.deletions) {
+                $deletions = "-$($file.deletions)"
+              }
+              else {
+                $deletions = "-0"
+              }
+
+              $fileLines += "- [$status] $($file.filename) ($additions / $deletions)"
+            }
+          }
+
+          if ($fileLines.Count -eq 0) {
+            $fileLines = @("- No file details were returned by the GitHub API.")
+          }
+
+          $fileSummary = $fileLines -join "`n"
+          $openAiPrompt = @"
+          Create a short public-facing summary for a Discord commit notification.
+
+          Rules:
+          - Return only the summary text for the Details field.
+          - Keep it to 1-3 sentences.
+          - Do not include markdown, code fences, bullets, or labels.
+          - Do not mention secrets, credentials, tokens, private URLs, or sensitive implementation details.
+          - Prefer describing the functional area or high-level maintenance work.
+          - If the change is unclear, give a safe generic summary.
+
+          Repository: $($env:REPO_NAME)
+          Commit author: $commitAuthor
+          Commit id: $shortSha
+          Commit message:
+          $commitMessage
+
+          Commit stats:
+          $commitStats
+
+          Changed files:
+          $fileSummary
+          "@
+
+          $openAiHeaders = @{
+            Authorization = "Bearer $env:OPENAI_API_KEY"
+            "Content-Type" = "application/json"
+          }
+
+          $openAiBody = @{
+            model = $env:OPENAI_MODEL
+            input = @(
+              @{
+                role = "system"
+                content = @(
+                  @{
+                    type = "input_text"
+                    text = "You summarize Git commits for short public Discord notifications."
+                  }
+                )
+              },
+              @{
+                role = "user"
+                content = @(
+                  @{
+                    type = "input_text"
+                    text = $openAiPrompt
+                  }
+                )
+              }
+            )
+            max_output_tokens = 120
+          } | ConvertTo-Json -Depth 10
+
+          $openAiResponse = Invoke-RestMethod -Method Post -Uri $env:OPENAI_API_URL -Headers $openAiHeaders -Body $openAiBody
+
+          function New-DiscordMessage {
+            param(
+              [string]$Author,
+              [string]$Area,
+              [string]$ChangeId,
+              [string]$Summary
+            )
+
+            return (@(
+              "**$Author** just made the following changes:"
+              "> **Area:** $Area"
+              "> **Change #:** $ChangeId"
+              "> **Details:** $Summary"
+            ) -join "`n")
+          }
+
+          $details = ""
+          if ($openAiResponse.output_text) {
+            $details = [string]$openAiResponse.output_text
+          }
+
+          if ([string]::IsNullOrWhiteSpace($details) -and $openAiResponse.output) {
+            $details = @(
+              foreach ($item in $openAiResponse.output) {
+                if (-not $item.content) {
+                  continue
+                }
+
+                foreach ($contentItem in $item.content) {
+                  if ($contentItem.type -eq "output_text" -and $contentItem.text) {
+                    [string]$contentItem.text
+                  }
+                }
+              }
+            ) -join " "
+          }
+
+          if ([string]::IsNullOrWhiteSpace($details)) {
+            $details = "Updated repository contents and related project files."
+          }
+
+          $details = ($details -replace "\s+", " ").Trim()
+
+          $message = New-DiscordMessage -Author $commitAuthor -Area $env:REPO_NAME -ChangeId $shortSha -Summary $details
+
+          if ($message.Length -gt 1900) {
+            $fixedLength = ($message.Length - $details.Length)
+            $maxDetailsLength = 1900 - $fixedLength - 3
+
+            if ($maxDetailsLength -lt 0) {
+              $maxDetailsLength = 0
+            }
+
+            if ($details.Length -gt $maxDetailsLength) {
+              $details = $details.Substring(0, $maxDetailsLength).TrimEnd() + "..."
+            }
+
+            $message = New-DiscordMessage -Author $commitAuthor -Area $env:REPO_NAME -ChangeId $shortSha -Summary $details
+          }
+
+          $discordBody = @{
+            content = $message
+            allowed_mentions = @{
+              parse = @()
+            }
+          } | ConvertTo-Json -Depth 5
+
+          Invoke-RestMethod -Method Post -Uri $env:DISCORD_WEBHOOK_URL -ContentType "application/json" -Body $discordBody
