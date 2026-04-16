@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: If
 # Last Modified: 2026 04 16 ACDT
-# Loaded: 2026 04 16 23:08 ACDT
+# Loaded: 2026 04 16 23:18 ACDT
 # ===================== #
 
 # ===================== #
@@ -17,4 +17,7 @@
 # ===================== #
 
 function port1(port2: object):
-    return None
+    if port2:
+        return "output1"
+    else:
+        return "output2"

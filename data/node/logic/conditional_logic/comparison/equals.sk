@@ -15,4 +15,13 @@
 # ===================== #
 
 function port1(port1: object):
-    return false
+    firstValue = None
+    hasValue = False
+    for input in port1:
+        if not hasValue:
+            firstValue = input
+            hasValue = True
+            continue
+        if input != firstValue:
+            return False
+    return True

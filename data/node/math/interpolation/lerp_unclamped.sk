@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: Lerp Unclamped
 # Last Modified: 2026 04 16 ACDT
-# Loaded: 2026 04 16 23:08 ACDT
+# Loaded: 2026 04 16 23:18 ACDT
 # ===================== #
 
 # ===================== #
@@ -17,4 +17,4 @@
 # ===================== #
 
 function port1(port1: object, port2: object, port3: object):
-    return 0
+    return port1 + ((port2 - port1) * port3)

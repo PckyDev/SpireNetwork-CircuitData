@@ -520,25 +520,30 @@ def syncSkriptFiles(circuit_data):
 
     """
 
-    Creates or updates SK files from the verified circuit data.
+    Creates missing SK files from the verified circuit data without overwriting existing files.
 
     """
 
-    synced_files = []
+    created_files = []
+    skipped_files = []
 
     for config_data in circuit_data["configs"].values():
         sk_content = _build_skript_content(config_data)
 
         for target_path in _build_skript_paths(config_data):
             target_path.parent.mkdir(parents=True, exist_ok=True)
+            if target_path.exists():
+                skipped_files.append(target_path)
+                continue
+
             target_path.write_text(sk_content, encoding="utf-8")
-            synced_files.append(target_path)
+            created_files.append(target_path)
 
         for legacy_path in _build_cleanup_paths(config_data):
-            if legacy_path.exists() and legacy_path not in synced_files:
+            if legacy_path.exists() and legacy_path not in created_files and legacy_path not in skipped_files:
                 legacy_path.unlink()
 
-    return synced_files
+    return created_files, skipped_files
 
 
 def verifyCircuitIntegrity():
@@ -569,10 +574,13 @@ def verifyCircuitIntegrity():
             print(f"- {issue}")
         return False
 
-    synced_files = syncSkriptFiles(circuit_data)
+    created_files, skipped_files = syncSkriptFiles(circuit_data)
 
     print("Circuit integrity verified successfully.")
-    print(f"Synced {len(synced_files)} SK files from {CONFIG_FILE.relative_to(BASE_DIR)}.")
+    print(
+        f"Created {len(created_files)} SK files and skipped {len(skipped_files)} existing files "
+        f"from {CONFIG_FILE.relative_to(BASE_DIR)}."
+    )
     return True
 
 
