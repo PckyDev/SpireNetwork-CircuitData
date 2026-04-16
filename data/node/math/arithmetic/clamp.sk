@@ -1,0 +1,20 @@
+# ===================== #
+# Chip: Clamp
+# Last Modified: 2026 04 16 ACDT
+# Loaded: 2026 04 16 23:08 ACDT
+# ===================== #
+
+# ===================== #
+# Circuit Data
+# ===================== #
+# Inputs
+# port1 (Value) [static]: float | int | vector
+# port2 (Min) [static]: float | int | vector
+# port3 (Max) [static]: float | int | vector
+# -------------------- #
+# Outputs
+# output1 (Result) [static]: float | int | vector
+# ===================== #
+
+function port1(port1: object, port2: object, port3: object):
+    return 0
