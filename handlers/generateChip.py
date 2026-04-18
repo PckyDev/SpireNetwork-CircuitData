@@ -214,8 +214,6 @@ def build_skript_content(config_data):
     lines = build_details_block(config_data, timestamp)
     lines.append("")
 
-    generated_function_count = 0
-
     for port_group in config_data["ports"]:
         inputs = expand_port_entries(port_group["inputs"])
         outputs = expand_port_entries(port_group["outputs"])
@@ -224,16 +222,9 @@ def build_skript_content(config_data):
         lines.extend(build_circuit_data_block(inputs, outputs))
         lines.append("")
 
-        if exec_inputs:
-            for exec_input in exec_inputs:
-                lines.extend(build_function_block(config_data["name"], exec_input["index"], inputs, outputs))
-                lines.append("")
-                generated_function_count += 1
-        else:
-            function_index = generated_function_count + 1
-            lines.extend(build_function_block(config_data["name"], function_index, inputs, outputs))
-            lines.append("")
-            generated_function_count += 1
+        function_index = exec_inputs[0]["index"] if exec_inputs else 1
+        lines.extend(build_function_block(config_data["name"], function_index, inputs, outputs))
+        lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 
