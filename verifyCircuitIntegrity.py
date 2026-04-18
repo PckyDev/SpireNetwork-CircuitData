@@ -13,6 +13,8 @@ import re
 from datetime import datetime
 from pathlib import Path
 
+from handlers.generateChip import build_skript_content, slugify_path_part
+
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
@@ -61,8 +63,7 @@ def _is_non_empty_string(value):
 
 
 def _slugify_path_part(value):
-    normalized = re.sub(r"[^a-z0-9]+", "_", value.strip().lower())
-    return normalized.strip("_") or "unnamed"
+    return slugify_path_part(value)
 
 
 def _coerce_type_name(type_names):
@@ -528,7 +529,7 @@ def syncSkriptFiles(circuit_data):
     skipped_files = []
 
     for config_data in circuit_data["configs"].values():
-        sk_content = _build_skript_content(config_data)
+        sk_content = build_skript_content(config_data)
 
         for target_path in _build_skript_paths(config_data):
             target_path.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,25 @@
+# ===================== #
+# Chip: Lerp Unclamped
+# Last Modified: 2026 04 18 18:22
+# Created: 2026 04 18 18:22
+# ===================== #
+
+# ===================== #
+# Circuit Data
+# ===================== #
+# Inputs
+# 1 (Start) (static) [ float | color | vector ] (min n/a, max n/a)
+# 2 (End) (static) [ float | color | vector ] (min n/a, max n/a)
+# 3 (Progress) (static) [ float ] (min n/a, max n/a)
+# -------------------- #
+# Outputs
+# 1 (Result) (static) [ float | color | vector ] (min n/a, max n/a)
+# ===================== #
+
+variables:
+    version = "1.0.0"
+
+execution = "port1"
+
+function CHIP_lerp_unclamped(port1: object, port2: object, port3: object):
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'

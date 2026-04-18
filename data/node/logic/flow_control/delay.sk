@@ -1,0 +1,35 @@
+# ===================== #
+# Chip: Delay
+# Last Modified: 2026 04 18 18:22
+# Created: 2026 04 18 18:22
+# ===================== #
+
+# ===================== #
+# Circuit Data
+# ===================== #
+# Inputs
+# 1 (Exec) (static) [ exec ] (min n/a, max n/a)
+# 2 (Ticks) (static) [ int ] (min n/a, max n/a)
+# 3 (Cancel) (static) [ exec ] (min n/a, max n/a)
+# -------------------- #
+# Outputs
+# 1 (Run) (static) [ exec ] (min n/a, max n/a)
+# 2 (After Delay) (static) [ exec ] (min n/a, max n/a)
+# 3 (Cancel) (static) [ exec ] (min n/a, max n/a)
+# ===================== #
+
+variables:
+    version = "1.0.0"
+
+execution = "port1"
+
+function CHIP_delay(port2: object):
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+
+variables:
+    version = "1.0.0"
+
+execution = "port3"
+
+function CHIP_delay(port2: object):
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
