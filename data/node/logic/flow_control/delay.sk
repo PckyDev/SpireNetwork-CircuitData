@@ -21,7 +21,40 @@
 variables:
     version = "1.0.0"
 
-execution = "port1"
+_execution = "port1"
+_cancelled = False
+_running = False
 
 function CHIP_delay(port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+
+    if port2 is None:
+
+            return 'TRIGGER.ERROR.PORT.EMPTY_VALUE'
+
+        else if not isinstance(port2, int):
+
+            return 'TRIGGER.ERROR.PORT.INVALID_TYPE'
+
+        else if port2 < 0:
+
+            return 'TRIGGER.ERROR.PORT.INVALID_VALUE'
+
+    if _execution is 'port1':
+
+        _running = True
+
+        wait for port2 ticks
+
+        if _cancelled:
+            _cancelled = False
+            return 'port3'
+
+        _running = False
+
+        return 'port2'
+
+    else if _execution is 'port3':
+
+        if _running:
+
+            _cancelled = True

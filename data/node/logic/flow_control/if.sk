@@ -22,4 +22,19 @@ variables:
 execution = "port1"
 
 function CHIP_if(port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+
+    if port2 is None:
+
+            return 'TRIGGER.ERROR.PORT.EMPTY_VALUE'
+
+        else if not isinstance(port2, bool):
+
+            return 'TRIGGER.ERROR.PORT.INVALID_TYPE'
+
+    if port2:
+
+        return 'port1'
+
+    else:
+
+        return 'port2'
