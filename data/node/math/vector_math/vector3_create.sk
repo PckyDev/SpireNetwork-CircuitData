@@ -16,10 +16,20 @@
 # 1 (Vector3) (static) [ vector ] (min n/a, max n/a)
 # ===================== #
 
-variables:
-    version = "1.0.0"
+on load:
+    add 1 to {DEV_CHIP_COUNT}
 
-execution = "port1"
+variables:
+    {_version} = "1.0.0"
+    {_execution} = "port1"
 
 function CHIP_vector3_create(port1: object, port2: object, port3: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+    if port1 is None or port2 is None or port3 is None:
+
+        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
+
+    else if (not isinstance(port1, float) and not isinstance(port1, int)) or (not isinstance(port2, float) and not isinstance(port2, int)) or (not isinstance(port3, float) and not isinstance(port3, int)):
+
+        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
+
+    return vector(port1, port2, port3)

@@ -16,25 +16,27 @@
 # 2 (False) (static) [ exec ] (min n/a, max n/a)
 # ===================== #
 
-variables:
-    version = "1.0.0"
+on load:
+    add 1 to {DEV_CHIP_COUNT}
 
-execution = "port1"
+variables:
+    {_version} = "1.0.0"
+    {_execution} = "port1"
 
 function CHIP_if(port2: object):
 
     if port2 is None:
 
-            return 'TRIGGER.ERROR.PORT.EMPTY_VALUE'
+        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
 
-        else if not isinstance(port2, bool):
+    else if not isinstance(port2, bool):
 
-            return 'TRIGGER.ERROR.PORT.INVALID_TYPE'
+        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
 
     if port2:
 
-        return 'port1'
+        return "port1"
 
     else:
 
-        return 'port2'
+        return "port2"

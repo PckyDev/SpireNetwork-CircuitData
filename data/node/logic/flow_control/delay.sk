@@ -18,26 +18,28 @@
 # 3 (Cancel) (static) [ exec ] (min n/a, max n/a)
 # ===================== #
 
-variables:
-    version = "1.0.0"
+on load:
+    add 1 to {DEV_CHIP_COUNT}
 
-_execution = "port1"
-_cancelled = False
-_running = False
+variables:
+    {_version} = "1.0.0"
+    {_execution} = "port1"
+    {chip_cancelled} = false
+    {chip_running} = false
 
 function CHIP_delay(port2: object):
 
     if port2 is None:
 
-            return 'TRIGGER.ERROR.PORT.EMPTY_VALUE'
+        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
 
-        else if not isinstance(port2, int):
+    else if not isinstance(port2, int):
 
-            return 'TRIGGER.ERROR.PORT.INVALID_TYPE'
+        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
 
-        else if port2 < 0:
+    else if port2 < 0:
 
-            return 'TRIGGER.ERROR.PORT.INVALID_VALUE'
+        return "TRIGGER.ERROR.PORT.INVALID_VALUE"
 
     if _execution is 'port1':
 
@@ -47,11 +49,11 @@ function CHIP_delay(port2: object):
 
         if _cancelled:
             _cancelled = False
-            return 'port3'
+            return "port3"
 
         _running = False
 
-        return 'port2'
+        return "port2"
 
     else if _execution is 'port3':
 

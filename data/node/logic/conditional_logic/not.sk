@@ -14,10 +14,20 @@
 # 1 (Result) (static) [ bool ] (min n/a, max n/a)
 # ===================== #
 
-variables:
-    version = "1.0.0"
+on load:
+    add 1 to {DEV_CHIP_COUNT}
 
-execution = "port1"
+variables:
+    {_version} = "1.0.0"
+    {_execution} = "port1"
 
 function CHIP_not(port1: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+    if port1 is None:
+
+        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
+
+    else if not isinstance(port1, bool):
+
+        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
+
+    return not port1

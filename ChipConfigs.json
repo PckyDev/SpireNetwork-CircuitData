@@ -647,7 +647,7 @@
     },
     "Atan2": {
       "name": "Atan2",
-      "description": "Executes the output by calculating the arctangent of the input. The result is the arctangent of the input.",
+      "description": "Executes the output by calculating the arctangent of two inputs. The result is the angle for the provided Y and X values.",
       "beta": false,
       "deprecated": false,
       "hidden": false,
@@ -658,9 +658,14 @@
           "inputs": {
             "static": [
               {
-                "name": "Input",
+                "name": "Y",
                 "types": ["float"],
-                "description": "The input value to calculate the arctangent for"
+                "description": "The Y value used to calculate the arctangent."
+              },
+              {
+                "name": "X",
+                "types": ["float"],
+                "description": "The X value used to calculate the arctangent."
               }
             ]
           },
@@ -669,7 +674,7 @@
               {
                 "name": "Result",
                 "types": ["float"],
-                "description": "The output value which is the arctangent of the input"
+                "description": "The output value which is the arctangent of the provided Y and X values."
               }
             ]
           }

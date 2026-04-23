@@ -1,4 +1,7 @@
-command /dev arguments: "chip"
+on load:
+    set {DEV_CHIP_COUNT} to 0
+
+command /dev [<text>] [<text>]:
     trigger:
-        send "This command is used to verify that the API request chips are working correctly. It does not perform any actual API requests." to console
-    
+        if arg-2 is not set:
+            send "§e§l[ CHIP ] > Starting Chip Verification of §a§l%{DEV_CHIP_COUNT}%§e§l loaded chips" to player
