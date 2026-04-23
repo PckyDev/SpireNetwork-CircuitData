@@ -170,7 +170,7 @@ def build_circuit_data_block(inputs, outputs):
     else:
         lines.append("# None")
 
-    lines.append("# ===================== #")
+    lines.append("# ===================== #\n\non load\n  add 1 to {DEV_CHIP_COUNT}\n")
     return lines
 
 

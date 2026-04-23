@@ -1,0 +1,4 @@
+command /dev arguments: "chip"
+    trigger:
+        send "This command is used to verify that the API request chips are working correctly. It does not perform any actual API requests." to console
+    

@@ -1,0 +1,32 @@
+# ===================== #
+# Chip: API Post
+# Last Modified: 2026 04 22 22:04
+# Created: 2026 04 22 22:04
+# ===================== #
+
+# ===================== #
+# Circuit Data
+# ===================== #
+# Inputs
+# 1 (trigger) (static) [ exec ] (min n/a, max n/a)
+# 2 (URL) (static) [ string ] (min n/a, max n/a)
+# 3 (Data) (static) [ list<string> ] (min n/a, max n/a)
+# 4 (Headers) (static) [ list<string> ] (min n/a, max n/a)
+# 5 (Parameters) (static) [ list<string> ] (min n/a, max n/a)
+# 6 (auth) (static) [ string ] (min n/a, max n/a)
+# -------------------- #
+# Outputs
+# 1 (Run) (static) [ exec ] (min n/a, max n/a)
+# 2 (On Response) (static) [ exec ] (min n/a, max n/a)
+# 3 (Success) (static) [ bool ] (min n/a, max n/a)
+# 4 (Response Code) (static) [ int ] (min n/a, max n/a)
+# 5 (Data) (static) [ any ] (min n/a, max n/a)
+# ===================== #
+
+variables:
+    version = "1.0.0"
+
+execution = "port1"
+
+function CHIP_api_post(port2: object, port3: object, port4: object, port5: object, port6: object):
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
