@@ -1462,7 +1462,7 @@
           "inputs": {
             "static": [
               {
-                "name": "trigger",
+                "name": "Trigger",
                 "types": ["exec"],
                 "description": "The execution input to trigger the API request."
               },
