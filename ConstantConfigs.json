@@ -1,0 +1,20 @@
+{
+  "configs": {
+    "color": {
+      "name": "Color",
+      "description": "Allows a constant color to be defined",
+      "output": {
+        "name": "Color",
+        "types": ["color"],
+        "description": "The color value defined in the config"
+      },
+      "fields": {
+        "data": {
+          "title": "Color",
+          "input": "colorrange",
+          "default": "#ffffff"
+        }
+      }
+    }
+  }
+}
