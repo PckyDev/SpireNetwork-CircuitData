@@ -1,87 +1,135 @@
 {
-    "configs": {
-        "color": {
-            "name": "Color",
-            "description": "Allows a constant color to be defined",
-            "output": {
-                "name": "Color",
-                "types": ["color"],
-                "description": "The color value defined in the config"
-            },
-            "fields": {
-                "data": {
-                    "title": "Color",
-                    "input": "colorrange",
-                    "default": "#ffffff"
-                }
-            }
-        },
-        "api": {
-            "name": "API",
-            "description": "Allows you to format and define an API request.",
-            "output": {
-                "name": "API Endpoint",
-                "types": ["api"],
-                "description": "The API endpoint defined in the config"
-            },
-            "fields": {
-                "url": {
-                    "title": "URL",
-                    "input": "text",
-                    "type": "string",
-                    "placeholder": "https://example.com/api",
-                    "validation": "url",
-                    "errorMessage": "Please enter a valid URL.",
-                    "description": "The URL of the API endpoint to call.",
-                    "default": "",
-                    "required": true
-                },
-                "headers": {
-                    "title": "Headers",
-                    "input": "structured",
-					"structure": [
-						{
-							"name": "Name",
-							"type": "string",
-							"placeholder": "Content-Type",
-							"validation": "nonEmpty",
-							"errorMessage": "Header name cannot be empty."
-						},
-						{
-							"name": "Value",
-							"type": "string",
-							"placeholder": "application/json",
-							"validation": "nonEmpty",
-							"errorMessage": "Header value cannot be empty."
-						}
-					],
-					"minItems": 0,
-					"maxItems": 20,
-					"description": "A list of headers to include in the API request.",
-					"default": []
-                },
-                "params": {
-                    "title": "Query Parameters",
-                    "input": "typedList<string|name,string|value>",
-                    "default": ""
-                },
-                "data": {
-                    "title": "Body Data",
-                    "input": "typedList<string|name,string|value>",
-                    "default": ""
-                },
-                "requesttype": {
-                    "title": "Request Type",
-                    "input": "dropdown",
-                    "options": ["GET", "POST", "PUT", "DELETE"],
-                    "default": "GET"
-                },
-                "auth": {
-                    "title": "Auth",
-                    "input": "string",
-                    "default": ""
-                }
-            }
+  "configs": {
+    "color": {
+      "name": "Color",
+      "description": "Allows a constant color to be defined",
+      "output": {
+        "name": "Color",
+        "types": ["color"],
+        "description": "The color value defined in the config"
+      },
+      "fields": {
+        "data": {
+          "title": "Color",
+          "input": "colorrange",
+          "type": "string",
+          "placeholder": "#ffffff",
+          "description": "The color value to use for this constant.",
+          "default": "#ffffff",
+          "tags": ["required"]
         }
+      }
+    },
+    "api": {
+      "name": "API",
+      "description": "Allows you to format and define an API request.",
+      "output": {
+        "name": "API Endpoint",
+        "types": ["api"],
+        "description": "The API endpoint defined in the config"
+      },
+      "fields": {
+        "url": {
+          "title": "URL",
+          "input": "text",
+          "type": "string",
+          "placeholder": "https://example.com/api",
+          "validation": "url",
+          "errorMessage": "Please enter a valid URL.",
+          "description": "The URL of the API endpoint to call.",
+          "default": "",
+          "tags": ["required"]
+        },
+        "headers": {
+          "title": "Headers",
+          "input": "structured",
+          "structure": [
+            {
+              "name": "Name",
+              "type": "string",
+              "placeholder": "Content-Type",
+              "validation": "nonEmpty",
+              "errorMessage": "Header name cannot be empty."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "placeholder": "application/json",
+              "validation": "nonEmpty",
+              "errorMessage": "Header value cannot be empty."
+            }
+          ],
+          "minItems": 0,
+          "maxItems": 20,
+          "description": "A list of headers to include in the API request.",
+          "default": []
+        },
+        "params": {
+          "title": "Query Parameters",
+          "input": "structured",
+          "structure": [
+            {
+              "name": "Name",
+              "type": "string",
+              "placeholder": "page",
+              "validation": "nonEmpty",
+              "errorMessage": "Parameter name cannot be empty."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "placeholder": "1",
+              "validation": "nonEmpty",
+              "errorMessage": "Parameter value cannot be empty."
+            }
+          ],
+          "minItems": 0,
+          "maxItems": 20,
+          "description": "A list of query parameters to include in the API request URL.",
+          "default": []
+        },
+        "data": {
+          "title": "Body Data",
+          "input": "structured",
+          "structure": [
+            {
+              "name": "Name",
+              "type": "string",
+              "placeholder": "username",
+              "validation": "nonEmpty",
+              "errorMessage": "Field name cannot be empty."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "placeholder": "player_one",
+              "validation": "nonEmpty",
+              "errorMessage": "Field value cannot be empty."
+            }
+          ],
+          "minItems": 0,
+          "maxItems": 50,
+          "description": "A list of body fields to include in the API request payload.",
+          "default": []
+        },
+        "requesttype": {
+          "title": "Request Type",
+          "input": "dropdown",
+          "options": ["GET", "POST", "PUT", "DELETE"],
+          "description": "The HTTP method to use when sending the API request.",
+          "default": "GET",
+          "tags": ["required"]
+        },
+        "auth": {
+          "title": "Authorization",
+          "input": "text",
+          "type": "string",
+          "placeholder": "Bearer your-token",
+          "description": "Optional authorization value to include with the request.",
+          "default": "",
+          "tags": ["sensitive"]
+        }
+      }
     }
+  }
 }
