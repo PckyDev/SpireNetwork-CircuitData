@@ -15,6 +15,48 @@
           "default": "#ffffff"
         }
       }
+    },
+    "api": {
+      "name": "API",
+      "description": "Allows you to format and define an API request.",
+      "output": {
+        "name": "API Endpoint",
+        "types": ["api"],
+        "description": "The API endpoint defined in the config"
+      },
+      "fields": {
+        "url": {
+          "title": "URL",
+          "input": "text",
+          "default": "https://spire-mc.net"
+        },
+        "headers": {
+          "title": "Headers",
+          "input": "typedList<string|name,string|value>",
+          "default": ""
+        },
+        "params": {
+          "title": "Query Parameters",
+          "input": "typedList<string|name,string|value>",
+          "default": ""
+        },
+        "data": {
+          "title": "Body Data",
+          "input": "typedList<string|name,string|value>",
+          "default": ""
+        },
+        "requesttype": {
+          "title": "Request Type",
+          "input": "dropdown",
+          "options": ["GET", "POST", "PUT", "DELETE"],
+          "default": "GET"
+        },
+        "auth": {
+          "title": "Auth",
+          "input": "string",
+          "default": ""
+        }
+      }
     }
   }
 }
