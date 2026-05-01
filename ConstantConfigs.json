@@ -130,6 +130,28 @@
           "tags": ["sensitive"]
         }
       }
+    },
+    "block": {
+      "name": "Block",
+      "description": "Allows you to define a constant block with specific data.",
+      "output": {
+        "name": "Block",
+        "types": ["block"],
+        "description": "The block value defined in the config"
+      },
+      "fields": {
+        "id": {
+          "title": "Block Name",
+          "input": "data",
+          "type": "modalpaletteselector<block>",
+          "placeholder": "minecraft:stone",
+          "validation": "nonEmpty",
+          "errorMessage": "Please enter a valid block name.",
+          "description": "The name of the block.",
+          "default": "",
+          "tags": ["required"]
+        }
+      }
     }
   }
 }

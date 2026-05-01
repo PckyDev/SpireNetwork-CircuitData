@@ -1,0 +1,46 @@
+{
+    "exec": {
+        "color": "#ff7640",
+        "description": "Is used to trigger something!"
+    },
+    "int": {
+        "color": "#64a768",
+        "description": "A whole number value that can be used for various purposes, such as counting or indexing."
+    },
+    "float": {
+        "color": "#4e90ff",
+        "description": "A floating-point number value that can be used for various purposes, such as representing decimal values or measurements."
+    },
+    "string": {
+        "color": "#9d64ff",
+        "description": "A sequence of characters that can be used for various purposes, such as storing text or messages."
+    },
+    "bool": {
+        "color": "#ff3b4b",
+        "description": "A boolean value that can be either true or false, often used for conditional logic."
+    },
+    "color": {
+        "color": "#4f60de",
+        "description": "A color value that can be used for various purposes, such as setting the color of an object or UI element."
+    },
+    "api": {
+        "color": "#334EE4",
+        "description": "An API value containing information about the request."
+    },
+    "player": {
+        "color": "#F0DB22",
+        "description": "A player value representing a player in the game."
+    },
+    "vector3": {
+        "color": "#F0DB22",
+        "description": "A vector3 value representing a point in 3D space."
+    },
+    "block": {
+        "color": "#FF8640",
+        "description": "A block value representing a block with data within the game."
+    },
+    "quaternion": {
+        "color": "#F0DB22",
+        "description": "A quaternion value representing a rotation in 3D space."
+     }
+}
