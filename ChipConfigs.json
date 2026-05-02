@@ -1504,6 +1504,68 @@
           }
         }
       ]
+    },
+    "Command Get Sender": {
+      "name": "Command Get Sender",
+      "description": "Gets the sender of the command.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions","Commands"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Command",
+                "types": ["command"],
+                "description": "The command input to get the sender from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Sender",
+                "types": ["player"],
+                "description": "The player who sent the command."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Command Get Arguments": {
+      "name": "Command Get Arguments",
+      "description": "Gets the arguments of the command.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions","Commands"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Command",
+                "types": ["command"],
+                "description": "The command input to get the arguments from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Arguments",
+                "types": ["list<string>"],
+                "description": "The arguments of the command."
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }

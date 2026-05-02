@@ -1,0 +1,33 @@
+{
+  "configs": {
+    "command": {
+      "name": "Command",
+      "description": "Allows you to define an event for a command string.",
+      "outputs": [
+        {
+          "name": "Command",
+          "types": ["exec"],
+          "description": "When the command is triggered"
+        },
+        {
+          "name": "Command",
+          "types": ["command"],
+          "description": "The information passed with the command"
+        }
+      ],
+      "fields": {
+        "command": {
+          "title": "Command",
+          "input": "text",
+          "type": "string",
+          "placeholder": "example",
+          "validation": "nonEmpty",
+          "errorMessage": "Please enter a valid command.",
+          "description": "The command string to use for this event.",
+          "default": "",
+          "tags": ["required"]
+        }
+      }
+    }
+  }
+}

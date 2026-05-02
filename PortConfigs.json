@@ -1,62 +1,67 @@
 {
-    "exec": {
-        "name": "exec",
-        "color": "#ff7640",
-        "description": "Is used to trigger something!"
-    },
-    "int": {
-        "name": "int",
-        "color": "#64a768",
-        "description": "A whole number value that can be used for various purposes, such as counting or indexing."
-    },
-    "float": {
-        "name": "float",
-        "color": "#4e90ff",
-        "description": "A floating-point number value that can be used for various purposes, such as representing decimal values or measurements."
-    },
-    "string": {
-        "name": "string",
-        "color": "#9d64ff",
-        "description": "A sequence of characters that can be used for various purposes, such as storing text or messages."
-    },
-    "bool": {
-        "name": "bool",
-        "color": "#ff3b4b",
-        "description": "A boolean value that can be either true or false, often used for conditional logic."
-    },
-    "color": {
-        "name": "color",
-        "color": "#4f60de",
-        "description": "A color value that can be used for various purposes, such as setting the color of an object or UI element."
-    },
-    "api": {
-        "name": "API",
-        "color": "#334EE4",
-        "description": "An API value containing information about the request."
-    },
-    "player": {
-        "name": "player",
-        "color": "#F0DB22",
-        "description": "A player value representing a player in the game."
-    },
-    "vector3": {
-        "name": "Vector3",
-        "color": "#F0DB22",
-        "description": "A vector3 value representing a point in 3D space."
-    },
-    "block": {
-        "name": "block",
-        "color": "#FF8640",
-        "description": "A block value representing a block with data within the game."
-    },
-    "quaternion": {
-        "name": "quaternion",
-        "color": "#F0DB22",
-        "description": "A quaternion value representing a rotation in 3D space."
-     },
-     "any": {
-        "name": "any",
-        "color": "#fffee8",
-        "description": "A value of any type, used for flexible inputs or outputs where the type may vary."
-     }
+  "exec": {
+    "name": "exec",
+    "color": "#ff7640",
+    "description": "Is used to trigger something!"
+  },
+  "int": {
+    "name": "int",
+    "color": "#64a768",
+    "description": "A whole number value that can be used for various purposes, such as counting or indexing."
+  },
+  "float": {
+    "name": "float",
+    "color": "#4e90ff",
+    "description": "A floating-point number value that can be used for various purposes, such as representing decimal values or measurements."
+  },
+  "string": {
+    "name": "string",
+    "color": "#9d64ff",
+    "description": "A sequence of characters that can be used for various purposes, such as storing text or messages."
+  },
+  "bool": {
+    "name": "bool",
+    "color": "#ff3b4b",
+    "description": "A boolean value that can be either true or false, often used for conditional logic."
+  },
+  "color": {
+    "name": "color",
+    "color": "#4f60de",
+    "description": "A color value that can be used for various purposes, such as setting the color of an object or UI element."
+  },
+  "api": {
+    "name": "API",
+    "color": "#334EE4",
+    "description": "An API value containing information about the request."
+  },
+  "player": {
+    "name": "player",
+    "color": "#F0DB22",
+    "description": "A player value representing a player in the game."
+  },
+  "vector3": {
+    "name": "Vector3",
+    "color": "#F0DB22",
+    "description": "A vector3 value representing a point in 3D space."
+  },
+  "block": {
+    "name": "block",
+    "color": "#FF8640",
+    "description": "A block value representing a block with data within the game."
+  },
+  "quaternion": {
+    "name": "quaternion",
+    "color": "#F0DB22",
+    "description": "A quaternion value representing a rotation in 3D space."
+  },
+  "any": {
+    "name": "any",
+    "color": "#fffee8",
+    "description": "A value of any type, used for flexible inputs or outputs where the type may vary."
+  },
+  "command": {
+    "name": "command",
+    "color": "#ff3b4b",
+    "description": "A command value representing a command string, often used for triggering events or actions based on specific commands."
+  }
 }
