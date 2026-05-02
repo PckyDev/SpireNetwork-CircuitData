@@ -152,28 +152,6 @@
           "tags": ["required"]
         }
       }
-    },
-    "command": {
-      "name": "Command",
-      "description": "Allows you to define a constant command string.",
-      "output": {
-        "name": "Command",
-        "types": ["exec"],
-        "description": "When the command is triggered"
-      },
-      "fields": {
-        "command": {
-          "title": "Command",
-          "input": "text",
-          "type": "string",
-          "placeholder": "/example",
-          "validation": "nonEmpty",
-          "errorMessage": "Please enter a valid command.",
-          "description": "The command string to use for this constant.",
-          "default": "",
-          "tags": ["required"]
-        }
-      }
     }
   }
 }
