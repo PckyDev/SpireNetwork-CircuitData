@@ -1,0 +1,29 @@
+# ===================== #
+# Chip: Color to RGB
+# Last Modified: 2026 05 03 20:58
+# Created: 2026 05 03 20:58
+# ===================== #
+
+# ===================== #
+# Circuit Data
+# ===================== #
+# Inputs
+# 1 (Color) (static) [ color ] (min n/a, max n/a)
+# -------------------- #
+# Outputs
+# 1 (Red) (static) [ float ] (min n/a, max n/a)
+# 2 (Green) (static) [ float ] (min n/a, max n/a)
+# 3 (Blue) (static) [ float ] (min n/a, max n/a)
+# ===================== #
+
+on load
+  add 1 to {DEV_CHIP_COUNT}
+
+
+variables:
+    version = "1.0.0"
+
+execution = "port1"
+
+function CHIP_color_to_rgb(port1: object):
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'

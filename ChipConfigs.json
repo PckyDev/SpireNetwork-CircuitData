@@ -1456,7 +1456,7 @@
       "deprecated": false,
       "hidden": false,
       "dev": true,
-      "filterPaths": [["Dev","Data", "API"]],
+      "filterPaths": [["Dev", "Data", "API"]],
       "ports": [
         {
           "inputs": {
@@ -1512,7 +1512,7 @@
       "deprecated": false,
       "hidden": false,
       "dev": false,
-      "filterPaths": [["Functions","Commands"]],
+      "filterPaths": [["Functions", "Commands"]],
       "ports": [
         {
           "inputs": {
@@ -1543,7 +1543,7 @@
       "deprecated": false,
       "hidden": false,
       "dev": false,
-      "filterPaths": [["Functions","Commands"]],
+      "filterPaths": [["Functions", "Commands"]],
       "ports": [
         {
           "inputs": {
@@ -1561,6 +1561,830 @@
                 "name": "Arguments",
                 "types": ["list<string>"],
                 "description": "The arguments of the command."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get All Players": {
+      "name": "Get All Players",
+      "description": "Gets a list of all players currently in the game.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Players",
+                "types": ["list<player>"],
+                "description": "The list of all players currently in the game."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Player Count": {
+      "name": "Get Player Count",
+      "description": "Gets the count of all players currently in the game.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Player Count",
+                "types": ["int"],
+                "description": "The count of all players currently in the game."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Player By Name": {
+      "name": "Get Player By Name",
+      "description": "Gets a player by their name.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Name",
+                "types": ["string"],
+                "description": "The name of the player to get."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player with the specified name, or null if no such player exists."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Player By UUID": {
+      "name": "Get Player By UUID",
+      "description": "Gets a player by their UUID.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "UUID",
+                "types": ["string"],
+                "description": "The UUID of the player to get."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player with the specified UUID, or null if no such player exists."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Play Audio At Position": {
+      "name": "Play Audio At Position",
+      "description": "Plays an audio clip at a specified position in the game world.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Audio"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Trigger",
+                "types": ["exec"],
+                "description": "The execution input to trigger the audio playback."
+              },
+              {
+                "name": "Audio Clip",
+                "types": ["audio"],
+                "description": "The audio clip to be played."
+              },
+              {
+                "name": "Position",
+                "types": ["vector3"],
+                "description": "The position in the game world where the audio should be played."
+              },
+              {
+                "name": "Volume",
+                "types": ["float"],
+                "description": "The volume at which the audio should be played, where 1 is full volume and 0 is silent."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution output that triggers when the audio starts playing."
+              },
+              {
+                "name": "On Complete",
+                "types": ["exec"],
+                "description": "The execution output that triggers when the audio finishes playing."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Position": {
+      "name": "Get Position",
+      "description": "Gets the position of a specified entity in the game world.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Entity"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["entity", "player"],
+                "description": "The entity to get the position of."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Position",
+                "types": ["vector3"],
+                "description": "The position of the specified entity in the game world."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Execution Integer Switch": {
+      "name": "Execution Integer Switch",
+      "description": "Executes different outputs based on the value of an integer input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Exec",
+                "types": ["exec"],
+                "description": "The execution input to trigger the switch."
+              },
+              {
+                "name": "Value",
+                "types": ["int"],
+                "description": "The integer value to switch on."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Failed",
+                "types": ["exec"],
+                "description": "The default execution output triggered when the input value does not match any of the defined cases."
+              }
+            ],
+            "dynamic": [
+              {
+                "name": "{dynamic_port_index}",
+                "types": ["execc"],
+                "description": "The execution output for a specific case, where the case number corresponds to the integer value input.",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Execution String Switch": {
+      "name": "Execution String Switch",
+      "description": "Executes different outputs based on the value of a string input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Exec",
+                "types": ["exec"],
+                "description": "The execution input to trigger the switch."
+              },
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The string value to switch on."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Failed",
+                "types": ["exec"],
+                "description": "The default execution output triggered when the input value does not match any of the defined cases."
+              }
+            ],
+            "dynamic": [
+              {
+                "name": "{dynamic_port_index}",
+                "types": ["execc"],
+                "description": "The execution output for a specific case, where the case number corresponds to the string value input.",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "For": {
+      "name": "For",
+      "description": "Executes a loop a specified number of times.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the loop."
+              },
+              {
+                "name": "From (Inclusive)",
+                "types": ["int"],
+                "description": "The starting value of the loop (inclusive)."
+              },
+              {
+                "name": "To (Exclusive)",
+                "types": ["int"],
+                "description": "The ending value of the loop (exclusive)."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Loop",
+                "types": ["exec"],
+                "description": "The execution output triggered for each iteration of the loop."
+              },
+              {
+                "name": "Index",
+                "types": ["int"],
+                "description": "The current index of the loop iteration, starting from the 'From' value and incrementing by 1 each time until it reaches the 'To' value."
+              },
+              {
+                "name": "Done",
+                "types": ["exec"],
+                "description": "The execution output triggered when the loop has completed all iterations."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "For Each": {
+      "name": "For Each",
+      "description": "Executes a loop for each item in a list.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the loop."
+              },
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The list of items to loop through."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Loop",
+                "types": ["exec"],
+                "description": "The execution output triggered for each iteration of the loop."
+              },
+              {
+                "name": "Item",
+                "types": ["any"],
+                "description": "The current item from the list for this iteration of the loop."
+              },
+              {
+                "name": "Index",
+                "types": ["int"],
+                "description": "The current index of the loop iteration, starting from 0 and incrementing by 1 each time until it reaches the length of the list minus one."
+              },
+              {
+                "name": "Done",
+                "types": ["exec"],
+                "description": "The execution output triggered when the loop has completed all iterations."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Sequence": {
+      "name": "Sequence",
+      "description": "Executes a series of outputs in order.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the sequence."
+              }
+            ]
+          },
+          "outputs": {
+            "dynamic": [
+              {
+                "name": "{dynamic_port_index}",
+                "types": ["exec"],
+                "description": "The execution outputs that are triggered in order when the sequence is executed",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Ceil to Int": {
+      "name": "Ceil to Int",
+      "description": "Rounds up the input value to the nearest integer and outputs it as an integer type.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Rounding"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The input value to be rounded up."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the input value rounded up to the nearest integer, output as an integer type."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Color To HSV": {
+      "name": "Color To HSV",
+      "description": "Converts a color value to its HSV (Hue, Saturation, Value) representation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Color Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Color",
+                "types": ["color"],
+                "description": "The input color value to be converted to HSV."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Hue",
+                "types": ["float"],
+                "description": "The output Hue component of the HSV representation of the input color (0-360)."
+              },
+              {
+                "name": "Saturation",
+                "types": ["float"],
+                "description": "The output Saturation component of the HSV representation of the input color (0-1)."
+              },
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The output Value component of the HSV representation of the input color (0-1)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Color to RGB": {
+      "name": "Color to RGB",
+      "description": "Converts a color value to its RGB (Red, Green, Blue) representation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Color Math"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Color",
+                "types": ["color"],
+                "description": "The input color value to be converted to RGB."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Red",
+                "types": ["float"],
+                "description": "The output Red component of the RGB representation of the input color (0-255)."
+              },
+              {
+                "name": "Green",
+                "types": ["float"],
+                "description": "The output Green component of the RGB representation of the input color (0-255)."
+              },
+              {
+                "name": "Blue",
+                "types": ["float"],
+                "description": "The output Blue component of the RGB representation of the input color (0-255)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Floor to Int": {
+      "name": "Floor to Int",
+      "description": "Rounds down the input value to the nearest integer and outputs it as an integer type.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Rounding"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The input value to be rounded down."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the input value rounded down to the nearest integer, output as an integer type."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Int to Float": {
+      "name": "Int to Float",
+      "description": "Converts an integer value to a float value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["int"],
+                "description": "The input integer value to be converted to float."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output value which is the input integer converted to a float value."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Round to Int": {
+      "name": "Round to Int",
+      "description": "Rounds the input value to the nearest integer and outputs it as an integer type.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Rounding"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["float"],
+                "description": "The input value to be rounded."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output value which is the input value rounded to the nearest integer, output as an integer type."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Parse Bool": {
+      "name": "Parse Bool",
+      "description": "Parses a string input to determine its boolean value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The input string value to be parsed as a boolean."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["bool"],
+                "description": "The output boolean value resulting from parsing the input string. Commonly, 'true' (case-insensitive) will parse to true, and 'false' (case-insensitive) will parse to false. If the input cannot be parsed as a boolean, the output may default to false or throw an error based on implementation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Parse Color": {
+      "name": "Parse Color",
+      "description": "Parses a string input to determine its color value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The input string value to be parsed as a color. This can be in formats such as hex (e.g., '#ff0000' for red), RGB (e.g., 'rgb(255, 0, 0)' for red), or color names (e.g., 'red')."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["color"],
+                "description": "The output color value resulting from parsing the input string. If the input string is in a valid color format, it will be converted to a color type. If the input cannot be parsed as a color, the output may default to a specific color (e.g., black) or throw an error based on implementation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Parse Float": {
+      "name": "Parse Float",
+      "description": "Parses a string input to determine its float value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The input string value to be parsed as a float. The string should represent a valid floating-point number (e.g., '3.14', '-0.001', '2e10')."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["float"],
+                "description": "The output float value resulting from parsing the input string. If the input string is in a valid float format, it will be converted to a float type. If the input cannot be parsed as a float, the output may default to 0.0 or throw an error based on implementation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Parse Int": {
+      "name": "Parse Int",
+      "description": "Parses a string input to determine its integer value.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The input string value to be parsed as an integer. The string should represent a valid integer number (e.g., '42', '-7', '0')."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["int"],
+                "description": "The output integer value resulting from parsing the input string. If the input string is in a valid integer format, it will be converted to an integer type. If the input cannot be parsed as an integer, the output may default to 0 or throw an error based on implementation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "To String": {
+      "name": "To String",
+      "description": "Converts an input value of any type to its string representation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["any"],
+                "description": "The input value of any type to be converted to a string representation."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["string"],
+                "description": "The output string value resulting from converting the input value to a string. The exact format of the string representation may depend on the type of the input value and the implementation of the conversion."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "String Format": {
+      "name": "String Format",
+      "description": "Formats a string using placeholders and input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Format",
+                "types": ["string"],
+                "description": "The input string format containing placeholders (e.g., 'Hello, {0}! You have {1} new messages.')."
+              }
+            ],
+            "dynamic": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "A value to be formatted into the string, where the index of the value corresponds to the placeholder number in the format string (e.g., the first dynamic input corresponds to {0}, the second to {1}, etc.).",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["string"],
+                "description": "The output string resulting from replacing the placeholders in the format string with the corresponding input values. The exact formatting may depend on the implementation of the string formatting function."
               }
             ]
           }

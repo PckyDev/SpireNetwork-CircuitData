@@ -152,6 +152,28 @@
           "tags": ["required"]
         }
       }
+    },
+    "audio": {
+      "name": "Audio",
+      "description": "Allows you to define a constant audio source.",
+      "output": {
+        "name": "Audio",
+        "types": ["audio"],
+        "description": "The audio source defined in the config"
+      },
+      "fields": {
+        "source": {
+          "title": "Audio Source",
+          "input": "modalpaletteselector<audio>",
+          "type": "string",
+          "placeholder": "test.mp3",
+          "validation": "url",
+          "errorMessage": "Please enter a valid audio for the audio source.",
+          "description": "The audio file to use as a constant source.",
+          "default": "",
+          "tags": ["required"]
+        }
+      }
     }
   }
 }

@@ -99,7 +99,9 @@ def _format_type_comment(type_names):
 
 def _format_port_metadata(entry, prefix):
     port_definition = entry["definition"]
-    port_name = port_definition.get("name", f"{prefix.title()} {entry['index']}")
+    port_name = port_definition.get("name")
+    if not _is_non_empty_string(port_name):
+        port_name = f"{prefix.title()} {entry['index']}"
     type_comment = _format_type_comment(port_definition.get("types", []))
 
     metadata = f"# {prefix}{entry['index']} ({port_name}) [{entry['kind']}]: {type_comment}"
@@ -192,8 +194,9 @@ def _validate_port_definition(port_definition, path_label, issues, require_dynam
         issues.append(f"{path_label} must be an object.")
         return
 
-    if not _is_non_empty_string(port_definition.get("name")):
-        issues.append(f"{path_label}.name must be a non-empty string.")
+    name = port_definition.get("name")
+    if name is not None and not isinstance(name, str):
+        issues.append(f"{path_label}.name must be a string when provided.")
 
     if not _is_non_empty_string(port_definition.get("description")):
         issues.append(f"{path_label}.description must be a non-empty string.")
@@ -310,8 +313,9 @@ def _validate_port_definition(port_definition, path_label, issues, require_dynam
         issues.append(f"{path_label} must be an object.")
         return
 
-    if not _is_non_empty_string(port_definition.get("name")):
-        issues.append(f"{path_label}.name must be a non-empty string.")
+    name = port_definition.get("name")
+    if name is not None and not isinstance(name, str):
+        issues.append(f"{path_label}.name must be a string when provided.")
 
     if not _is_non_empty_string(port_definition.get("description")):
         issues.append(f"{path_label}.description must be a non-empty string.")
@@ -348,16 +352,13 @@ def _validate_port_collection(collection, path_label, issues):
         issues.append(f"{path_label} must be an object.")
         return
 
-    if not any(group_name in collection for group_name in VALID_PORT_GROUPS):
-        issues.append(f"{path_label} must include at least one of: {', '.join(VALID_PORT_GROUPS)}.")
-
     for group_name, port_definitions in collection.items():
         if group_name not in VALID_PORT_GROUPS:
             issues.append(f"{path_label}.{group_name} is not a valid port group.")
             continue
 
-        if not isinstance(port_definitions, list) or not port_definitions:
-            issues.append(f"{path_label}.{group_name} must be a non-empty list.")
+        if not isinstance(port_definitions, list):
+            issues.append(f"{path_label}.{group_name} must be a list.")
             continue
 
         for index, port_definition in enumerate(port_definitions):
@@ -380,14 +381,10 @@ def _validate_ports(ports, path_label, issues):
             issues.append(f"{port_group_label} must be an object.")
             continue
 
-        if "inputs" not in port_group:
-            issues.append(f"{port_group_label}.inputs is required.")
-        else:
+        if "inputs" in port_group:
             _validate_port_collection(port_group["inputs"], f"{port_group_label}.inputs", issues)
 
-        if "outputs" not in port_group:
-            issues.append(f"{port_group_label}.outputs is required.")
-        else:
+        if "outputs" in port_group:
             _validate_port_collection(port_group["outputs"], f"{port_group_label}.outputs", issues)
 
 
@@ -456,8 +453,8 @@ def _build_skript_content(config_data):
     generated_function_count = 0
 
     for port_group in config_data["ports"]:
-        inputs = _expand_port_entries(port_group["inputs"])
-        outputs = _expand_port_entries(port_group["outputs"])
+        inputs = _expand_port_entries(port_group.get("inputs", {}))
+        outputs = _expand_port_entries(port_group.get("outputs", {}))
         exec_inputs = [item for item in inputs if "exec" in item["definition"].get("types", [])]
 
         lines.extend(_build_circuit_data_block(inputs, outputs))

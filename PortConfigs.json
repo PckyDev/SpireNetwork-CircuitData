@@ -2,66 +2,79 @@
   "exec": {
     "name": "exec",
     "color": "#ff7640",
-    "description": "Is used to trigger something!"
+    "description": "Is used to trigger something!",
+    "tags": []
   },
   "int": {
     "name": "int",
     "color": "#64a768",
-    "description": "A whole number value that can be used for various purposes, such as counting or indexing."
+    "description": "A whole number value that can be used for various purposes, such as counting or indexing.",
+    "tags": ["editable"]
   },
   "float": {
     "name": "float",
     "color": "#4e90ff",
-    "description": "A floating-point number value that can be used for various purposes, such as representing decimal values or measurements."
+    "description": "A floating-point number value that can be used for various purposes, such as representing decimal values or measurements.",
+    "tags": ["editable"]
   },
   "string": {
     "name": "string",
     "color": "#9d64ff",
-    "description": "A sequence of characters that can be used for various purposes, such as storing text or messages."
+    "description": "A sequence of characters that can be used for various purposes, such as storing text or messages.",
+    "tags": ["editable"]
   },
   "bool": {
     "name": "bool",
     "color": "#ff3b4b",
-    "description": "A boolean value that can be either true or false, often used for conditional logic."
+    "description": "A boolean value that can be either true or false, often used for conditional logic.",
+    "tags": ["editable"]
   },
   "color": {
     "name": "color",
     "color": "#4f60de",
-    "description": "A color value that can be used for various purposes, such as setting the color of an object or UI element."
+    "description": "A color value that can be used for various purposes, such as setting the color of an object or UI element.",
+    "tags": ["editable"]
   },
   "api": {
     "name": "API",
     "color": "#334EE4",
-    "description": "An API value containing information about the request."
+    "description": "An API value containing information about the request.",
+    "tags": []
   },
   "player": {
     "name": "player",
     "color": "#F0DB22",
-    "description": "A player value representing a player in the game."
+    "description": "A player value representing a player in the game.",
+    "tags": []
   },
   "vector3": {
     "name": "Vector3",
     "color": "#F0DB22",
-    "description": "A vector3 value representing a point in 3D space."
+    "description": "A vector3 value representing a point in 3D space.",
+    "tags": ["editable"]
   },
   "block": {
     "name": "block",
     "color": "#FF8640",
-    "description": "A block value representing a block with data within the game."
+    "description": "A block value representing a block with data within the game.",
+    "tags": []
   },
   "quaternion": {
     "name": "quaternion",
     "color": "#F0DB22",
-    "description": "A quaternion value representing a rotation in 3D space."
+    "description": "A quaternion value representing a rotation in 3D space.",
+    "tags": ["editable"]
   },
   "any": {
     "name": "any",
     "color": "#fffee8",
-    "description": "A value of any type, used for flexible inputs or outputs where the type may vary."
+    "description": "A value of any type, used for flexible inputs or outputs where the type may vary.",
+    "tags": []
   },
   "command": {
     "name": "command",
     "color": "#ff3b4b",
-    "description": "A command value representing a command string, often used for triggering events or actions based on specific commands."
+    "description": "A command value representing a command string, often used for triggering events or actions based on specific commands.",
+    "tags": []
   }
 }
