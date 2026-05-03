@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: Atan2
-# Last Modified: 2026 04 18 18:28
-# Created: 2026 04 18 18:28
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
 # ===================== #
 
 # ===================== #
@@ -13,24 +13,13 @@
 # -------------------- #
 # Outputs
 # 1 (Result) (static) [ float ] (min n/a, max n/a)
-# ===================== #
+# =====================
 
-on load:
-    add 1 to {DEV_CHIP_COUNT}
 
 variables:
-    {_version} = "1.0.0"
-    {_execution} = "port1"
+    version = "1.0.0"
+
+execution = "port1"
 
 function CHIP_atan2(port1: object, port2: object):
-    if port1 is None or port2 is None:
-
-        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
-
-    else if (not isinstance(port1, float) and not isinstance(port1, int)) or (not isinstance(port2, float) and not isinstance(port2, int)):
-
-        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
-
-    import math
-
-    return math.atan2(port1, port2)
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'

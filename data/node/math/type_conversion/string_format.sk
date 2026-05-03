@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: String Format
-# Last Modified: 2026 05 03 20:58
-# Created: 2026 05 03 20:58
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
 # ===================== #
 
 # ===================== #
@@ -13,10 +13,7 @@
 # -------------------- #
 # Outputs
 # 1 (Result) (static) [ string ] (min n/a, max n/a)
-# ===================== #
-
-on load
-  add 1 to {DEV_CHIP_COUNT}
+# =====================
 
 
 variables:

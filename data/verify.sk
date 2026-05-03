@@ -1,7 +1,0 @@
-on load:
-    set {DEV_CHIP_COUNT} to 0
-
-command /dev [<text>] [<text>]:
-    trigger:
-        if arg-2 is not set:
-            send "§e§l[ CHIP ] > Starting Chip Verification of §a§l%{DEV_CHIP_COUNT}%§e§l loaded chips" to player

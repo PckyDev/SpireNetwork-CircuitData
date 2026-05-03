@@ -1,14 +1,14 @@
 # ===================== #
 # Chip: API Request
-# Last Modified: 2026 05 01 23:16
-# Created: 2026 05 01 23:16
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
 # ===================== #
 
 # ===================== #
 # Circuit Data
 # ===================== #
 # Inputs
-# 1 (trigger) (static) [ exec ] (min n/a, max n/a)
+# 1 (Trigger) (static) [ exec ] (min n/a, max n/a)
 # 2 (API) (static) [ api ] (min n/a, max n/a)
 # -------------------- #
 # Outputs
@@ -17,10 +17,7 @@
 # 3 (Success) (static) [ bool ] (min n/a, max n/a)
 # 4 (Response Code) (static) [ int ] (min n/a, max n/a)
 # 5 (Data) (static) [ any ] (min n/a, max n/a)
-# ===================== #
-
-on load
-  add 1 to {DEV_CHIP_COUNT}
+# =====================
 
 
 variables:

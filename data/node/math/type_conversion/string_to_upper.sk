@@ -1,0 +1,24 @@
+# ===================== #
+# Chip: String To Upper
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
+# ===================== #
+
+# ===================== #
+# Circuit Data
+# ===================== #
+# Inputs
+# 1 (Value) (static) [ string ] (min n/a, max n/a)
+# -------------------- #
+# Outputs
+# 1 (Result) (static) [ string ] (min n/a, max n/a)
+# =====================
+
+
+variables:
+    version = "1.0.0"
+
+execution = "port1"
+
+function CHIP_string_to_upper(port1: object):
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'

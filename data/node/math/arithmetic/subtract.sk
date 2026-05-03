@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: Subtract
-# Last Modified: 2026 04 18 18:28
-# Created: 2026 04 18 18:28
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
 # ===================== #
 
 # ===================== #
@@ -12,32 +12,13 @@
 # -------------------- #
 # Outputs
 # 1 (Result) (static) [ float | int | vector ] (min n/a, max n/a)
-# ===================== #
+# =====================
 
-on load:
-    add 1 to {DEV_CHIP_COUNT}
 
 variables:
-    {_version} = "1.0.0"
-    {_execution} = "port1"
+    version = "1.0.0"
+
+execution = "port1"
 
 function CHIP_subtract(port1: object):
-    if port1 is None:
-
-        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
-
-    else if not isinstance(port1, list):
-
-        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
-
-    else if size of port1 < 2:
-
-        return "TRIGGER.ERROR.PORT.INVALID_VALUE"
-
-    set {_result} to port1[0]
-
-    for {_value} in port1[1:]:
-
-        set {_result} to {_result} - {_value}
-
-    return {_result}
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'

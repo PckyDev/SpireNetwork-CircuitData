@@ -1241,12 +1241,12 @@
           "inputs": {
             "static": [
               {
-                "name": "Input",
+                "name": "A",
                 "types": ["vector3"],
                 "description": "The starting value for distance calculation."
               },
               {
-                "name": "Input",
+                "name": "B",
                 "types": ["vector3"],
                 "description": "The ending value for distance calculation."
               }
@@ -1851,6 +1851,90 @@
         }
       ]
     },
+    "Value Integer Switch": {
+      "name": "Value Integer Switch",
+      "description": "Outputs different values based on the value of an integer input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["int"],
+                "description": "The integer value to switch on."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Failed",
+                "types": ["any"],
+                "description": "The default output value when the input value does not match any of the defined cases."
+              }
+            ],
+            "dynamic": [
+              {
+                "name": "{dynamic_port_index}",
+                "types": ["any"],
+                "description": "The output value for a specific case, where the case number corresponds to the integer value input.",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Value String Switch": {
+      "name": "Value String Switch",
+      "description": "Outputs different values based on the value of a string input.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The string value to switch on."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Failed",
+                "types": ["any"],
+                "description": "The default output value when the input value does not match any of the defined cases."
+              }
+            ],
+            "dynamic": [
+              {
+                "name": "{dynamic_port_index}",
+                "types": ["any"],
+                "description": "The output value for a specific case, where the case number corresponds to the string value input.",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "For": {
       "name": "For",
       "description": "Executes a loop a specified number of times.",
@@ -2385,6 +2469,1059 @@
                 "name": "Result",
                 "types": ["string"],
                 "description": "The output string resulting from replacing the placeholders in the format string with the corresponding input values. The exact formatting may depend on the implementation of the string formatting function."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "String To Lower": {
+      "name": "String To Lower",
+      "description": "Converts all characters in the input string to lowercase.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The input string value to be converted to lowercase."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["string"],
+                "description": "The output string value resulting from converting all characters in the input string to lowercase."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "String To Upper": {
+      "name": "String To Upper",
+      "description": "Converts all characters in the input string to uppercase.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Type Conversion"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Value",
+                "types": ["string"],
+                "description": "The input string value to be converted to uppercase."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["string"],
+                "description": "The output string value resulting from converting all characters in the input string to uppercase."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Get First Index Of": {
+      "name": "List Get First Index Of",
+      "description": "Gets the first index of a specified value in a list.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The input list to search through."
+              },
+              {
+                "name": "Value",
+                "types": ["any"],
+                "description": "The value to find the first index of in the list."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Index",
+                "types": ["int"],
+                "description": "The output index of the first occurrence of the specified value in the list, or -1 if the value is not found."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Instance Get Is Private": {
+      "name": "Instance Get Is Private",
+      "description": "Gets whether a specified instance is private.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Instance"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Is Private",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the specified instance is private (true) or not (false)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "If Local Player Is World Authority": {
+      "name": "If Local Player Is World Authority",
+      "description": "Executes different outputs based on whether the local player is the world authority.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the check."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Is World Authority",
+                "types": ["exec"],
+                "description": "The execution output triggered if the local player is the world authority."
+              },
+              {
+                "name": "Is Not World Authority",
+                "types": ["exec"],
+                "description": "The execution output triggered if the local player is not the world authority."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Create": {
+      "name": "List Create",
+      "description": "Creates a list from the input values.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "{dynamic_port_index}",
+                "types": ["any"],
+                "description": "An input value to be included in the created list, where the index of the value corresponds to the dynamic port index (e.g., the first dynamic input is index 0, the second is index 1, etc.).",
+                "dynamic": {
+                  "min": 1,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The output list containing all of the input values from the dynamic ports."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Insert": {
+      "name": "List Insert",
+      "description": "Inserts a value into a list at a specified index.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The input list to insert the value into."
+              },
+              {
+                "name": "Index",
+                "types": ["int"],
+                "description": "The index at which to insert the value in the list. If the index is out of bounds, the value may be inserted at the end of the list or an error may occur based on implementation."
+              },
+              {
+                "name": "Value",
+                "types": ["any"],
+                "description": "The value to be inserted into the list at the specified index."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The output list after the value has been inserted at the specified index."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Intersect": {
+      "name": "List Intersect",
+      "description": "Outputs a list containing the values that are present in both input lists.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "dynamic": [
+              {
+                "name": "Value",
+                "types": ["list<any>"],
+                "description": "An input list for the intersection operation.",
+                "dynamic": {
+                  "min": 2,
+                  "max": null
+                }
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Intersection",
+                "types": ["list<any>"],
+                "description": "The output list containing only the values that are present in all input lists."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Remove At": {
+      "name": "List Remove At",
+      "description": "Removes a value from a list at a specified index.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The input list to remove the value from."
+              },
+              {
+                "name": "Index",
+                "types": ["int"],
+                "description": "The index of the value to be removed from the list. If the index is out of bounds, no value may be removed or an error may occur based on implementation."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The output list after the value at the specified index has been removed."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Get Count": {
+      "name": "List Get Count",
+      "description": "Gets the number of items in a list.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The input list to count the number of items in."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Count",
+                "types": ["int"],
+                "description": "The output integer value representing the number of items in the input list."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Remove Last": {
+      "name": "List Remove Last",
+      "description": "Removes the last occurrence of a specified value from a list.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The input list to remove the value from."
+              },
+              {
+                "name": "Value",
+                "types": ["any"],
+                "description": "The value to be removed from the list. If the value is not found in the list, no value may be removed or an error may occur based on implementation."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The output list after the last occurrence of the specified value has been removed."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Sort By Key": {
+      "name": "List Sort By Key",
+      "description": "Sorts a list of items based on a specified key.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List",
+                "types": ["list<any>"],
+                "description": "The input list of items to be sorted."
+              },
+              {
+                "name": "Key",
+                "types": ["string"],
+                "description": "The key to sort the items by. Each item in the list should be a data structure (e.g., dictionary) that contains this key. The sorting will be based on the values associated with this key in each item."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Sorted List",
+                "types": ["list<any>"],
+                "description": "The output list of items sorted based on the specified key."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "List Subtract": {
+      "name": "List Subtract",
+      "description": "Subtracts one list from another, removing all occurrences of each element in the second list from the first list.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "List Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "List A",
+                "types": ["list<any>"],
+                "description": "The first input list."
+              },
+              {
+                "name": "List B",
+                "types": ["list<any>"],
+                "description": "The second input list. All occurrences of each element in this list will be removed from the first list."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Result",
+                "types": ["list<any>"],
+                "description": "The output list after subtracting the elements of the second list from the first list."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Authority": {
+      "name": "Get Authority",
+      "description": "Gets the authority of the current player's instance.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Instance"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Authority",
+                "types": ["player"],
+                "description": "The output integer value representing the authority level of the current player's instance. The meaning of different authority levels may depend on the context of the instance and the implementation of authority in the system."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Local Player": {
+      "name": "Get Local Player",
+      "description": "Gets the local player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Local Player",
+                "types": ["player"],
+                "description": "The output player value representing the local player in the game."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "If Local Player Should Run": {
+      "name": "If Local Player Should Run",
+      "description": "Executes different outputs based on whether the local player should run a specific piece of logic, often used for client-side prediction or determining if certain actions should be performed by the local player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the check."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Should Run",
+                "types": ["exec"],
+                "description": "The execution output triggered if the local player should run the specific piece of logic."
+              },
+              {
+                "name": "Should Not Run",
+                "types": ["exec"],
+                "description": "The execution output triggered if the local player should not run the specific piece of logic."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "If Player Is Local": {
+      "name": "If Player Is Local",
+      "description": "Executes different outputs based on whether a specified player is the local player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the check."
+              },
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to check against the local player."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Is Local Player",
+                "types": ["exec"],
+                "description": "The execution output triggered if the specified player is the local player."
+              },
+              {
+                "name": "Is Not Local Player",
+                "types": ["exec"],
+                "description": "The execution output triggered if the specified player is not the local player."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "If Player Is Valid And Local": {
+      "name": "If Player Is Valid And Local",
+      "description": "Executes different outputs based on whether a specified player is valid and is the local player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Flow Control"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the check."
+              },
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to check for validity and against the local player."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Is Valid And Local",
+                "types": ["exec"],
+                "description": "The execution output triggered if the specified player is valid and is the local player."
+              },
+              {
+                "name": "Is Not Valid Or Not Local",
+                "types": ["exec"],
+                "description": "The execution output triggered if the specified player is not valid or is not the local player."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "AABB Contains Point": {
+      "name": "AABB Contains Point",
+      "description": "Checks if an axis-aligned bounding box (AABB) contains a specific point in 3D space.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Geometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "AABB Min",
+                "types": ["vector3"],
+                "description": "The minimum corner of the axis-aligned bounding box."
+              },
+              {
+                "name": "AABB Max",
+                "types": ["vector3"],
+                "description": "The maximum corner of the axis-aligned bounding box."
+              },
+              {
+                "name": "Point",
+                "types": ["vector3"],
+                "description": "The point in 3D space to check for containment within the AABB."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Contains Point",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the AABB contains the specified point (true) or not (false)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Forward Vector": {
+      "name": "Get Forward Vector",
+      "description": "Gets the forward direction vector based on a given rotation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Rotation",
+                "types": ["player", "entity"],
+                "description": "The input rotation (e.g., in Euler angles) to calculate the forward vector from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Forward Vector",
+                "types": ["vector3"],
+                "description": "The output forward direction vector calculated from the input rotation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Up Vector": {
+      "name": "Get Up Vector",
+      "description": "Gets the up direction vector based on a given rotation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Rotation",
+                "types": ["player", "entity"],
+                "description": "The input rotation (e.g., in Euler angles) to calculate the up vector from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Up Vector",
+                "types": ["vector3"],
+                "description": "The output up direction vector calculated from the input rotation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Down Vector": {
+      "name": "Get Down Vector",
+      "description": "Gets the down direction vector based on a given rotation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Rotation",
+                "types": ["player", "entity"],
+                "description": "The input rotation (e.g., in Euler angles) to calculate the down vector from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Down Vector",
+                "types": ["vector3"],
+                "description": "The output down direction vector calculated from the input rotation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Left Vector": {
+      "name": "Get Left Vector",
+      "description": "Gets the left direction vector based on a given rotation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Rotation",
+                "types": ["player", "entity"],
+                "description": "The input rotation (e.g., in Euler angles) to calculate the left vector from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Left Vector",
+                "types": ["vector3"],
+                "description": "The output left direction vector calculated from the input rotation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Right Vector": {
+      "name": "Get Right Vector",
+      "description": "Gets the right direction vector based on a given rotation.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Vector Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Rotation",
+                "types": ["player", "entity"],
+                "description": "The input rotation (e.g., in Euler angles) to calculate the right vector from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Right Vector",
+                "types": ["vector3"],
+                "description": "The output right direction vector calculated from the input rotation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Raycast": {
+      "name": "Raycast",
+      "description": "Performs a raycast in the game world and outputs information about what was hit.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Geometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Origin",
+                "types": ["vector3"],
+                "description": "The starting point of the raycast in 3D space."
+              },
+              {
+                "name": "Direction",
+                "types": ["vector3"],
+                "description": "The direction of the raycast as a vector. This should be a normalized vector indicating the direction in which to cast the ray."
+              },
+              {
+                "name": "Distance",
+                "types": ["float"],
+                "description": "The maximum distance the ray should check for collisions. If an object is hit within this distance, it will be reported in the outputs."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Hit",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the raycast hit an object (true) or not (false)."
+              },
+              {
+                "name": "Hit Position",
+                "types": ["vector3"],
+                "description": "The output position in 3D space where the raycast hit an object. If no object was hit, this may default to a zero vector or be undefined based on implementation."
+              },
+              {
+                "name": "Hit Normal",
+                "types": ["vector3"],
+                "description": "The output normal vector at the point of impact where the raycast hit an object. This represents the surface normal of the hit location. If no object was hit, this may default to a zero vector or be undefined based on implementation."
+              },
+              {
+                "name": "Hit Entity",
+                "types": ["entity"],
+                "description": "The output entity that was hit by the raycast. If no object was hit, this may default to null or be undefined based on implementation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Closest": {
+      "name": "Get Closest",
+      "description": "Gets the closest item in the list based from an origin",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Geometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Origin",
+                "types": ["vector3"],
+                "description": "The point in 3D space to find the closest item to."
+              },
+              {
+                "name": "Targets",
+                "types": ["list<player>", "list<entity>", "list<block>"],
+                "description": "The list of potential targets to find the closest item from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Closest",
+                "types": ["player", "entity", "block"],
+                "description": "The output item from the list that is closest to the input origin point."
+              },
+              {
+                "name": "Closest Index",
+                "types": ["int"],
+                "description": "The output index of the closest item in the input list. This corresponds to the position of the closest item in the list of targets, where the first item is index 0, the second item is index 1, etc. If the list is empty, this may default to -1 or be undefined based on implementation."
+              },
+              {
+                "name": "Distance",
+                "types": ["float"],
+                "description": "The output distance from the input origin point to the closest item."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Farthest": {
+      "name": "Get Farthest",
+      "description": "Gets the farthest item in the list based from an origin",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Math", "Geometry"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Origin",
+                "types": ["vector3"],
+                "description": "The point in 3D space to find the farthest item from."
+              },
+              {
+                "name": "Targets",
+                "types": ["list<player>", "list<entity>", "list<block>"],
+                "description": "The list of potential targets to find the farthest item from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Farthest",
+                "types": ["player", "entity", "block"],
+                "description": "The output item from the list that is farthest from the input origin point."
+              },
+              {
+                "name": "Farthest Index",
+                "types": ["int"],
+                "description": "The output index of the farthest item in the input list. This corresponds to the position of the farthest item in the list of targets, where the first item is index 0, the second item is index 1, etc. If the list is empty, this may default to -1 or be undefined based on implementation."
+              },
+              {
+                "name": "Distance",
+                "types": ["float"],
+                "description": "The output distance from the input origin point to the farthest item."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Player Get Time Zone": {
+      "name": "Player Get Time Zone",
+      "description": "Gets the time zone of a specified player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to get the time zone of."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Time Zone",
+                "types": ["int"],
+                "description": "Gets the amount of seconds the user is offset from UTC."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Time Get Universal Seconds": {
+      "name": "Time Get Universal Seconds",
+      "description": "Gets the current universal time in seconds since the Unix epoch (January 1, 1970).",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Time"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Seconds",
+                "types": ["int"],
+                "description": "The output integer value representing the current universal time in seconds since the Unix epoch (January 1, 1970)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Time Get Universal Time": {
+      "name": "Time Get Universal Time",
+      "description": "Gets the current universal time as a formatted string.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Time"]],
+      "ports": [
+        {
+          "inputs": {},
+          "outputs": {
+            "static": [
+              {
+                "name": "Year",
+                "types": ["int"],
+                "description": "The output integer value representing the current year in universal time."
+              },
+              {
+                "name": "Month",
+                "types": ["int"],
+                "description": "The output integer value representing the current month (1-12) in universal time."
+              },
+              {
+                "name": "Day",
+                "types": ["int"],
+                "description": "The output integer value representing the current day of the month (1-31) in universal time."
+              },
+              {
+                "name": "Hour",
+                "types": ["int"],
+                "description": "The output integer value representing the current hour (0-23) in universal time."
+              },
+              {
+                "name": "Minute",
+                "types": ["int"],
+                "description": "The output integer value representing the current minute (0-59) in universal time."
+              },
+              {
+                "name": "Second",
+                "types": ["int"],
+                "description": "The output integer value representing the current second (0-59) in universal time."
               }
             ]
           }

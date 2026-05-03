@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: Delay
-# Last Modified: 2026 04 18 18:28
-# Created: 2026 04 18 18:28
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
 # ===================== #
 
 # ===================== #
@@ -16,47 +16,13 @@
 # 1 (Run) (static) [ exec ] (min n/a, max n/a)
 # 2 (After Delay) (static) [ exec ] (min n/a, max n/a)
 # 3 (Cancel) (static) [ exec ] (min n/a, max n/a)
-# ===================== #
+# =====================
 
-on load:
-    add 1 to {DEV_CHIP_COUNT}
 
 variables:
-    {_version} = "1.0.0"
-    {_execution} = "port1"
-    {chip_cancelled} = false
-    {chip_running} = false
+    version = "1.0.0"
+
+execution = "port1"
 
 function CHIP_delay(port2: object):
-
-    if port2 is None:
-
-        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
-
-    else if not isinstance(port2, int):
-
-        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
-
-    else if port2 < 0:
-
-        return "TRIGGER.ERROR.PORT.INVALID_VALUE"
-
-    if _execution is 'port1':
-
-        _running = True
-
-        wait for port2 ticks
-
-        if _cancelled:
-            _cancelled = False
-            return "port3"
-
-        _running = False
-
-        return "port2"
-
-    else if _execution is 'port3':
-
-        if _running:
-
-            _cancelled = True
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'

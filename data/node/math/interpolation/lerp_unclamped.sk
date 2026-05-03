@@ -1,7 +1,7 @@
 # ===================== #
 # Chip: Lerp Unclamped
-# Last Modified: 2026 04 18 18:28
-# Created: 2026 04 18 18:28
+# Last Modified: 2026 05 03 21:17
+# Created: 2026 05 03 21:17
 # ===================== #
 
 # ===================== #
@@ -14,32 +14,13 @@
 # -------------------- #
 # Outputs
 # 1 (Result) (static) [ float | color | vector ] (min n/a, max n/a)
-# ===================== #
+# =====================
 
-on load:
-    add 1 to {DEV_CHIP_COUNT}
 
 variables:
-    {_version} = "1.0.0"
-    {_execution} = "port1"
+    version = "1.0.0"
+
+execution = "port1"
 
 function CHIP_lerp_unclamped(port1: object, port2: object, port3: object):
-    if port1 is None or port2 is None or port3 is None:
-
-        return "TRIGGER.ERROR.PORT.EMPTY_VALUE"
-
-    else if not isinstance(port3, float) and not isinstance(port3, int):
-
-        return "TRIGGER.ERROR.PORT.INVALID_TYPE"
-
-    if hasattr(port1, "getX") and hasattr(port2, "getX"):
-
-        set {_result} to port1.clone()
-        set {_offset} to port2.clone()
-        {_offset}.subtract(port1)
-        {_offset}.multiply(port3)
-        {_result}.add({_offset})
-
-        return {_result}
-
-    return port1 + ((port2 - port1) * port3)
+    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
