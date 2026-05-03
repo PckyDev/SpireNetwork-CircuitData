@@ -76,5 +76,10 @@
     "color": "#ff3b4b",
     "description": "A command value representing a command string, often used for triggering events or actions based on specific commands.",
     "tags": []
-  }
+  },
+  "audio": {
+    "name": "audio",
+    "color": "#F4FF5D",
+    "description": "An audio value representing a sound or music clip that can be played within the game.",
+    "tags": []
 }
