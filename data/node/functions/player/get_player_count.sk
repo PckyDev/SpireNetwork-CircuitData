@@ -1,24 +1,13 @@
-# ===================== #
 # Chip: Get Player Count
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Output 1 | Type: int | Name: Player Count
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# None
-# -------------------- #
-# Outputs
-# 1 (Player Count) (static) [ int ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_get_player_count():
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_GET_PLAYER_COUNT_TRIGGER():
+    return "{error.not_implemented}"

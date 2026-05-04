@@ -3527,6 +3527,471 @@
           }
         }
       ]
+    },
+    "Set Block": {
+      "name": "Set Block",
+      "description": "Sets a block at a specified position in the game world.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Block"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the block placement."
+              },
+              {
+                "name": "Position",
+                "types": ["vector3"],
+                "description": "The position in 3D space where the block should be set."
+              },
+              {
+                "name": "Block",
+                "types": ["block"],
+                "description": "The block to set at the specified position. The available block types may depend on the context of the game and its implementation."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after the block has been set at the specified position."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the block was successfully set at the specified position (true) or not (false). This may depend on various factors such as whether the position is valid, whether the block type is allowed, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Get Block At Position": {
+      "name": "Get Block At Position",
+      "description": "Gets the block at a specified position in the game world.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Block"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the block retrieval."
+              },
+              {
+                "name": "Position",
+                "types": ["vector3"],
+                "description": "The position in 3D space to get the block from."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to get the block at the specified position."
+              },
+              {
+                "name": "Block",
+                "types": ["block"],
+                "description": "The output block value representing the block at the specified position. If there is no block at that position, this may default to null or a special 'air' block type based on implementation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Set Position": {
+      "name": "Set Position",
+      "description": "Sets the position of an entity in the game world.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Entity"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the position change."
+              },
+              {
+                "name": "Target",
+                "types": ["entity", "player"],
+                "description": "The entity or player to set the position of."
+              },
+              {
+                "name": "Position",
+                "types": ["vector3"],
+                "description": "The new position in 3D space to set the target to."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to set the target's position."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the target's position was successfully set to the new value (true) or not (false). This may depend on various factors such as whether the target is valid, whether the position is within allowed bounds, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Velocity Add": {
+      "name": "Velocity Add",
+      "description": "Adds a velocity vector to an entity, causing it to move in the direction of the velocity.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Entity"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the velocity addition."
+              },
+              {
+                "name": "Target",
+                "types": ["entity", "player"],
+                "description": "The entity or player to add velocity to."
+              },
+              {
+                "name": "Velocity",
+                "types": ["vector3"],
+                "description": "The velocity vector to add to the target. This will cause the target to move in the direction of the velocity vector. The magnitude of the vector may affect how fast the target moves."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to add velocity to the target."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the velocity was successfully added to the target (true) or not (false). This may depend on various factors such as whether the target is valid, whether it can receive velocity changes, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Velocity Set": {
+      "name": "Velocity Set",
+      "description": "Sets the velocity of an entity to a specific vector, causing it to move in the direction of the velocity.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Entity"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the velocity change."
+              },
+              {
+                "name": "Target",
+                "types": ["entity", "player"],
+                "description": "The entity or player to set the velocity of."
+              },
+              {
+                "name": "Velocity",
+                "types": ["vector3"],
+                "description": "The velocity vector to set for the target. This will cause the target to move in the direction of the velocity vector. The magnitude of the vector may affect how fast the target moves."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to set the target's velocity."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the target's velocity was successfully set to the new value (true) or not (false). This may depend on various factors such as whether the target is valid, whether it can receive velocity changes, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Player Show Title": {
+      "name": "Player Show Title",
+      "description": "Shows a title message on the screen of a specified player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the title display."
+              },
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to show the title message to."
+              },
+              {
+                "name": "Title",
+                "types": ["text"],
+                "description": "The title message to display on the player's screen."
+              },
+              {
+                "name": "Subtitle",
+                "types": ["text"],
+                "description": "The subtitle message to display below the title on the player's screen. This is optional and may be left empty if not needed."
+              },
+              {
+                "name": "Duration",
+                "types": ["int"],
+                "description": "The duration in ticks for which the title message should be displayed on the player's screen."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to show the title message."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the title message was successfully shown to the player (true) or not (false). This may depend on various factors such as whether the player is valid, whether they can receive title messages, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Player Show Action Bar": {
+      "name": "Player Show Action Bar",
+      "description": "Shows an action bar message on the screen of a specified player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the action bar display."
+              },
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to show the action bar message to."
+              },
+              {
+                "name": "Message",
+                "types": ["text"],
+                "description": "The action bar message to display on the player's screen."
+              },
+              {
+                "name": "Duration",
+                "types": ["int"],
+                "description": "The duration in ticks for which the action bar message should be displayed on the player's screen."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to show the action bar message."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the action bar message was successfully shown to the player (true) or not (false). This may depend on various factors such as whether the player is valid, whether they can receive action bar messages, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "String Contains": {
+      "name": "String Contains",
+      "description": "Checks if a given string contains a specified substring.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "Comparison"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "String",
+                "types": ["string"],
+                "description": "The input string to check for the presence of the substring."
+              },
+              {
+                "name": "Contains",
+                "types": ["string"],
+                "description": "The string to check for within the input string."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Contains",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the input string contains the specified string (true) or not (false)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "String Substring": {
+      "name": "String Substring",
+      "description": "Extracts a substring from a given string based on specified start index and length.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Logic", "String Operations"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "String",
+                "types": ["string"],
+                "description": "The input string to extract the substring from."
+              },
+              {
+                "name": "Index",
+                "types": ["int"],
+                "description": "The starting index in the input string from which to begin extracting the substring. The first character of the string is at index 0."
+              },
+              {
+                "name": "Length",
+                "types": ["int"],
+                "description": "The number of characters to include in the substring starting from the specified index. If this value exceeds the bounds of the string, it may be adjusted to fit within the string length based on implementation."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Substring",
+                "types": ["string"],
+                "description": "The output substring extracted from the input string based on the specified start index and length."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Player Force Resources": {
+      "name": "Player Force Resources",
+      "description": "Forces a specified player to load resources, which can be useful for ensuring that they have the necessary assets for certain actions or events.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": true,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution input to trigger the resource loading."
+              },
+              {
+                "name": "Resources",
+                "types": ["resourcepack"],
+                "description": "The resources to be loaded for the player."
+              },
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to force load resources for."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to force the player to load resources."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the player was successfully forced to load resources (true) or not (false). This may depend on various factors such as whether the player is valid, whether they can receive resource loading commands, etc."
+              },
+              {
+                "name": "Hash",
+                "types": ["string"],
+                "description": "The output string value representing a hash of the resources that were loaded for the player. This can be used to verify that the correct resources were loaded or to compare against expected resource hashes."
+              },
+              {
+                "name": "Download Size",
+                "types": ["int"],
+                "description": "The output integer value representing the size of the resources that were downloaded for the player in bytes. This can be used to track how much data was transferred during the resource loading process."
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }

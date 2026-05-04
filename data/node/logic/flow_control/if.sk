@@ -1,26 +1,16 @@
-# ===================== #
 # Chip: If
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: exec | Name: Run
+#   Input 2 | Type: bool | Name: Condition
+#   Output 1 | Type: exec | Name: Then
+#   Output 2 | Type: exec | Name: Else
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Run) (static) [ exec ] (min n/a, max n/a)
-# 2 (Condition) (static) [ bool ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Then) (static) [ exec ] (min n/a, max n/a)
-# 2 (Else) (static) [ exec ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_if(port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_IF_TRIGGER(input2 : bool):
+    return "{error.not_implemented}"

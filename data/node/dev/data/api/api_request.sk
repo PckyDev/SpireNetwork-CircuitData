@@ -1,29 +1,19 @@
-# ===================== #
 # Chip: API Request
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: exec | Name: Trigger
+#   Input 2 | Type: api | Name: API
+#   Output 1 | Type: exec | Name: Run
+#   Output 2 | Type: exec | Name: On Response
+#   Output 3 | Type: bool | Name: Success
+#   Output 4 | Type: int | Name: Response Code
+#   Output 5 | Type: any | Name: Data
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Trigger) (static) [ exec ] (min n/a, max n/a)
-# 2 (API) (static) [ api ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Run) (static) [ exec ] (min n/a, max n/a)
-# 2 (On Response) (static) [ exec ] (min n/a, max n/a)
-# 3 (Success) (static) [ bool ] (min n/a, max n/a)
-# 4 (Response Code) (static) [ int ] (min n/a, max n/a)
-# 5 (Data) (static) [ any ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_api_request(port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_API_REQUEST_TRIGGER(input2 : object):
+    return "{error.not_implemented}"

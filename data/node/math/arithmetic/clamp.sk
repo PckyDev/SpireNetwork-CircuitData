@@ -1,26 +1,16 @@
-# ===================== #
 # Chip: Clamp
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: object | Name: Value
+#   Input 2 | Type: object | Name: Min
+#   Input 3 | Type: object | Name: Max
+#   Output 1 | Type: object | Name: Result
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Value) (static) [ float | int | vector ] (min n/a, max n/a)
-# 2 (Min) (static) [ float | int | vector ] (min n/a, max n/a)
-# 3 (Max) (static) [ float | int | vector ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Result) (static) [ float | int | vector ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_clamp(port1: object, port2: object, port3: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_CLAMP_TRIGGER(input1 : object, input2 : object, input3 : object):
+    return "{error.not_implemented}"

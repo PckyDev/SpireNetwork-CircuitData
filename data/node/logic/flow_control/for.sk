@@ -1,28 +1,18 @@
-# ===================== #
 # Chip: For
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: exec | Name: 
+#   Input 2 | Type: int | Name: From (Inclusive)
+#   Input 3 | Type: int | Name: To (Exclusive)
+#   Output 1 | Type: exec | Name: Loop
+#   Output 2 | Type: int | Name: Index
+#   Output 3 | Type: exec | Name: Done
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 () (static) [ exec ] (min n/a, max n/a)
-# 2 (From (Inclusive)) (static) [ int ] (min n/a, max n/a)
-# 3 (To (Exclusive)) (static) [ int ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Loop) (static) [ exec ] (min n/a, max n/a)
-# 2 (Index) (static) [ int ] (min n/a, max n/a)
-# 3 (Done) (static) [ exec ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_for(port2: object, port3: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_FOR_TRIGGER(input2 : int, input3 : int):
+    return "{error.not_implemented}"

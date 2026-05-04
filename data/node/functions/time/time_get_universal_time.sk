@@ -1,0 +1,18 @@
+# Chip: Time Get Universal Time
+# Ports:
+#   Output 1 | Type: int | Name: Year
+#   Output 2 | Type: int | Name: Month
+#   Output 3 | Type: int | Name: Day
+#   Output 4 | Type: int | Name: Hour
+#   Output 5 | Type: int | Name: Minute
+#   Output 6 | Type: int | Name: Second
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_TIME_GET_UNIVERSAL_TIME_TRIGGER():
+    return "{error.not_implemented}"

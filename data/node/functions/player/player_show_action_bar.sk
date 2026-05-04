@@ -1,0 +1,18 @@
+# Chip: Player Show Action Bar
+# Ports:
+#   Input 1 | Type: exec | Name: 
+#   Input 2 | Type: player | Name: Player
+#   Input 3 | Type: text | Name: Message
+#   Input 4 | Type: int | Name: Duration
+#   Output 1 | Type: exec | Name: 
+#   Output 2 | Type: bool | Name: Success
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_PLAYER_SHOW_ACTION_BAR_TRIGGER(input2 : object, input3 : text, input4 : int):
+    return "{error.not_implemented}"

@@ -160,35 +160,31 @@ When generating a default return value, the current scripts use:
 Generated files in `data/node/` follow this general structure:
 
 ```sk
-# ===================== #
 # Chip: If
-# Last Modified: 2026 04 16 ACDT
-# Loaded: 2026 04 18 17:51 ACDT
-# ===================== #
+# Ports:
+#   Input 1 | Type: exec | Name: Run
+#   Input 2 | Type: bool | Name: Condition
+#   Output 1 | Type: exec | Name: Then
+#   Output 2 | Type: exec | Name: Else
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# port1 (Run) [static]: exec
-# port2 (Condition) [static]: bool
-# -------------------- #
-# Outputs
-# output1 (True) [static]: exec
-# output2 (False) [static]: exec
-# ===================== #
+# Required Libraries
+#   - None
 
-function port1(port2: object):
-		return None
+variables:
+	_CHIP_VER = 1.0.0
+	_CURRENT_EXEC = None
+
+function CHIP_IF_TRIGGER(input2 : bool):
+	return "{error.not_implemented}"
 ```
 
 Notes:
 
-1. Input ports are listed as `port1`, `port2`, and so on.
-2. Output ports are listed as `output1`, `output2`, and so on.
+1. Header metadata follows the documentation contract with `# Chip:`, `# Ports:`, and `# Required Libraries` sections.
+2. Multi-type ports are documented as `object` in the generated header.
 3. Exec input ports are not included in the function parameter list.
-4. If a chip has one or more exec inputs, a function is generated for each exec input port.
-5. If a chip has no exec inputs, one function is generated for the port group.
+4. Generated trigger functions use the `CHIP_<NAME>_TRIGGER` naming convention.
+5. Generated scaffolds always include `_CHIP_VER` and `_CURRENT_EXEC`.
 
 ## Validation Rules
 
@@ -206,4 +202,4 @@ Notes:
 
 ## Generator Notes
 
-`generateChip.py` currently reads the first chip in `ChipConfigs.json` and writes a test file to `test.sk`. Its internal `CONTENT` dictionary acts as a template source for the generated sections.
+`generateChip.py` currently reads the first chip in `ChipConfigs.json` and writes a test file to `test.sk`. The generator builds a documentation-compliant scaffold directly from the chip config.

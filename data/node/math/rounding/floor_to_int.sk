@@ -1,24 +1,14 @@
-# ===================== #
 # Chip: Floor to Int
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: float | Name: Value
+#   Output 1 | Type: int | Name: Result
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Value) (static) [ float ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Result) (static) [ int ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_floor_to_int(port1: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_FLOOR_TO_INT_TRIGGER(input1 : float):
+    return "{error.not_implemented}"

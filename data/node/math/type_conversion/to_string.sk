@@ -1,24 +1,14 @@
-# ===================== #
 # Chip: To String
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: any | Name: Value
+#   Output 1 | Type: string | Name: Result
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Value) (static) [ any ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Result) (static) [ string ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_to_string(port1: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_TO_STRING_TRIGGER(input1 : object):
+    return "{error.not_implemented}"

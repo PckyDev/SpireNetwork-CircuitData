@@ -1,25 +1,15 @@
-# ===================== #
 # Chip: Atan2
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: float | Name: Y
+#   Input 2 | Type: float | Name: X
+#   Output 1 | Type: float | Name: Result
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Y) (static) [ float ] (min n/a, max n/a)
-# 2 (X) (static) [ float ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Result) (static) [ float ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_atan2(port1: object, port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_ATAN2_TRIGGER(input1 : float, input2 : float):
+    return "{error.not_implemented}"

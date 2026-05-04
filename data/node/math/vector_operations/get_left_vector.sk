@@ -1,0 +1,14 @@
+# Chip: Get Left Vector
+# Ports:
+#   Input 1 | Type: object | Name: Rotation
+#   Output 1 | Type: vector | Name: Left Vector
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_GET_LEFT_VECTOR_TRIGGER(input1 : object):
+    return "{error.not_implemented}"

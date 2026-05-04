@@ -1,26 +1,16 @@
-# ===================== #
 # Chip: Color To HSV
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: color | Name: Color
+#   Output 1 | Type: float | Name: Hue
+#   Output 2 | Type: float | Name: Saturation
+#   Output 3 | Type: float | Name: Value
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Color) (static) [ color ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Hue) (static) [ float ] (min n/a, max n/a)
-# 2 (Saturation) (static) [ float ] (min n/a, max n/a)
-# 3 (Value) (static) [ float ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_color_to_hsv(port1: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_COLOR_TO_HSV_TRIGGER(input1 : object):
+    return "{error.not_implemented}"

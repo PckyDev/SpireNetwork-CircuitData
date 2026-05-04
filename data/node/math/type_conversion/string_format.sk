@@ -1,25 +1,15 @@
-# ===================== #
 # Chip: String Format
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: string | Name: Format
+#   Input 2 | Type: string | Name: Value
+#   Output 1 | Type: string | Name: Result
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Format) (static) [ string ] (min n/a, max n/a)
-# 2 (Value) (dynamic) [ string ] (min 1, max unbounded)
-# -------------------- #
-# Outputs
-# 1 (Result) (static) [ string ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_string_format(port1: object, port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_STRING_FORMAT_TRIGGER(input1 : string, input2 : string):
+    return "{error.not_implemented}"

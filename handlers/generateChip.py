@@ -1,12 +1,12 @@
 import json
 import re
-from datetime import datetime
 from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve().parent
-CONFIG_PATH = BASE_DIR / "ChipConfigs.json"
-OUTPUT_PATH = BASE_DIR / "test.sk"
+ROOT_DIR = BASE_DIR.parent
+CONFIG_PATH = ROOT_DIR / "ChipConfigs.json"
+OUTPUT_PATH = ROOT_DIR / "test.sk"
 VALID_PORT_GROUPS = ("static", "dynamic")
 TYPE_DEFAULTS = {
     "bool": "false",
@@ -15,30 +15,6 @@ TYPE_DEFAULTS = {
     "string": "''",
     "text": "''",
     "exec": "None",
-}
-CONTENT = {
-    "details": """
-# ===================== #
-# Chip: data.chip.name
-# Last Modified: data.date.modification
-# Created: data.date.creation
-# ===================== #
-""",
-    "inputs": """
-# data.port.index (data.port.name) (data.port.type) [ data.port.datatype ] (min data.port.min, max data.port.max)
-""",
-    "outputs": """
-# data.port.index (data.port.name) (data.port.type) [ data.port.datatype ] (min data.port.min, max data.port.max)
-""",
-    "function": """
-variables:
-    version = "1.0.0"
-
-execution = "port1"
-
-function CHIP_data.chip.name(data.port.values):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
-""",
 }
 
 
@@ -75,11 +51,32 @@ def skript_type_name(type_names):
 
 
 def format_type_comment(type_names):
-    if not isinstance(type_names, list):
+    if not isinstance(type_names, list) or not type_names:
         return "object"
 
-    normalized_types = [skript_type_name([type_name]) for type_name in type_names if isinstance(type_name, str)]
-    return " | ".join(normalized_types) if normalized_types else "object"
+    normalized_types = []
+    for type_name in type_names:
+        if not isinstance(type_name, str):
+            continue
+
+        normalized_name = skript_type_name([type_name])
+        if normalized_name not in normalized_types:
+            normalized_types.append(normalized_name)
+
+    if not normalized_types:
+        return "object"
+
+    if len(normalized_types) > 1:
+        return "object"
+
+    return normalized_types[0]
+
+
+def format_parameter_type(type_names):
+    normalized_type = format_type_comment(type_names)
+    if normalized_type in {"bool", "int", "float", "string", "text", "vector"}:
+        return normalized_type
+    return "object"
 
 
 def render_template(template, replacements):
@@ -107,37 +104,10 @@ def expand_port_entries(collection):
     return expanded_ports
 
 
-def format_port_metadata(entry, prefix):
+def format_port_metadata(entry, direction_label):
     port_definition = entry["definition"]
     type_comment = format_type_comment(port_definition.get("types", []))
-    metadata = f"# {prefix}{entry['index']} ({port_definition['name']}) [{entry['kind']}]: {type_comment}"
-
-    if entry["kind"] == "dynamic":
-        dynamic_rules = port_definition.get("dynamic", {})
-        minimum = dynamic_rules.get("min")
-        maximum = dynamic_rules.get("max")
-        maximum_label = "unbounded" if maximum is None else str(maximum)
-        metadata = f"{metadata} (min {minimum}, max {maximum_label})"
-
-    return metadata
-
-
-def format_template_port_line(entry, template_key):
-    port_definition = entry["definition"]
-    dynamic_rules = port_definition.get("dynamic", {})
-    minimum = dynamic_rules.get("min", "n/a")
-    maximum = dynamic_rules.get("max", "n/a")
-    maximum_label = "unbounded" if maximum is None else str(maximum)
-
-    replacements = {
-        "data.port.index": str(entry["index"]),
-        "data.port.name": port_definition["name"],
-        "data.port.type": entry["kind"],
-        "data.port.datatype": format_type_comment(port_definition.get("types", [])),
-        "data.port.min": str(minimum),
-        "data.port.max": maximum_label,
-    }
-    return render_template(CONTENT[template_key], replacements)
+    return f"#   {direction_label} {entry['index']} | Type: {type_comment} | Name: {port_definition['name']}"
 
 
 def default_return_for_type(type_names):
@@ -147,36 +117,31 @@ def default_return_for_type(type_names):
     return TYPE_DEFAULTS.get(type_name, "0")
 
 
-def build_circuit_data_block(inputs, outputs):
+def build_header_block(config_data, inputs, outputs):
     lines = [
-        "# ===================== #",
-        "# Circuit Data",
-        "# ===================== #",
-        "# Inputs",
+        f"# Chip: {config_data['name']}",
+        "# Ports:",
     ]
 
-    if inputs:
-        for input_port in inputs:
-            lines.append(format_template_port_line(input_port, "inputs"))
-    else:
-        lines.append("# None")
+    for input_port in inputs:
+        lines.append(format_port_metadata(input_port, "Input"))
 
-    lines.append("# -------------------- #")
-    lines.append("# Outputs")
+    for output_port in outputs:
+        lines.append(format_port_metadata(output_port, "Output"))
 
-    if outputs:
-        for output_port in outputs:
-            lines.append(format_template_port_line(output_port, "outputs"))
-    else:
-        lines.append("# None")
-
-    lines.append("# =====================\n")
+    lines.extend(
+        [
+            "",
+            "# Required Libraries",
+            "#   - None",
+        ]
+    )
     return lines
 
 
-def build_function_block(chip_name, port_index, inputs, outputs):
+def build_function_block(chip_name, inputs, outputs):
     parameter_lines = []
-    chip_identifier = slugify_path_part(chip_name)
+    chip_identifier = slugify_path_part(chip_name).upper()
 
     for input_port in inputs:
         input_index = input_port["index"]
@@ -184,47 +149,32 @@ def build_function_block(chip_name, port_index, inputs, outputs):
         if "exec" in port_definition.get("types", []):
             continue
 
-        parameter_lines.append(f"port{input_index}: object")
+        parameter_type = format_parameter_type(port_definition.get("types", []))
+        parameter_lines.append(f"input{input_index} : {parameter_type}")
 
-    parameter_value = ", ".join(parameter_lines)
-    if not parameter_value:
-        parameter_value = ""
+    signature = ", ".join(parameter_lines)
 
-    replacements = {
-        "data.chip.name": chip_identifier,
-        "data.port.values": parameter_value,
-        "data.chip.name": chip_identifier,
-        'execution = "port1"': f'execution = "port{port_index}"',
-        "execution = 'port1'": f"execution = 'port{port_index}'",
-    }
-    return render_template(CONTENT["function"], replacements).splitlines()
+    if signature:
+        lines = [f"function CHIP_{chip_identifier}_TRIGGER({signature}):"]
+    else:
+        lines = [f"function CHIP_{chip_identifier}_TRIGGER():"]
 
-
-def build_details_block(config_data, timestamp):
-    replacements = {
-        "data.chip.name": config_data["name"],
-        "data.date.modification": timestamp,
-        "data.date.creation": timestamp,
-    }
-    return render_template(CONTENT["details"], replacements).splitlines()
+    lines.append('    return "{error.not_implemented}"')
+    return lines
 
 
 def build_skript_content(config_data):
-    timestamp = datetime.now().strftime("%Y %m %d %H:%M")
-    lines = build_details_block(config_data, timestamp)
+    port_group = config_data["ports"][0]
+    inputs = expand_port_entries(port_group["inputs"])
+    outputs = expand_port_entries(port_group["outputs"])
+
+    lines = build_header_block(config_data, inputs, outputs)
     lines.append("")
-
-    for port_group in config_data["ports"]:
-        inputs = expand_port_entries(port_group["inputs"])
-        outputs = expand_port_entries(port_group["outputs"])
-        exec_inputs = [item for item in inputs if "exec" in item["definition"].get("types", [])]
-
-        lines.extend(build_circuit_data_block(inputs, outputs))
-        lines.append("")
-
-        function_index = exec_inputs[0]["index"] if exec_inputs else 1
-        lines.extend(build_function_block(config_data["name"], function_index, inputs, outputs))
-        lines.append("")
+    lines.append("variables:")
+    lines.append("    _CHIP_VER = 1.0.0")
+    lines.append("    _CURRENT_EXEC = None")
+    lines.append("")
+    lines.extend(build_function_block(config_data["name"], inputs, outputs))
 
     return "\n".join(lines).rstrip() + "\n"
 

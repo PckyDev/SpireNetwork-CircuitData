@@ -1,0 +1,14 @@
+# Chip: Player Get Time Zone
+# Ports:
+#   Input 1 | Type: player | Name: Player
+#   Output 1 | Type: int | Name: Time Zone
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_PLAYER_GET_TIME_ZONE_TRIGGER(input1 : object):
+    return "{error.not_implemented}"

@@ -1,25 +1,15 @@
-# ===================== #
 # Chip: List Sort By Key
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: list<any> | Name: List
+#   Input 2 | Type: string | Name: Key
+#   Output 1 | Type: list<any> | Name: Sorted List
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (List) (static) [ list<any> ] (min n/a, max n/a)
-# 2 (Key) (static) [ string ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Sorted List) (static) [ list<any> ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_list_sort_by_key(port1: object, port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_LIST_SORT_BY_KEY_TRIGGER(input1 : object, input2 : string):
+    return "{error.not_implemented}"

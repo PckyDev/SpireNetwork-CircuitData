@@ -1,26 +1,16 @@
-# ===================== #
 # Chip: Execution Integer Switch
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: exec | Name: Exec
+#   Input 2 | Type: int | Name: Value
+#   Output 1 | Type: exec | Name: Failed
+#   Output 2 | Type: execc | Name: {dynamic_port_index}
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Exec) (static) [ exec ] (min n/a, max n/a)
-# 2 (Value) (static) [ int ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Failed) (static) [ exec ] (min n/a, max n/a)
-# 2 ({dynamic_port_index}) (dynamic) [ execc ] (min 1, max unbounded)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_execution_integer_switch(port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_EXECUTION_INTEGER_SWITCH_TRIGGER(input2 : int):
+    return "{error.not_implemented}"

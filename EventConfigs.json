@@ -28,6 +28,112 @@
           "tags": ["required"]
         }
       }
+    },
+    "blockbroken": {
+      "name": "Block Broken",
+      "description": "Triggered when a block is broken.",
+      "outputs": [
+        {
+          "name": "",
+          "types": ["exec"],
+          "description": "The execution output triggered after attempting to get the block at the specified position."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who broke the block."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The information about the block that was broken."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the block that was broken."
+        }
+      ]
+    },
+    "blockplaced": {
+      "name": "Block Placed",
+      "description": "Triggered when a block is placed.",
+      "outputs": [
+        {
+          "name": "",
+          "types": ["exec"],
+          "description": "The execution output triggered after attempting to get the block at the specified position."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who placed the block."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The information about the block that was placed."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the block that was placed."
+        }
+      ]
+    },
+    "update1tick": {
+      "name": "Update 1 Tick",
+      "description": "Triggered every tick (20 times per second).",
+      "outputs": [
+        {
+          "name": "",
+          "types": ["exec"],
+          "description": "The execution output triggered every tick."
+        }
+      ]
+    },
+    "update20ticks": {
+      "name": "Update 20 Ticks",
+      "description": "Triggered every 20 ticks (1 second).",
+      "outputs": [
+        {
+          "name": "",
+          "types": ["exec"],
+          "description": "The execution output triggered every 20 ticks."
+        }
+      ]
+    },
+    "playerjoin": {
+      "name": "Player Join",
+      "description": "Triggered when a player joins the game.",
+      "outputs": [
+        {
+          "name": "",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player joins."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who joined the game."
+        }
+      ]
+    },
+    "playerleave": {
+      "name": "Player Leave",
+      "description": "Triggered when a player leaves the game.",
+      "outputs": [
+        {
+          "name": "",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player leaves."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who left the game."
+        }
+      ]
     }
   }
 }

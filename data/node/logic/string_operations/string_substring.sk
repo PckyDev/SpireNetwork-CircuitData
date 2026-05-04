@@ -1,0 +1,16 @@
+# Chip: String Substring
+# Ports:
+#   Input 1 | Type: string | Name: String
+#   Input 2 | Type: int | Name: Index
+#   Input 3 | Type: int | Name: Length
+#   Output 1 | Type: string | Name: Substring
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_STRING_SUBSTRING_TRIGGER(input1 : string, input2 : int, input3 : int):
+    return "{error.not_implemented}"

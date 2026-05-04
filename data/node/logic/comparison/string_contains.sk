@@ -1,0 +1,15 @@
+# Chip: String Contains
+# Ports:
+#   Input 1 | Type: string | Name: String
+#   Input 2 | Type: string | Name: Contains
+#   Output 1 | Type: bool | Name: Contains
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_STRING_CONTAINS_TRIGGER(input1 : string, input2 : string):
+    return "{error.not_implemented}"

@@ -1,26 +1,16 @@
-# ===================== #
 # Chip: Vector3 Create
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: float | Name: X
+#   Input 2 | Type: float | Name: Y
+#   Input 3 | Type: float | Name: Z
+#   Output 1 | Type: vector | Name: Vector3
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (X) (static) [ float ] (min n/a, max n/a)
-# 2 (Y) (static) [ float ] (min n/a, max n/a)
-# 3 (Z) (static) [ float ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Vector3) (static) [ vector ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_vector3_create(port1: object, port2: object, port3: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_VECTOR3_CREATE_TRIGGER(input1 : float, input2 : float, input3 : float):
+    return "{error.not_implemented}"

@@ -1,0 +1,17 @@
+# Chip: Get Closest
+# Ports:
+#   Input 1 | Type: vector | Name: Origin
+#   Input 2 | Type: object | Name: Targets
+#   Output 1 | Type: object | Name: Closest
+#   Output 2 | Type: int | Name: Closest Index
+#   Output 3 | Type: float | Name: Distance
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_GET_CLOSEST_TRIGGER(input1 : vector, input2 : object):
+    return "{error.not_implemented}"

@@ -1,0 +1,13 @@
+# Chip: Time Get Universal Seconds
+# Ports:
+#   Output 1 | Type: int | Name: Seconds
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_TIME_GET_UNIVERSAL_SECONDS_TRIGGER():
+    return "{error.not_implemented}"

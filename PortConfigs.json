@@ -82,5 +82,11 @@
     "color": "#F4FF5D",
     "description": "An audio value representing a sound or music clip that can be played within the game.",
     "tags": []
+  },
+  "resourcepack": {
+    "name": "resourcepack",
+    "color": "#4f60de",
+    "description": "A resource pack value representing a collection of assets, such as textures, models, and sounds, that can be applied to the game to change its appearance and audio.",
+    "tags": []
   }
 }

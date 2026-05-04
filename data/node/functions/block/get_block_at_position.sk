@@ -1,0 +1,16 @@
+# Chip: Get Block At Position
+# Ports:
+#   Input 1 | Type: exec | Name: 
+#   Input 2 | Type: vector | Name: Position
+#   Output 1 | Type: exec | Name: 
+#   Output 2 | Type: block | Name: Block
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_GET_BLOCK_AT_POSITION_TRIGGER(input2 : vector):
+    return "{error.not_implemented}"

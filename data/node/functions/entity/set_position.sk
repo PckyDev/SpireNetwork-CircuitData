@@ -1,0 +1,17 @@
+# Chip: Set Position
+# Ports:
+#   Input 1 | Type: exec | Name: 
+#   Input 2 | Type: object | Name: Target
+#   Input 3 | Type: vector | Name: Position
+#   Output 1 | Type: exec | Name: 
+#   Output 2 | Type: bool | Name: Success
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_SET_POSITION_TRIGGER(input2 : object, input3 : vector):
+    return "{error.not_implemented}"

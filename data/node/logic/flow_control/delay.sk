@@ -1,28 +1,18 @@
-# ===================== #
 # Chip: Delay
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: exec | Name: Exec
+#   Input 2 | Type: int | Name: Ticks
+#   Input 3 | Type: exec | Name: Cancel
+#   Output 1 | Type: exec | Name: Run
+#   Output 2 | Type: exec | Name: After Delay
+#   Output 3 | Type: exec | Name: Cancel
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (Exec) (static) [ exec ] (min n/a, max n/a)
-# 2 (Ticks) (static) [ int ] (min n/a, max n/a)
-# 3 (Cancel) (static) [ exec ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Run) (static) [ exec ] (min n/a, max n/a)
-# 2 (After Delay) (static) [ exec ] (min n/a, max n/a)
-# 3 (Cancel) (static) [ exec ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_delay(port2: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_DELAY_TRIGGER(input2 : int):
+    return "{error.not_implemented}"

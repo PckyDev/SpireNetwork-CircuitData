@@ -1,24 +1,14 @@
-# ===================== #
 # Chip: List Get Count
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: list<any> | Name: List
+#   Output 1 | Type: int | Name: Count
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 (List) (static) [ list<any> ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Count) (static) [ int ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_list_get_count(port1: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_LIST_GET_COUNT_TRIGGER(input1 : object):
+    return "{error.not_implemented}"

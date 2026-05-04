@@ -1,0 +1,17 @@
+# Chip: Set Block
+# Ports:
+#   Input 1 | Type: exec | Name: 
+#   Input 2 | Type: vector | Name: Position
+#   Input 3 | Type: block | Name: Block
+#   Output 1 | Type: exec | Name: 
+#   Output 2 | Type: bool | Name: Success
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_SET_BLOCK_TRIGGER(input2 : vector, input3 : object):
+    return "{error.not_implemented}"

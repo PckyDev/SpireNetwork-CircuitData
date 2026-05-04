@@ -1,24 +1,14 @@
-# ===================== #
 # Chip: Get Position
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Input 1 | Type: object | Name: 
+#   Output 1 | Type: vector | Name: Position
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# 1 () (static) [ entity | player ] (min n/a, max n/a)
-# -------------------- #
-# Outputs
-# 1 (Position) (static) [ vector ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_get_position(port1: object):
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_GET_POSITION_TRIGGER(input1 : object):
+    return "{error.not_implemented}"

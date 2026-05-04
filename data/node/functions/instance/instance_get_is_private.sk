@@ -1,24 +1,13 @@
-# ===================== #
 # Chip: Instance Get Is Private
-# Last Modified: 2026 05 03 21:17
-# Created: 2026 05 03 21:17
-# ===================== #
+# Ports:
+#   Output 1 | Type: bool | Name: Is Private
 
-# ===================== #
-# Circuit Data
-# ===================== #
-# Inputs
-# None
-# -------------------- #
-# Outputs
-# 1 (Is Private) (static) [ bool ] (min n/a, max n/a)
-# =====================
-
+# Required Libraries
+#   - None
 
 variables:
-    version = "1.0.0"
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
 
-execution = "port1"
-
-function CHIP_instance_get_is_private():
-    return 'TRIGGER.ERROR.NOT_IMPLEMENTED'
+function CHIP_INSTANCE_GET_IS_PRIVATE_TRIGGER():
+    return "{error.not_implemented}"

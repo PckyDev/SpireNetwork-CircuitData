@@ -1,0 +1,19 @@
+# Chip: Raycast
+# Ports:
+#   Input 1 | Type: vector | Name: Origin
+#   Input 2 | Type: vector | Name: Direction
+#   Input 3 | Type: float | Name: Distance
+#   Output 1 | Type: bool | Name: Hit
+#   Output 2 | Type: vector | Name: Hit Position
+#   Output 3 | Type: vector | Name: Hit Normal
+#   Output 4 | Type: entity | Name: Hit Entity
+
+# Required Libraries
+#   - None
+
+variables:
+    _CHIP_VER = 1.0.0
+    _CURRENT_EXEC = None
+
+function CHIP_RAYCAST_TRIGGER(input1 : vector, input2 : vector, input3 : float):
+    return "{error.not_implemented}"
