@@ -5,7 +5,7 @@
       "description": "Allows you to define an event for a command string.",
       "outputs": [
         {
-          "name": "Command",
+          "name": "Command Triggered",
           "types": ["exec"],
           "description": "When the command is triggered"
         },
@@ -34,7 +34,7 @@
       "description": "Triggered when a block is broken.",
       "outputs": [
         {
-          "name": "",
+          "name": "Block Broken",
           "types": ["exec"],
           "description": "The execution output triggered after attempting to get the block at the specified position."
         },
@@ -60,7 +60,7 @@
       "description": "Triggered when a block is placed.",
       "outputs": [
         {
-          "name": "",
+          "name": "Block Placed",
           "types": ["exec"],
           "description": "The execution output triggered after attempting to get the block at the specified position."
         },
@@ -86,7 +86,7 @@
       "description": "Triggered every tick (20 times per second).",
       "outputs": [
         {
-          "name": "",
+          "name": "Update 1 Tick",
           "types": ["exec"],
           "description": "The execution output triggered every tick."
         }
@@ -97,7 +97,7 @@
       "description": "Triggered every 20 ticks (1 second).",
       "outputs": [
         {
-          "name": "",
+          "name": "Update 20 Ticks",
           "types": ["exec"],
           "description": "The execution output triggered every 20 ticks."
         }
@@ -108,7 +108,7 @@
       "description": "Triggered when a player joins the game.",
       "outputs": [
         {
-          "name": "",
+          "name": "Player Joined",
           "types": ["exec"],
           "description": "The execution output triggered when a player joins."
         },
@@ -124,7 +124,7 @@
       "description": "Triggered when a player leaves the game.",
       "outputs": [
         {
-          "name": "",
+          "name": "Player Left",
           "types": ["exec"],
           "description": "The execution output triggered when a player leaves."
         },
