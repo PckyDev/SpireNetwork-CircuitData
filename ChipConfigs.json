@@ -3933,6 +3933,92 @@
           }
         }
       ]
-    }
+    },
+    "Send Chat Message To Player": {
+      "name": "Send Chat Message To Player",
+      "description": "Sends a chat message to a specified player.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution input to trigger the chat message sending."
+              },
+              {
+                "name": "Player",
+                "types": ["player"],
+                "description": "The player to send the chat message to."
+              },
+              {
+                "name": "Message",
+                "types": ["string"],
+                "description": "The chat message to send to the player."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to send the chat message."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the chat message was successfully sent to the player (true) or not (false). This may depend on various factors such as whether the player is valid, whether they can receive chat messages, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Send Chat Message To All": {
+      "name": "Send Chat Message To All",
+      "description": "Sends a chat message to all players in the game.",
+      "beta": false,
+      "deprecated": false,
+      "hidden": false,
+      "dev": false,
+      "filterPaths": [["Functions", "Player"]],
+      "ports": [
+        {
+          "inputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution input to trigger the chat message sending."
+              },
+              {
+                "name": "Message",
+                "types": ["string"],
+                "description": "The chat message to send to all players."
+              }
+            ]
+          },
+          "outputs": {
+            "static": [
+              {
+                "name": "Run",
+                "types": ["exec"],
+                "description": "The execution output triggered after attempting to send the chat message."
+              },
+              {
+                "name": "Success",
+                "types": ["bool"],
+                "description": "The output boolean value indicating whether the chat message was successfully sent to all players (true) or not (false). This may depend on various factors such as whether there are any players in the game, whether they can receive chat messages, etc."
+              }
+            ]
+          }
+        }
+      ]
   }
 }
