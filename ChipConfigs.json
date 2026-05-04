@@ -1739,7 +1739,7 @@
           "inputs": {
             "static": [
               {
-                "name": "",
+                "name": "Target",
                 "types": ["entity", "player"],
                 "description": "The entity to get the position of."
               }
@@ -2596,42 +2596,6 @@
         }
       ]
     },
-    "If Local Player Is World Authority": {
-      "name": "If Local Player Is World Authority",
-      "description": "Executes different outputs based on whether the local player is the world authority.",
-      "beta": false,
-      "deprecated": false,
-      "hidden": false,
-      "dev": false,
-      "filterPaths": [["Logic", "Flow Control"]],
-      "ports": [
-        {
-          "inputs": {
-            "static": [
-              {
-                "name": "Run",
-                "types": ["exec"],
-                "description": "The execution input to trigger the check."
-              }
-            ]
-          },
-          "outputs": {
-            "static": [
-              {
-                "name": "Is World Authority",
-                "types": ["exec"],
-                "description": "The execution output triggered if the local player is the world authority."
-              },
-              {
-                "name": "Is Not World Authority",
-                "types": ["exec"],
-                "description": "The execution output triggered if the local player is not the world authority."
-              }
-            ]
-          }
-        }
-      ]
-    },
     "List Create": {
       "name": "List Create",
       "description": "Creates a list from the input values.",
@@ -2912,29 +2876,6 @@
                 "name": "Result",
                 "types": ["list<any>"],
                 "description": "The output list after subtracting the elements of the second list from the first list."
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "Get Authority": {
-      "name": "Get Authority",
-      "description": "Gets the authority of the current player's instance.",
-      "beta": false,
-      "deprecated": false,
-      "hidden": false,
-      "dev": false,
-      "filterPaths": [["Functions", "Instance"]],
-      "ports": [
-        {
-          "inputs": {},
-          "outputs": {
-            "static": [
-              {
-                "name": "Authority",
-                "types": ["player"],
-                "description": "The output integer value representing the authority level of the current player's instance. The meaning of different authority levels may depend on the context of the instance and the implementation of authority in the system."
               }
             ]
           }
@@ -3937,9 +3878,9 @@
         }
       ]
     },
-    "Player Force Resources": {
-      "name": "Player Force Resources",
-      "description": "Forces a specified player to load resources, which can be useful for ensuring that they have the necessary assets for certain actions or events.",
+    "Player Force Resource Pack": {
+      "name": "Player Force Resource Pack",
+      "description": "Forces a specified player to load a resource pack, which can be useful for ensuring that they have the necessary assets for certain actions or events.",
       "beta": false,
       "deprecated": false,
       "hidden": false,
@@ -3955,7 +3896,7 @@
                 "description": "The execution input to trigger the resource loading."
               },
               {
-                "name": "Resources",
+                "name": "Resource Pack",
                 "types": ["resourcepack"],
                 "description": "The resources to be loaded for the player."
               },
