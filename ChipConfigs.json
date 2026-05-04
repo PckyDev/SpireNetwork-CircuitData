@@ -3777,12 +3777,12 @@
               },
               {
                 "name": "Title",
-                "types": ["text"],
+                "types": ["string"],
                 "description": "The title message to display on the player's screen."
               },
               {
                 "name": "Subtitle",
-                "types": ["text"],
+                "types": ["string"],
                 "description": "The subtitle message to display below the title on the player's screen. This is optional and may be left empty if not needed."
               },
               {
@@ -3833,7 +3833,7 @@
               },
               {
                 "name": "Message",
-                "types": ["text"],
+                "types": ["string"],
                 "description": "The action bar message to display on the player's screen."
               },
               {
