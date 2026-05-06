@@ -3963,6 +3963,47 @@
 					}
 				}
 			]
+		},
+		"Variable": {
+			"name": "Variable",
+			"description": "A variable chip that can store a value of any type. This can be used to hold data for later use in the circuit. Variable chip instances with the same name will share the same value, allowing for communication between different parts of the circuit.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "Variable"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Set",
+								"types": ["exec"],
+								"description": "The execution input to set the variable's value."
+							},
+							{
+								"name": "Value",
+								"types": ["any"],
+								"description": "The value to store in the variable. This can be of any type and will be output when the variable is accessed."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "After Set",
+								"types": ["exec"],
+								"description": "The execution output after setting the variable's value."
+							},
+							{
+								"name": "Value",
+								"types": ["any"],
+								"description": "The output value stored in the variable. This will be the value that was set through the 'Set' input."
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }
