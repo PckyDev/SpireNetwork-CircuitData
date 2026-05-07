@@ -4003,7 +4003,28 @@
 						]
 					}
 				}
-			]
+			],
+			"fields": {
+				"name": {
+					"title": "Variable Name",
+					"input": "text",
+					"type": "string",
+					"placeholder": "",
+					"validation": "nonEmpty",
+					"errorMessage": "Please enter a valid variable name.",
+					"description": "The name of the variable. Variable chips with the same name will share the same value.",
+					"default": "Variable",
+					"tags": ["required"]
+				},
+				"type": {
+					"title": "Variable Type",
+					"input": "dropdown",
+					"options": ["any", "int", "float", "string", "bool", "vector3", "quaternion", "color", "block", "player"],
+					"description": "The type of value that the variable will store. This is used for validation and to provide better error messages. The 'any' type allows the variable to store any type of value.",
+					"default": "any",
+					"tags": ["required"]
+				}
+			}
 		}
 	}
 }
