@@ -2317,7 +2317,12 @@
                                 "name": "Result",
                                 "types": ["bool"],
                                 "description": "The output boolean value resulting from parsing the input string. Commonly, 'true' (case-insensitive) will parse to true, and 'false' (case-insensitive) will parse to false. If the input cannot be parsed as a boolean, the output may default to false or throw an error based on implementation."
-                            }
+                            },
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "Indicates whether the parsing was successful. This can be useful to differentiate between an input that is explicitly false and an input that could not be parsed as a boolean at all."
+							}
                         ]
                     }
                 }
@@ -2348,7 +2353,12 @@
                                 "name": "Result",
                                 "types": ["color"],
                                 "description": "The output color value resulting from parsing the input string. If the input string is in a valid color format, it will be converted to a color type. If the input cannot be parsed as a color, the output may default to a specific color (e.g., black) or throw an error based on implementation."
-                            }
+                            },
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "Indicates whether the parsing was successful. This can be useful to differentiate between an input that is explicitly a color and an input that could not be parsed as a color at all."
+							}
                         ]
                     }
                 }
@@ -2379,7 +2389,12 @@
                                 "name": "Result",
                                 "types": ["float"],
                                 "description": "The output float value resulting from parsing the input string. If the input string is in a valid float format, it will be converted to a float type. If the input cannot be parsed as a float, the output may default to 0.0 or throw an error based on implementation."
-                            }
+                            },
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "Indicates whether the parsing was successful. This can be useful to differentiate between an input that is explicitly a float and an input that could not be parsed as a float at all."
+							}
                         ]
                     }
                 }
@@ -2410,7 +2425,12 @@
                                 "name": "Result",
                                 "types": ["int"],
                                 "description": "The output integer value resulting from parsing the input string. If the input string is in a valid integer format, it will be converted to an integer type. If the input cannot be parsed as an integer, the output may default to 0 or throw an error based on implementation."
-                            }
+                            },
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "Indicates whether the parsing was successful. This can be useful to differentiate between an input that is explicitly an integer and an input that could not be parsed as an integer at all."
+							}
                         ]
                     }
                 }
@@ -4025,6 +4045,78 @@
 					"tags": ["required"]
 				}
 			}
+		},
+		"List Get Element": {
+			"name": "List Get Element",
+			"description": "Gets an element from a list based on a specified index.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "List Operations"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "List",
+								"types": ["list<any>"],
+								"description": "The input list to get the element from."
+							},
+							{
+								"name": "Index",
+								"types": ["int"],
+								"description": "The index of the element to retrieve from the list. The first element of the list is at index 0."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Element",
+								"types": ["any"],
+								"description": "The output value representing the element retrieved from the list at the specified index. The type of this value will depend on the contents of the list."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Power": {
+			"name": "Power",
+			"description": "Multiplies a base value by itself a specified number of times, effectively calculating the power of the base value. This can be used for various mathematical operations in the circuit.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "Math Operations"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Base",
+								"types": ["float"],
+								"description": "The base value to be raised to a power."
+							},
+							{
+								"name": "Exponent",
+								"types": ["float"],
+								"description": "The exponent value that determines how many times the base value is multiplied by itself."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Result",
+								"types": ["float"],
+								"description": "The output value representing the result of raising the base to the power of the exponent."
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }
