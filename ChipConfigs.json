@@ -4043,6 +4043,13 @@
 					"description": "The type of value that the variable will store. This is used for validation and to provide better error messages. The 'any' type allows the variable to store any type of value.",
 					"default": "any",
 					"tags": ["required"]
+				},
+				"list": {
+					"title": "Is List",
+					"input": "checkbox",
+					"description": "Whether the variable should be treated as a list. If this is checked, the variable can store a list of values of the specified type instead of a single value.",
+					"default": false,
+					"tags": []
 				}
 			}
 		},
@@ -4112,6 +4119,124 @@
 								"name": "Result",
 								"types": ["float"],
 								"description": "The output value representing the result of raising the base to the power of the exponent."
+							}
+						]
+					}
+				}
+			]
+		},
+		"If Value": {
+			"name": "If Value",
+			"description": "A conditional chip that outputs one of two values based on a boolean condition. This can be used to create simple if-else logic in the circuit.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "Conditional"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Condition",
+								"types": ["bool"],
+								"description": "The boolean condition to evaluate. If this is true, the 'True Value' will be output; if false, the 'False Value' will be output."
+							},
+							{
+								"name": "True Value",
+								"types": ["any"],
+								"description": "The value to output if the condition is true."
+							},
+							{
+								"name": "False Value",
+								"types": ["any"],
+								"description": "The value to output if the condition is false."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Output",
+								"types": ["any"],
+								"description": "The output value based on the evaluation of the condition. This will be either the 'True Value' or the 'False Value' depending on whether the condition is true or false."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Random Number": {
+			"name": "Random Number",
+			"description": "Generates a random number between a specified minimum and maximum value. This can be used for various purposes such as creating random events, randomizing behavior, etc.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "Random"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Min",
+								"types": ["float"],
+								"description": "The minimum value for the random number generation. The output will be greater than or equal to this value."
+							},
+							{
+								"name": "Max",
+								"types": ["float"],
+								"description": "The maximum value for the random number generation. The output will be less than or equal to this value."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Random Number",
+								"types": ["float"],
+								"description": "The output value representing the randomly generated number between the specified minimum and maximum values."
+							}
+						]
+					}
+				}
+			],
+			"fields": {
+				"type": {
+					"title": "Number Type",
+					"input": "dropdown",
+					"options": ["int", "float"],
+					"description": "The type of number to generate. 'int' will generate a random integer, while 'float' will generate a random floating-point number.",
+					"default": "float",
+					"tags": ["required"]
+				}
+			}
+		},
+		"List Get Random": {
+			"name": "List Get Random",
+			"description": "Gets a random element from a list. This can be used to select random items, players, blocks, etc. from a list of options.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "Random"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "List",
+								"types": ["list<any>"],
+								"description": "The input list to get a random element from."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Random Element",
+								"types": ["any"],
+								"description": "The output value representing a randomly selected element from the input list. The type of this value will depend on the contents of the list."
 							}
 						]
 					}
