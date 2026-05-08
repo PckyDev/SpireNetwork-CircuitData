@@ -1806,7 +1806,7 @@
                         "dynamic": [
                             {
                                 "name": "{dynamic_port_index}",
-                                "types": ["execc"],
+                                "types": ["exec"],
                                 "description": "The execution output for a specific case, where the case number corresponds to the integer value input.",
                                 "dynamic": {
                                     "min": 1,
@@ -1853,7 +1853,7 @@
                         "dynamic": [
                             {
                                 "name": "{dynamic_port_index}",
-                                "types": ["execc"],
+                                "types": ["exec"],
                                 "description": "The execution output for a specific case, where the case number corresponds to the string value input.",
                                 "dynamic": {
                                     "min": 1,
