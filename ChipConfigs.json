@@ -4387,6 +4387,132 @@
 					}
 				}
 			]
+		},
+		"Set Time": {
+			"name": "Set Time",
+			"description": "Sets the time of day in the world to a specified value.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the time change."
+							},
+							{
+								"name": "Time",
+								"types": ["int"],
+								"description": "The time of day to set in the world, represented as an integer. This is based on the Minecraft time system where 0 is the start of the day, 6000 is noon, 12000 is sunset, and 18000 is midnight."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution output after setting the time."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the time was successfully set (true) or not (false)."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Set Day Night Cycle": {
+			"name": "Set Day Night Cycle",
+			"description": "Enables or disables the day-night cycle in the world. When disabled, the time of day will remain constant and will not change naturally.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the change in the day-night cycle."
+							},
+							{
+								"name": "Enabled",
+								"types": ["bool"],
+								"description": "Whether to enable (true) or disable (false) the day-night cycle in the world."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution output after attempting to change the day-night cycle setting."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the day-night cycle setting was successfully changed (true) or not (false)."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Get Time": {
+			"name": "Get Time",
+			"description": "Gets the current time of day in the world as an integer value.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"outputs": {
+						"static": [
+							{
+								"name": "Time",
+								"types": ["int"],
+								"description": "The output integer value representing the current time of day in the world. This follows the Minecraft time system where 0 is the start of the day, 6000 is noon, 12000 is sunset, and 18000 is midnight."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Get Day Night Cycle": {
+			"name": "Get Day Night Cycle",
+			"description": "Gets whether the day-night cycle is currently enabled or disabled in the world.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"outputs": {
+						"static": [
+							{
+								"name": "Enabled",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the day-night cycle is currently enabled (true) or disabled (false) in the world."
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }
