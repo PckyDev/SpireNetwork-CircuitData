@@ -4336,6 +4336,57 @@
 					}
 				}
 			]
+		},
+		"Set Block Area": {
+			"name": "Set Block Area",
+			"description": "Sets a rectangular area of blocks to a specified block type. This can be used for various purposes such as building structures, clearing areas, etc.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "Block"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the block area change."
+							},
+							{
+								"name": "Start",
+								"types": ["vector3"],
+								"description": "The starting coordinates of the block area to change. This represents one corner of the rectangular area."
+							},
+							{
+								"name": "End",
+								"types": ["vector3"],
+								"description": "The ending coordinates of the block area to change. This represents the opposite corner of the rectangular area."
+							},
+							{
+								"name": "Block Type",
+								"types": ["block"],
+								"description": "The type of block to set in the specified area. All blocks within the defined rectangular area will be changed to this block type."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution output after attempting to set the block area."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the block area was successfully set to the new block type (true) or not (false)."
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }
