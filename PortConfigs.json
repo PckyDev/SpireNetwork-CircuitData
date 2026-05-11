@@ -47,6 +47,12 @@
     "description": "A player value representing a player in the game.",
     "tags": []
   },
+  "entity": {
+    "name": "entity",
+    "color": "#ffd166",
+    "description": "An entity value representing a non-block world entity such as a mob or player.",
+    "tags": []
+  },
   "vector3": {
     "name": "Vector3",
     "color": "#F0DB22",

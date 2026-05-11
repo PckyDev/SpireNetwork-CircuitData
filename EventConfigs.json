@@ -134,6 +134,22 @@
           "description": "The player who left the game."
         }
       ]
+  },
+  "mobspawned": {
+    "name": "Mob Spawned",
+    "description": "Triggered when a mob spawns in the world.",
+    "outputs": [
+      {
+        "name": "Mob Spawned",
+        "types": ["exec"],
+        "description": "The execution output triggered when a mob spawns."
+      },
+      {
+        "name": "Mob",
+        "types": ["entity"],
+        "description": "The mob entity that was spawned."
+      }
+    ]
     }
   }
 }
