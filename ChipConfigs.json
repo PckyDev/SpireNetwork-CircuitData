@@ -776,15 +776,11 @@
             "ports": [
                 {
                     "inputs": {
-                        "dynamic": [
+                        "static": [
                             {
                                 "name": "Input",
                                 "types": ["float", "int", "vector3"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition",
-                                "dynamic": {
-                                    "min": 2,
-                                    "max": null
-                                }
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
                             }
                         ]
                     },
@@ -811,15 +807,11 @@
             "ports": [
                 {
                     "inputs": {
-                        "dynamic": [
+                        "static": [
                             {
                                 "name": "Input",
                                 "types": ["float", "int", "vector3"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than' condition",
-                                "dynamic": {
-                                    "min": 2,
-                                    "max": null
-                                }
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than' condition"
                             }
                         ]
                     },
@@ -846,15 +838,11 @@
             "ports": [
                 {
                     "inputs": {
-                        "dynamic": [
+                        "static": [
                             {
                                 "name": "Input",
                                 "types": ["float", "int", "vector3"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than or equal' condition",
-                                "dynamic": {
-                                    "min": 2,
-                                    "max": null
-                                }
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than or equal' condition"
                             }
                         ]
                     },
@@ -881,15 +869,11 @@
             "ports": [
                 {
                     "inputs": {
-                        "dynamic": [
+                        "static": [
                             {
                                 "name": "Input",
                                 "types": ["float", "int", "vector3"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than or equal' condition",
-                                "dynamic": {
-                                    "min": 2,
-                                    "max": null
-                                }
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than or equal' condition"
                             }
                         ]
                     },
