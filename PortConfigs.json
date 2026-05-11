@@ -88,5 +88,11 @@
     "color": "#4f60de",
     "description": "A resource pack value representing a collection of assets, such as textures, models, and sounds, that can be applied to the game to change its appearance and audio.",
     "tags": []
+	},
+	"weather": {
+		"name": "weather",
+		"color": "#73c7ff",
+		"description": "A weather value representing a world weather state such as clear, rain, or thunder.",
+		"tags": []
   }
 }

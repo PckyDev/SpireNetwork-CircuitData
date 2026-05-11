@@ -4513,6 +4513,137 @@
 					}
 				}
 			]
+		},
+		"Set Weather": {
+			"name": "Set Weather",
+			"description": "Sets the weather in the world to a specified type for a certain duration.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the weather change."
+							},
+							{
+								"name": "Weather Type",
+								"types": ["weather"],
+								"description": "The type of weather to set in the world using a weather constant."
+							},
+							{
+								"name": "Duration (s)",
+								"types": ["float"],
+								"description": "The duration in seconds for which the specified weather should last. After this duration, the weather may change back to clear or to another type based on the world's natural weather cycle or other circuit actions."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution output after attempting to set the weather."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the weather was successfully set to the new type (true) or not (false). This may depend on various factors such as whether the weather type is valid, whether the world can change weather at the moment, etc."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Get Weather": {
+			"name": "Get Weather",
+			"description": "Gets the current weather type in the world.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"outputs": {
+						"static": [
+							{
+								"name": "Weather Type",
+								"types": ["weather"],
+								"description": "The output value representing the current weather type in the world. This will be one of the defined weather constants."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Set Weather Cycle": {
+			"name": "Set Weather Cycle",
+			"description": "Enables or disables the natural weather cycle in the world. When disabled, the weather will remain constant and will not change naturally.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the change in the weather cycle."
+							},
+							{
+								"name": "Enabled",
+								"types": ["bool"],
+								"description": "Whether to enable (true) or disable (false) the natural weather cycle in the world."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution output after attempting to change the weather cycle setting."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the weather cycle setting was successfully changed (true) or not (false)."
+							}
+						]
+					}
+				}
+			]
+		},
+		"Get Weather Cycle": {
+			"name": "Get Weather Cycle",
+			"description": "Gets whether the natural weather cycle is currently enabled or disabled in the world.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Functions", "World"]],
+			"ports": [
+				{
+					"outputs": {
+						"static": [
+							{
+								"name": "Enabled",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the natural weather cycle is currently enabled (true) or disabled (false) in the world."
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }
