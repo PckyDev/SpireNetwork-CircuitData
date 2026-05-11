@@ -4242,6 +4242,93 @@
 					}
 				}
 			]
+		},
+		"List Contains": {
+			"name": "List Contains",
+			"description": "Checks if a list contains a specified element. This can be used for various purposes such as validating input, controlling logic flow based on list contents, etc.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "List Operations"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "List",
+								"types": ["list<any>"],
+								"description": "The input list to check for the presence of the element."
+							},
+							{
+								"name": "Element",
+								"types": ["any"],
+								"description": "The element to check for within the input list."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Contains",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the input list contains the specified element (true) or not (false)."
+							}
+						]
+					}
+				}
+			]
+		},
+		"List Add": {
+			"name": "List Add",
+			"description": "Adds an element to a list. This can be used to build up lists of items, players, blocks, etc. over time.",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Logic", "List Operations"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the addition of the element to the list."
+							},
+							{
+								"name": "List",
+								"types": ["list<any>"],
+								"description": "The input list to add the element to."
+							},
+							{
+								"name": "Element",
+								"types": ["any"],
+								"description": "The element to add to the input list."
+							}
+						]
+					},
+					"outputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution output after adding the element to the list."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "The output boolean value indicating whether the element was successfully added to the list (true) or not (false). This may depend on various factors such as whether the list is valid, whether it can accept new elements, etc."
+							},
+							{
+								"name": "List",
+								"types": ["list<any>"],
+								"description": "The output list after the new element has been added. This will contain all previous elements plus the newly added element."
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }
