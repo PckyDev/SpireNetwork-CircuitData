@@ -4648,13 +4648,15 @@
 							}
 						]
 					},
-					"outputs": [
-						{
-							"name": "Run",
-							"types": ["exec"],
-							"description": "The execution output after attempting to cancel the event."
-						}
-					]
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output after attempting to cancel the event."
+                            }
+                        ]
+                    }
 				}
 			]
 		}
