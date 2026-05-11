@@ -4628,6 +4628,35 @@
 					}
 				}
 			]
+		},
+		"Cancel Event": {
+			"name": "Cancel Event",
+			"description": "Can be used in event flows to cancel or stop the event from doing its default behavior. For example, if used in a Mob Spawned event, it would prevent the mob from actually spawning in the world and when used in a Block Broken event, it would prevent the block from actually being broken",
+			"beta": false,
+			"deprecated": false,
+			"hidden": false,
+			"dev": false,
+			"filterPaths": [["Events", "Event Control"]],
+			"ports": [
+				{
+					"inputs": {
+						"static": [
+							{
+								"name": "Run",
+								"types": ["exec"],
+								"description": "The execution input to trigger the event cancellation."
+							}
+						]
+					},
+					"outputs": [
+						{
+							"name": "Run",
+							"types": ["exec"],
+							"description": "The execution output after attempting to cancel the event."
+						}
+					]
+				}
+			]
 		}
 	}
 }
