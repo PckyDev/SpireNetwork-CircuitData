@@ -1583,7 +1583,7 @@
         },
         "Get All Players": {
             "name": "Get All Players",
-            "description": "Gets a list of all players currently in the game.",
+            "description": "Gets a list of all players currently in the world.",
             "beta": false,
             "deprecated": false,
             "hidden": false,
@@ -1597,7 +1597,7 @@
                             {
                                 "name": "Players",
                                 "types": ["list<player>"],
-                                "description": "The list of all players currently in the game."
+                                "description": "The list of all players currently in the world."
                             }
                         ]
                     }
@@ -4048,6 +4048,13 @@
 					"title": "Is List",
 					"input": "checkbox",
 					"description": "Whether the variable should be treated as a list. If this is checked, the variable can store a list of values of the specified type instead of a single value.",
+					"default": false,
+					"tags": []
+				},
+				"perplayer": {
+					"title": "Per Player",
+					"input": "checkbox",
+					"description": "Whether the variable should store a separate value for each player. If this is checked, the variable will have an additional input for the player and will store a different value for each player that is used to read or write the variable.",
 					"default": false,
 					"tags": []
 				}
