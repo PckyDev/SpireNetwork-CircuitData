@@ -81,6 +81,58 @@
         }
       ]
     },
+    "leftclick": {
+      "name": "Left Click",
+      "description": "Triggered when a player left clicks in the world, even if they do not hit a block.",
+      "outputs": [
+        {
+          "name": "Left Click",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player left clicks in the world."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who performed the left click."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The clicked block, or empty if the click hit air."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The clicked block position, or empty if the click hit air."
+        }
+      ]
+    },
+    "rightclick": {
+      "name": "Right Click",
+      "description": "Triggered when a player right clicks in the world, even if they do not hit a block.",
+      "outputs": [
+        {
+          "name": "Right Click",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player right clicks in the world."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who performed the right click."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The clicked block, or empty if the click hit air."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The clicked block position, or empty if the click hit air."
+        }
+      ]
+    },
     "update1tick": {
       "name": "Update 1 Tick",
       "description": "Triggered every tick (20 times per second).",
