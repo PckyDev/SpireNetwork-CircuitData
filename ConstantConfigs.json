@@ -153,6 +153,28 @@
                 }
             }
         },
+        "material": {
+            "name": "Material",
+            "description": "Allows you to define a constant material.",
+            "output": {
+                "name": "Material",
+                "types": ["material"],
+                "description": "The material value defined in the config"
+            },
+            "fields": {
+                "id": {
+                    "title": "Material Name",
+                    "input": "data",
+                    "type": "modalpaletteselector<material>",
+                    "placeholder": "minecraft:stone",
+                    "validation": "nonEmpty",
+                    "errorMessage": "Please enter a valid material name.",
+                    "description": "The name of the material.",
+                    "default": "",
+                    "tags": ["required"]
+                }
+            }
+        },
         "audio": {
             "name": "Audio",
             "description": "Allows you to define a constant audio source.",

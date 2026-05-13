@@ -1675,6 +1675,160 @@
                 }
             ]
         },
+        "Get Held Item": {
+            "name": "Get Held Item",
+            "description": "Gets the item and quantity currently held in the main hand of a specified player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose main hand item to get."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material currently held in the player's main hand, or empty if no item is held."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity of the item in the player's main hand, or 0 if no item is held."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Off Hand Item": {
+            "name": "Get Off Hand Item",
+            "description": "Gets the item and quantity currently held in the off hand of a specified player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose off hand item to get."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material currently held in the player's off hand, or empty if no item is held."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity of the item in the player's off hand, or 0 if no item is held."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Armor Slot": {
+            "name": "Get Armor Slot",
+            "description": "Gets the item and quantity currently worn by a specified player in an armor slot.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose armor slot to inspect."
+                            },
+                            {
+                                "name": "Armor Slot",
+                                "types": ["int"],
+                                "description": "The armor slot index to inspect: 0 for boots, 1 for leggings, 2 for chestplate, 3 for helmet."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material currently equipped in the selected armor slot, or empty if the slot is empty or invalid."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity currently equipped in the selected armor slot, or 0 if the slot is empty or invalid."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Inventory Slot": {
+            "name": "Get Inventory Slot",
+            "description": "Gets the item and quantity currently stored in a specified inventory slot of a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose inventory slot to inspect."
+                            },
+                            {
+                                "name": "Slot",
+                                "types": ["int"],
+                                "description": "The inventory slot index to inspect, from 0 to 35."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material currently stored in the selected inventory slot, or empty if the slot is empty or invalid."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity currently stored in the selected inventory slot, or 0 if the slot is empty or invalid."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Play Audio At Position": {
             "name": "Play Audio At Position",
             "description": "Plays an audio clip at a specified position in the game world.",
@@ -4025,7 +4179,7 @@
 				"type": {
 					"title": "Variable Type",
 					"input": "dropdown",
-					"options": ["any", "int", "float", "string", "bool", "vector3", "quaternion", "color", "block", "player"],
+                    "options": ["any", "int", "float", "string", "bool", "vector3", "quaternion", "color", "block", "material", "player"],
 					"description": "The type of value that the variable will store. This is used for validation and to provide better error messages. The 'any' type allows the variable to store any type of value.",
 					"default": "any",
 					"tags": ["required"]

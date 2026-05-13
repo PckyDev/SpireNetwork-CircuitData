@@ -65,6 +65,12 @@
     "description": "A block value representing a block with data within the game.",
     "tags": []
   },
+  "material": {
+    "name": "material",
+    "color": "#ffb347",
+    "description": "A material value representing any Minecraft item or block material.",
+    "tags": []
+  },
   "quaternion": {
     "name": "quaternion",
     "color": "#F0DB22",
