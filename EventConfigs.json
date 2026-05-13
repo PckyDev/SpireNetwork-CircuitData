@@ -141,6 +141,11 @@
           "name": "Update 1 Tick",
           "types": ["exec"],
           "description": "The execution output triggered every tick."
+        },
+        {
+          "name": "Delta Time",
+          "types": ["float"],
+          "description": "The elapsed time in seconds since this event last executed for the current instance. On the first execution, this defaults to 0.05 seconds."
         }
       ]
     },
@@ -152,6 +157,11 @@
           "name": "Update 20 Ticks",
           "types": ["exec"],
           "description": "The execution output triggered every 20 ticks."
+        },
+        {
+          "name": "Delta Time",
+          "types": ["float"],
+          "description": "The elapsed time in seconds since this event last executed for the current instance. On the first execution, this defaults to 1.0 seconds."
         }
       ]
     },
