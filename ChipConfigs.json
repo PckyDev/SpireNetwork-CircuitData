@@ -1829,6 +1829,307 @@
                 }
             ]
         },
+        "Player Give Item": {
+            "name": "Player Give Item",
+            "description": "Gives a specified item and quantity to a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the item give operation."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player who should receive the item."
+                            },
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material to give to the player."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity of the item to give. If this input is unset or not positive, the chip uses 1."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to give the item to the player."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the requested item quantity was successfully given to the player (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Take Item": {
+            "name": "Player Take Item",
+            "description": "Takes a specified item and quantity from all slots of a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the item removal."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose inventory should be searched for the item."
+                            },
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material to remove from the player's inventory."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity of the item to remove. If this input is unset or not positive, the chip uses 1."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to remove the item from the player's inventory."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the requested item quantity was successfully removed from the player's inventory (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Take Item From Slot": {
+            "name": "Player Take Item From Slot",
+            "description": "Takes a specified item and quantity from a specific inventory slot of a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the slot item removal."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose inventory slot should be modified."
+                            },
+                            {
+                                "name": "Slot",
+                                "types": ["int"],
+                                "description": "The inventory slot index to remove the item from, from 0 to 35."
+                            },
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material expected in the selected slot before removal."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity of the item to remove from the selected slot. If this input is unset or not positive, the chip uses 1."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to remove the item from the selected slot."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the requested item quantity was successfully removed from the selected slot (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Clear Inventory": {
+            "name": "Player Clear Inventory",
+            "description": "Removes all items from a player's inventory.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the inventory clear operation."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose inventory should be cleared."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to clear the player's inventory."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player's inventory was successfully cleared (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Clear Slot": {
+            "name": "Player Clear Slot",
+            "description": "Removes all items from a specific inventory slot of a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the slot clear operation."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose inventory slot should be cleared."
+                            },
+                            {
+                                "name": "Slot",
+                                "types": ["int"],
+                                "description": "The inventory slot index to clear, from 0 to 35."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to clear the selected slot."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the selected slot was successfully cleared (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Set Item In Slot": {
+            "name": "Player Set Item In Slot",
+            "description": "Sets a specific inventory slot of a player to a specified item and quantity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the slot set operation."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose inventory slot should be changed."
+                            },
+                            {
+                                "name": "Slot",
+                                "types": ["int"],
+                                "description": "The inventory slot index to set, from 0 to 35."
+                            },
+                            {
+                                "name": "Item",
+                                "types": ["material"],
+                                "description": "The material to place in the selected slot. Use the air material to clear the slot."
+                            },
+                            {
+                                "name": "Quantity",
+                                "types": ["int"],
+                                "description": "The quantity of the item to place in the selected slot. If this input is unset or not positive, the chip uses 1."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to set the selected slot."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the selected slot was successfully updated (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Play Audio At Position": {
             "name": "Play Audio At Position",
             "description": "Plays an audio clip at a specified position in the game world.",
