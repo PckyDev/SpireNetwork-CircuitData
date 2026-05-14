@@ -1675,6 +1675,130 @@
                 }
             ]
         },
+        "Player Get Is Creative": {
+            "name": "Player Get Is Creative",
+            "description": "Checks whether a player's current game mode is Creative.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose current game mode to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Creative",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player's current game mode is Creative (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Is Survival": {
+            "name": "Player Get Is Survival",
+            "description": "Checks whether a player's current game mode is Survival.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose current game mode to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Survival",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player's current game mode is Survival (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Is Adventure": {
+            "name": "Player Get Is Adventure",
+            "description": "Checks whether a player's current game mode is Adventure.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose current game mode to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Adventure",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player's current game mode is Adventure (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Is Spectator": {
+            "name": "Player Get Is Spectator",
+            "description": "Checks whether a player's current game mode is Spectator.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose current game mode to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Spectator",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player's current game mode is Spectator (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Get Held Item": {
             "name": "Get Held Item",
             "description": "Gets the item and quantity currently held in the main hand of a specified player.",
