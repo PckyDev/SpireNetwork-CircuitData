@@ -153,23 +153,23 @@
                 }
             }
         },
-        "item": {
-            "name": "Item",
-            "description": "Allows you to define a constant item.",
+        "material": {
+            "name": "Material",
+            "description": "Allows you to define a constant material.",
             "output": {
-                "name": "Item",
-                "types": ["item"],
-                "description": "The item value defined in the config"
+                "name": "Material",
+                "types": ["material"],
+                "description": "The material value defined in the config"
             },
             "fields": {
                 "id": {
-                    "title": "Item Name",
+                    "title": "Material Name",
                     "input": "data",
-                    "type": "modalpaletteselector<item>",
+                    "type": "modalpaletteselector<material>",
                     "placeholder": "minecraft:stone",
                     "validation": "nonEmpty",
-                    "errorMessage": "Please enter a valid item name.",
-                    "description": "The name of the item.",
+                    "errorMessage": "Please enter a valid material name.",
+                    "description": "The name of the material.",
                     "default": "",
                     "tags": ["required"]
                 }
