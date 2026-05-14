@@ -765,7 +765,12 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["any"],
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
+                            },
+                            {
+                                "name": "Input",
+                                "types": ["int", "float", "vector3"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
                             }
                         ]
@@ -796,8 +801,13 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["any"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than' condition"
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
+                            },
+                            {
+                                "name": "Input",
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
                             }
                         ]
                     },
@@ -827,8 +837,13 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["any"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than or equal' condition"
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
+                            },
+                            {
+                                "name": "Input",
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
                             }
                         ]
                     },
@@ -858,8 +873,13 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["any"],
-                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than or equal' condition"
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
+                            },
+                            {
+                                "name": "Input",
+                                "types": ["int", "float", "vector3"],
+                                "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
                             }
                         ]
                     },
@@ -3519,7 +3539,7 @@
                     "inputs": {
                         "static": [
                             {
-                                "name": "Rotation",
+                                "name": "Target",
                                 "types": ["player", "entity"],
                                 "description": "The input rotation (e.g., in Euler angles) to calculate the forward vector from."
                             }
@@ -3550,7 +3570,7 @@
                     "inputs": {
                         "static": [
                             {
-                                "name": "Rotation",
+                                "name": "Target",
                                 "types": ["player", "entity"],
                                 "description": "The input rotation (e.g., in Euler angles) to calculate the up vector from."
                             }
@@ -3581,7 +3601,7 @@
                     "inputs": {
                         "static": [
                             {
-                                "name": "Rotation",
+                                "name": "Target",
                                 "types": ["player", "entity"],
                                 "description": "The input rotation (e.g., in Euler angles) to calculate the down vector from."
                             }
@@ -3612,7 +3632,7 @@
                     "inputs": {
                         "static": [
                             {
-                                "name": "Rotation",
+                                "name": "Target",
                                 "types": ["player", "entity"],
                                 "description": "The input rotation (e.g., in Euler angles) to calculate the left vector from."
                             }
@@ -3643,7 +3663,7 @@
                     "inputs": {
                         "static": [
                             {
-                                "name": "Rotation",
+                                "name": "Target",
                                 "types": ["player", "entity"],
                                 "description": "The input rotation (e.g., in Euler angles) to calculate the right vector from."
                             }
