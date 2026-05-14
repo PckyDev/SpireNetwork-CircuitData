@@ -3898,6 +3898,37 @@
                 }
             ]
         },
+        "Get Block By Name": {
+            "name": "Get Block By Name",
+            "description": "Gets a block value from a block name string. Supports both namespaced IDs like minecraft:stone and legacy names like stone.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Block"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Name",
+                                "types": ["string"],
+                                "description": "The block name to resolve, such as minecraft:stone or stone."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Block",
+                                "types": ["block"],
+                                "description": "The resolved block value, or an empty value if the name is not a valid block."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Set Position": {
             "name": "Set Position",
             "description": "Sets the position of an entity in the game world.",
