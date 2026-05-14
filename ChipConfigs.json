@@ -695,15 +695,7 @@
                         "dynamic": [
                             {
                                 "name": "Input",
-                                "types": [
-                                    "float",
-                                    "int",
-                                    "string",
-                                    "vector3",
-                                    "bool",
-                                    "block",
-                                    "player"
-                                ],
+                                "types": ["any"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for equality",
                                 "dynamic": {
                                     "min": 2,
@@ -738,15 +730,7 @@
                         "dynamic": [
                             {
                                 "name": "Input",
-                                "types": [
-                                    "float",
-                                    "int",
-                                    "string",
-                                    "vector3",
-                                    "bool",
-                                    "block",
-                                    "player"
-                                ],
+                                "types": ["any"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for inequality",
                                 "dynamic": {
                                     "min": 2,
@@ -781,7 +765,7 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["float", "int", "vector3"],
+                                "types": ["any"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than' condition"
                             }
                         ]
@@ -812,7 +796,7 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["float", "int", "vector3"],
+                                "types": ["any"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than' condition"
                             }
                         ]
@@ -843,7 +827,7 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["float", "int", "vector3"],
+                                "types": ["any"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'greater than or equal' condition"
                             }
                         ]
@@ -874,7 +858,7 @@
                         "static": [
                             {
                                 "name": "Input",
-                                "types": ["float", "int", "vector3"],
+                                "types": ["any"],
                                 "description": "The input to define the value to compare against. All inputs will be compared to each other for the 'less than or equal' condition"
                             }
                         ]
