@@ -196,22 +196,38 @@
           "description": "The player who left the game."
         }
       ]
-  },
-  "mobspawned": {
-    "name": "Mob Spawned",
-    "description": "Triggered when a mob spawns in the world.",
-    "outputs": [
-      {
-        "name": "Mob Spawned",
-        "types": ["exec"],
-        "description": "The execution output triggered when a mob spawns."
-      },
-      {
-        "name": "Mob",
-        "types": ["entity"],
-        "description": "The mob entity that was spawned."
-      }
-    ]
+    },
+    "worldloaded": {
+      "name": "World Loaded",
+      "description": "Triggered once after a world instance finishes loading and its circuits runtime is ready.",
+      "outputs": [
+        {
+          "name": "World Loaded",
+          "types": ["exec"],
+          "description": "The execution output triggered once after the world instance finishes loading."
+        },
+        {
+          "name": "Load Time",
+          "types": ["float"],
+          "description": "The time in seconds it took for the world instance and its circuits runtime to finish loading."
+        }
+      ]
+    },
+    "mobspawned": {
+      "name": "Mob Spawned",
+      "description": "Triggered when a mob spawns in the world.",
+      "outputs": [
+        {
+          "name": "Mob Spawned",
+          "types": ["exec"],
+          "description": "The execution output triggered when a mob spawns."
+        },
+        {
+          "name": "Mob",
+          "types": ["entity"],
+          "description": "The mob entity that was spawned."
+        }
+      ]
     }
   }
 }
