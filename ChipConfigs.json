@@ -1803,6 +1803,192 @@
                 }
             ]
         },
+        "Player Get Is Jumping": {
+            "name": "Player Get Is Jumping",
+            "description": "Checks whether a player is currently in the air from jumping.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose jumping state to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Jumping",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player is currently in the air from jumping (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Is Crouching": {
+            "name": "Player Get Is Crouching",
+            "description": "Checks whether a player is currently crouching.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose crouching state to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Crouching",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player is currently crouching (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get In Air": {
+            "name": "Player Get In Air",
+            "description": "Checks whether a player is currently in the air from any cause.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose airborne state to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "In Air",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player is currently in the air from any cause (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get On Ground": {
+            "name": "Player Get On Ground",
+            "description": "Checks whether a player is currently on the ground.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose grounded state to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "On Ground",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player is currently on the ground (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Is Flying": {
+            "name": "Player Get Is Flying",
+            "description": "Checks whether a player is currently flying, including gliding with elytra.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose flying state to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Flying",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player is currently flying, including gliding with elytra (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Is Swimming": {
+            "name": "Player Get Is Swimming",
+            "description": "Checks whether a player is currently swimming.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose swimming state to check."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Swimming",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether the player is currently swimming (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Player Get Head Position": {
             "name": "Player Get Head Position",
             "description": "Gets the position of a player's head in the game world.",
