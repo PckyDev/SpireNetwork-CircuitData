@@ -5106,6 +5106,62 @@
 				}
 			]
 		},
+        "Replace All Blocks In Area": {
+            "name": "Replace All Blocks In Area",
+            "description": "Replaces every block in a rectangular area that matches a target block with a replacement block.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Block"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the area block replacement."
+                            },
+                            {
+                                "name": "Start",
+                                "types": ["vector3"],
+                                "description": "The starting coordinates of the area to search. This represents one corner of the rectangular area."
+                            },
+                            {
+                                "name": "End",
+                                "types": ["vector3"],
+                                "description": "The ending coordinates of the area to search. This represents the opposite corner of the rectangular area."
+                            },
+                            {
+                                "name": "Target Block",
+                                "types": ["block"],
+                                "description": "Only blocks matching this block value will be replaced inside the area."
+                            },
+                            {
+                                "name": "Replacement Block",
+                                "types": ["block"],
+                                "description": "The block value to place wherever the target block is found in the area."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output after attempting the area block replacement."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "The output boolean value indicating whether at least one matching block was replaced in the area."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
 		"Set Time": {
 			"name": "Set Time",
 			"description": "Sets the time of day in the world to a specified value.",
