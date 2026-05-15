@@ -3278,7 +3278,7 @@
                                 "types": ["any"],
                                 "description": "An input value to be included in the created list, where the index of the value corresponds to the dynamic port index (e.g., the first dynamic input is index 0, the second is index 1, etc.).",
                                 "dynamic": {
-                                    "min": 1,
+                                    "min": 0,
                                     "max": null
                                 }
                             }
