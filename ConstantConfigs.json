@@ -184,14 +184,14 @@
                 "description": "The audio source defined in the config"
             },
             "fields": {
-                "source": {
+                "data": {
                     "title": "Audio Source",
-                    "input": "modalpaletteselector<audio>",
-                    "type": "string",
-                    "placeholder": "test.mp3",
-                    "validation": "url",
-                    "errorMessage": "Please enter a valid audio for the audio source.",
-                    "description": "The audio file to use as a constant source.",
+                    "input": "data",
+                    "type": "modalpaletteselector<audio>",
+                    "placeholder": "minecraft:block.note_block.harp",
+                    "validation": "nonEmpty",
+                    "errorMessage": "Please select a valid audio source.",
+                    "description": "The audio file to use as a constant source, including its playback metadata.",
                     "default": "",
                     "tags": ["required"]
                 }

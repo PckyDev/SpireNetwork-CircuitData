@@ -2371,6 +2371,62 @@
                 }
             ]
         },
+        "Play Audio At Position For Player": {
+            "name": "Play Audio At Position For Player",
+            "description": "Plays an audio clip at a specified position in the game world for one specific player only.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Audio"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Trigger",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the audio playback."
+                            },
+                            {
+                                "name": "Audio Clip",
+                                "types": ["audio"],
+                                "description": "The audio clip to be played."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player who should hear the audio clip."
+                            },
+                            {
+                                "name": "Position",
+                                "types": ["vector3"],
+                                "description": "The position in the game world where the audio should be played."
+                            },
+                            {
+                                "name": "Volume",
+                                "types": ["float"],
+                                "description": "The volume at which the audio should be played, where 1 is full volume and 0 is silent."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output that triggers when the audio starts playing."
+                            },
+                            {
+                                "name": "On Complete",
+                                "types": ["exec"],
+                                "description": "The execution output that triggers when the audio finishes playing."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Get Position": {
             "name": "Get Position",
             "description": "Gets the position of a specified entity in the game world.",
