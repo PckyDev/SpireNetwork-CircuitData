@@ -3196,6 +3196,48 @@
                 }
             ]
         },
+        "String Concat": {
+            "name": "String Concat",
+            "description": "Concatenates multiple strings together into a single string, optionally inserting a separator between each value.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Math", "Type Conversion"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Separator",
+                                "types": ["string"],
+                                "description": "The string to insert between each concatenated value. Leave it empty to join the values directly together."
+                            }
+                        ],
+                        "dynamic": [
+                            {
+                                "name": "Value",
+                                "types": ["string"],
+                                "description": "A string value to include in the concatenated output.",
+                                "dynamic": {
+                                    "min": 1,
+                                    "max": null
+                                }
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Result",
+                                "types": ["string"],
+                                "description": "The output string formed by concatenating each input value, optionally separated by the provided separator."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "String To Lower": {
             "name": "String To Lower",
             "description": "Converts all characters in the input string to lowercase.",
