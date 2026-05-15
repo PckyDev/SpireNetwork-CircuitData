@@ -133,6 +133,115 @@
         }
       ]
     },
+    "buttonpressed": {
+      "name": "Button Pressed",
+      "description": "Triggered when a player presses a button in the world.",
+      "outputs": [
+        {
+          "name": "Button Pressed",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player presses a button."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who pressed the button."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The button block that was pressed."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the button that was pressed."
+        }
+      ]
+    },
+    "levertoggled": {
+      "name": "Lever Toggled",
+      "description": "Triggered when a player toggles a lever in the world.",
+      "outputs": [
+        {
+          "name": "Lever Toggled",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player toggles a lever."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who toggled the lever."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The lever block that was toggled."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the lever that was toggled."
+        },
+        {
+          "name": "Is On",
+          "types": ["bool"],
+          "description": "Whether the lever was toggled on after the interaction."
+        }
+      ]
+    },
+    "pressureplatesteppedon": {
+      "name": "Pressure Plate Stepped On",
+      "description": "Triggered when a player steps onto a pressure plate in the world.",
+      "outputs": [
+        {
+          "name": "Pressure Plate Stepped On",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player steps onto a pressure plate."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who stepped onto the pressure plate."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The pressure plate block that was stepped on."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the pressure plate that was stepped on."
+        }
+      ]
+    },
+    "pressureplatesteppedoff": {
+      "name": "Pressure Plate Stepped Off",
+      "description": "Triggered when a player steps off a pressure plate in the world.",
+      "outputs": [
+        {
+          "name": "Pressure Plate Stepped Off",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player steps off a pressure plate."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who stepped off the pressure plate."
+        },
+        {
+          "name": "Block",
+          "types": ["block"],
+          "description": "The pressure plate block that was stepped off."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the pressure plate that was stepped off."
+        }
+      ]
+    },
     "update1tick": {
       "name": "Update 1 Tick",
       "description": "Triggered every tick (20 times per second).",
