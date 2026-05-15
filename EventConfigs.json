@@ -306,6 +306,48 @@
         }
       ]
     },
+    "playerjumped": {
+      "name": "Player Jumped",
+      "description": "Triggered when a player jumps.",
+      "outputs": [
+        {
+          "name": "Player Jumped",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player jumps."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who jumped."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the player when they jumped."
+        }
+      ]
+    },
+    "playercrouched": {
+      "name": "Player Crouched",
+      "description": "Triggered when a player starts crouching.",
+      "outputs": [
+        {
+          "name": "Player Crouched",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player starts crouching."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who started crouching."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position of the player when they started crouching."
+        }
+      ]
+    },
     "worldloaded": {
       "name": "World Loaded",
       "description": "Triggered once after a world instance finishes loading and its circuits runtime is ready.",
