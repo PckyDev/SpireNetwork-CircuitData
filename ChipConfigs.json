@@ -1803,6 +1803,68 @@
                 }
             ]
         },
+        "Player Get Head Position": {
+            "name": "Player Get Head Position",
+            "description": "Gets the position of a player's head in the game world.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose head position to get."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Head Position",
+                                "types": ["vector3"],
+                                "description": "The vector position of the player's head in the game world."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Get Head Forward": {
+            "name": "Player Get Head Forward",
+            "description": "Gets the normalized forward direction vector of a player's head.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose head forward direction to get."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Head Forward",
+                                "types": ["vector3"],
+                                "description": "The normalized forward direction vector of the player's head."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Get Held Item": {
             "name": "Get Held Item",
             "description": "Gets the item and quantity currently held in the main hand of a specified player.",
