@@ -4449,6 +4449,52 @@
                 }
             ]
         },
+            "Entity Spawn": {
+                "name": "Entity Spawn",
+                "description": "Spawns an entity of a specified type at a position in the game world.",
+                "beta": false,
+                "deprecated": false,
+                "hidden": false,
+                "dev": false,
+                "filterPaths": [["Functions", "Entity"]],
+                "ports": [
+                    {
+                        "inputs": {
+                            "static": [
+                                {
+                                    "name": "Run",
+                                    "types": ["exec"],
+                                    "description": "The execution input to trigger the entity spawn."
+                                },
+                                {
+                                    "name": "Entity Type",
+                                    "types": ["entitytype"],
+                                    "description": "The entity type to spawn, such as a zombie or skeleton."
+                                },
+                                {
+                                    "name": "Position",
+                                    "types": ["vector3"],
+                                    "description": "The position in 3D space where the entity should be spawned."
+                                }
+                            ]
+                        },
+                        "outputs": {
+                            "static": [
+                                {
+                                    "name": "Run",
+                                    "types": ["exec"],
+                                    "description": "The execution output triggered after attempting to spawn the entity."
+                                },
+                                {
+                                    "name": "Entity",
+                                    "types": ["entity"],
+                                    "description": "The spawned entity value. If the entity could not be spawned, this output will be empty."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
         "Velocity Add": {
             "name": "Velocity Add",
             "description": "Adds a velocity vector to an entity, causing it to move in the direction of the velocity.",
