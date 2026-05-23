@@ -1,0 +1,944 @@
+{
+  "Acacia Boat": {
+    "id": "minecraft:acacia_boat",
+    "name": "Acacia Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Acacia Chest Boat": {
+    "id": "minecraft:acacia_chest_boat",
+    "name": "Acacia Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Allay": {
+    "id": "minecraft:allay",
+    "name": "Allay",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Area Effect Cloud": {
+    "id": "minecraft:area_effect_cloud",
+    "name": "Area Effect Cloud",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Armadillo": {
+    "id": "minecraft:armadillo",
+    "name": "Armadillo",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Armor Stand": {
+    "id": "minecraft:armor_stand",
+    "name": "Armor Stand",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Arrow": {
+    "id": "minecraft:arrow",
+    "name": "Arrow",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Axolotl": {
+    "id": "minecraft:axolotl",
+    "name": "Axolotl",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Bamboo Chest Raft": {
+    "id": "minecraft:bamboo_chest_raft",
+    "name": "Bamboo Chest Raft",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Bamboo Raft": {
+    "id": "minecraft:bamboo_raft",
+    "name": "Bamboo Raft",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Bat": {
+    "id": "minecraft:bat",
+    "name": "Bat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Bee": {
+    "id": "minecraft:bee",
+    "name": "Bee",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Birch Boat": {
+    "id": "minecraft:birch_boat",
+    "name": "Birch Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Birch Chest Boat": {
+    "id": "minecraft:birch_chest_boat",
+    "name": "Birch Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Blaze": {
+    "id": "minecraft:blaze",
+    "name": "Blaze",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Block Display": {
+    "id": "minecraft:block_display",
+    "name": "Block Display",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Bogged": {
+    "id": "minecraft:bogged",
+    "name": "Bogged",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Breeze": {
+    "id": "minecraft:breeze",
+    "name": "Breeze",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Breeze Wind Charge": {
+    "id": "minecraft:breeze_wind_charge",
+    "name": "Breeze Wind Charge",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Camel": {
+    "id": "minecraft:camel",
+    "name": "Camel",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Camel Husk": {
+    "id": "minecraft:camel_husk",
+    "name": "Camel Husk",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Cat": {
+    "id": "minecraft:cat",
+    "name": "Cat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Cave Spider": {
+    "id": "minecraft:cave_spider",
+    "name": "Cave Spider",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Cherry Boat": {
+    "id": "minecraft:cherry_boat",
+    "name": "Cherry Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Cherry Chest Boat": {
+    "id": "minecraft:cherry_chest_boat",
+    "name": "Cherry Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Chest Minecart": {
+    "id": "minecraft:chest_minecart",
+    "name": "Chest Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Chicken": {
+    "id": "minecraft:chicken",
+    "name": "Chicken",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Cod": {
+    "id": "minecraft:cod",
+    "name": "Cod",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Command Block Minecart": {
+    "id": "minecraft:command_block_minecart",
+    "name": "Command Block Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Copper Golem": {
+    "id": "minecraft:copper_golem",
+    "name": "Copper Golem",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Cow": {
+    "id": "minecraft:cow",
+    "name": "Cow",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Creaking": {
+    "id": "minecraft:creaking",
+    "name": "Creaking",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Creeper": {
+    "id": "minecraft:creeper",
+    "name": "Creeper",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Dark Oak Boat": {
+    "id": "minecraft:dark_oak_boat",
+    "name": "Dark Oak Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Dark Oak Chest Boat": {
+    "id": "minecraft:dark_oak_chest_boat",
+    "name": "Dark Oak Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Dolphin": {
+    "id": "minecraft:dolphin",
+    "name": "Dolphin",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Donkey": {
+    "id": "minecraft:donkey",
+    "name": "Donkey",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Dragon Fireball": {
+    "id": "minecraft:dragon_fireball",
+    "name": "Dragon Fireball",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Drowned": {
+    "id": "minecraft:drowned",
+    "name": "Drowned",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Egg": {
+    "id": "minecraft:egg",
+    "name": "Egg",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Elder Guardian": {
+    "id": "minecraft:elder_guardian",
+    "name": "Elder Guardian",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "End Crystal": {
+    "id": "minecraft:end_crystal",
+    "name": "End Crystal",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Ender Dragon": {
+    "id": "minecraft:ender_dragon",
+    "name": "Ender Dragon",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Ender Pearl": {
+    "id": "minecraft:ender_pearl",
+    "name": "Ender Pearl",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Enderman": {
+    "id": "minecraft:enderman",
+    "name": "Enderman",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Endermite": {
+    "id": "minecraft:endermite",
+    "name": "Endermite",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Evoker": {
+    "id": "minecraft:evoker",
+    "name": "Evoker",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Evoker Fangs": {
+    "id": "minecraft:evoker_fangs",
+    "name": "Evoker Fangs",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Experience Bottle": {
+    "id": "minecraft:experience_bottle",
+    "name": "Experience Bottle",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Experience Orb": {
+    "id": "minecraft:experience_orb",
+    "name": "Experience Orb",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Eye Of Ender": {
+    "id": "minecraft:eye_of_ender",
+    "name": "Eye Of Ender",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Falling Block": {
+    "id": "minecraft:falling_block",
+    "name": "Falling Block",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Fireball": {
+    "id": "minecraft:fireball",
+    "name": "Fireball",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Firework Rocket": {
+    "id": "minecraft:firework_rocket",
+    "name": "Firework Rocket",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Fishing Bobber": {
+    "id": "minecraft:fishing_bobber",
+    "name": "Fishing Bobber",
+    "subtitle": "Non-spawnable entity type",
+    "hideImage": true
+  },
+  "Fox": {
+    "id": "minecraft:fox",
+    "name": "Fox",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Frog": {
+    "id": "minecraft:frog",
+    "name": "Frog",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Furnace Minecart": {
+    "id": "minecraft:furnace_minecart",
+    "name": "Furnace Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Ghast": {
+    "id": "minecraft:ghast",
+    "name": "Ghast",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Giant": {
+    "id": "minecraft:giant",
+    "name": "Giant",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Glow Item Frame": {
+    "id": "minecraft:glow_item_frame",
+    "name": "Glow Item Frame",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Glow Squid": {
+    "id": "minecraft:glow_squid",
+    "name": "Glow Squid",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Goat": {
+    "id": "minecraft:goat",
+    "name": "Goat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Guardian": {
+    "id": "minecraft:guardian",
+    "name": "Guardian",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Happy Ghast": {
+    "id": "minecraft:happy_ghast",
+    "name": "Happy Ghast",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Hoglin": {
+    "id": "minecraft:hoglin",
+    "name": "Hoglin",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Hopper Minecart": {
+    "id": "minecraft:hopper_minecart",
+    "name": "Hopper Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Horse": {
+    "id": "minecraft:horse",
+    "name": "Horse",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Husk": {
+    "id": "minecraft:husk",
+    "name": "Husk",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Illusioner": {
+    "id": "minecraft:illusioner",
+    "name": "Illusioner",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Interaction": {
+    "id": "minecraft:interaction",
+    "name": "Interaction",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Iron Golem": {
+    "id": "minecraft:iron_golem",
+    "name": "Iron Golem",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Item": {
+    "id": "minecraft:item",
+    "name": "Item",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Item Display": {
+    "id": "minecraft:item_display",
+    "name": "Item Display",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Item Frame": {
+    "id": "minecraft:item_frame",
+    "name": "Item Frame",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Jungle Boat": {
+    "id": "minecraft:jungle_boat",
+    "name": "Jungle Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Jungle Chest Boat": {
+    "id": "minecraft:jungle_chest_boat",
+    "name": "Jungle Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Leash Knot": {
+    "id": "minecraft:leash_knot",
+    "name": "Leash Knot",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Lightning Bolt": {
+    "id": "minecraft:lightning_bolt",
+    "name": "Lightning Bolt",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Lingering Potion": {
+    "id": "minecraft:lingering_potion",
+    "name": "Lingering Potion",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Llama": {
+    "id": "minecraft:llama",
+    "name": "Llama",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Llama Spit": {
+    "id": "minecraft:llama_spit",
+    "name": "Llama Spit",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Magma Cube": {
+    "id": "minecraft:magma_cube",
+    "name": "Magma Cube",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Mangrove Boat": {
+    "id": "minecraft:mangrove_boat",
+    "name": "Mangrove Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Mangrove Chest Boat": {
+    "id": "minecraft:mangrove_chest_boat",
+    "name": "Mangrove Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Mannequin": {
+    "id": "minecraft:mannequin",
+    "name": "Mannequin",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Marker": {
+    "id": "minecraft:marker",
+    "name": "Marker",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Minecart": {
+    "id": "minecraft:minecart",
+    "name": "Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Mooshroom": {
+    "id": "minecraft:mooshroom",
+    "name": "Mooshroom",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Mule": {
+    "id": "minecraft:mule",
+    "name": "Mule",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Nautilus": {
+    "id": "minecraft:nautilus",
+    "name": "Nautilus",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Oak Boat": {
+    "id": "minecraft:oak_boat",
+    "name": "Oak Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Oak Chest Boat": {
+    "id": "minecraft:oak_chest_boat",
+    "name": "Oak Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Ocelot": {
+    "id": "minecraft:ocelot",
+    "name": "Ocelot",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Ominous Item Spawner": {
+    "id": "minecraft:ominous_item_spawner",
+    "name": "Ominous Item Spawner",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Painting": {
+    "id": "minecraft:painting",
+    "name": "Painting",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Pale Oak Boat": {
+    "id": "minecraft:pale_oak_boat",
+    "name": "Pale Oak Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Pale Oak Chest Boat": {
+    "id": "minecraft:pale_oak_chest_boat",
+    "name": "Pale Oak Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Panda": {
+    "id": "minecraft:panda",
+    "name": "Panda",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Parched": {
+    "id": "minecraft:parched",
+    "name": "Parched",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Parrot": {
+    "id": "minecraft:parrot",
+    "name": "Parrot",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Phantom": {
+    "id": "minecraft:phantom",
+    "name": "Phantom",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Pig": {
+    "id": "minecraft:pig",
+    "name": "Pig",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Piglin": {
+    "id": "minecraft:piglin",
+    "name": "Piglin",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Piglin Brute": {
+    "id": "minecraft:piglin_brute",
+    "name": "Piglin Brute",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Pillager": {
+    "id": "minecraft:pillager",
+    "name": "Pillager",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Player": {
+    "id": "minecraft:player",
+    "name": "Player",
+    "subtitle": "Non-spawnable entity type",
+    "hideImage": true
+  },
+  "Polar Bear": {
+    "id": "minecraft:polar_bear",
+    "name": "Polar Bear",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Pufferfish": {
+    "id": "minecraft:pufferfish",
+    "name": "Pufferfish",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Rabbit": {
+    "id": "minecraft:rabbit",
+    "name": "Rabbit",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Ravager": {
+    "id": "minecraft:ravager",
+    "name": "Ravager",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Salmon": {
+    "id": "minecraft:salmon",
+    "name": "Salmon",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Sheep": {
+    "id": "minecraft:sheep",
+    "name": "Sheep",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Shulker": {
+    "id": "minecraft:shulker",
+    "name": "Shulker",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Shulker Bullet": {
+    "id": "minecraft:shulker_bullet",
+    "name": "Shulker Bullet",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Silverfish": {
+    "id": "minecraft:silverfish",
+    "name": "Silverfish",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Skeleton": {
+    "id": "minecraft:skeleton",
+    "name": "Skeleton",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Skeleton Horse": {
+    "id": "minecraft:skeleton_horse",
+    "name": "Skeleton Horse",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Slime": {
+    "id": "minecraft:slime",
+    "name": "Slime",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Small Fireball": {
+    "id": "minecraft:small_fireball",
+    "name": "Small Fireball",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Sniffer": {
+    "id": "minecraft:sniffer",
+    "name": "Sniffer",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Snow Golem": {
+    "id": "minecraft:snow_golem",
+    "name": "Snow Golem",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Snowball": {
+    "id": "minecraft:snowball",
+    "name": "Snowball",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Spawner Minecart": {
+    "id": "minecraft:spawner_minecart",
+    "name": "Spawner Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Spectral Arrow": {
+    "id": "minecraft:spectral_arrow",
+    "name": "Spectral Arrow",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Spider": {
+    "id": "minecraft:spider",
+    "name": "Spider",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Splash Potion": {
+    "id": "minecraft:splash_potion",
+    "name": "Splash Potion",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Spruce Boat": {
+    "id": "minecraft:spruce_boat",
+    "name": "Spruce Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Spruce Chest Boat": {
+    "id": "minecraft:spruce_chest_boat",
+    "name": "Spruce Chest Boat",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Squid": {
+    "id": "minecraft:squid",
+    "name": "Squid",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Stray": {
+    "id": "minecraft:stray",
+    "name": "Stray",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Strider": {
+    "id": "minecraft:strider",
+    "name": "Strider",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Tadpole": {
+    "id": "minecraft:tadpole",
+    "name": "Tadpole",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Text Display": {
+    "id": "minecraft:text_display",
+    "name": "Text Display",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Tnt": {
+    "id": "minecraft:tnt",
+    "name": "Tnt",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Tnt Minecart": {
+    "id": "minecraft:tnt_minecart",
+    "name": "Tnt Minecart",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Trader Llama": {
+    "id": "minecraft:trader_llama",
+    "name": "Trader Llama",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Trident": {
+    "id": "minecraft:trident",
+    "name": "Trident",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Tropical Fish": {
+    "id": "minecraft:tropical_fish",
+    "name": "Tropical Fish",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Turtle": {
+    "id": "minecraft:turtle",
+    "name": "Turtle",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Vex": {
+    "id": "minecraft:vex",
+    "name": "Vex",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Villager": {
+    "id": "minecraft:villager",
+    "name": "Villager",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Vindicator": {
+    "id": "minecraft:vindicator",
+    "name": "Vindicator",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Wandering Trader": {
+    "id": "minecraft:wandering_trader",
+    "name": "Wandering Trader",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Warden": {
+    "id": "minecraft:warden",
+    "name": "Warden",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Wind Charge": {
+    "id": "minecraft:wind_charge",
+    "name": "Wind Charge",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Witch": {
+    "id": "minecraft:witch",
+    "name": "Witch",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Wither": {
+    "id": "minecraft:wither",
+    "name": "Wither",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Wither Skeleton": {
+    "id": "minecraft:wither_skeleton",
+    "name": "Wither Skeleton",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Wither Skull": {
+    "id": "minecraft:wither_skull",
+    "name": "Wither Skull",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Wolf": {
+    "id": "minecraft:wolf",
+    "name": "Wolf",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Zoglin": {
+    "id": "minecraft:zoglin",
+    "name": "Zoglin",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Zombie": {
+    "id": "minecraft:zombie",
+    "name": "Zombie",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Zombie Horse": {
+    "id": "minecraft:zombie_horse",
+    "name": "Zombie Horse",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Zombie Nautilus": {
+    "id": "minecraft:zombie_nautilus",
+    "name": "Zombie Nautilus",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Zombie Villager": {
+    "id": "minecraft:zombie_villager",
+    "name": "Zombie Villager",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  },
+  "Zombified Piglin": {
+    "id": "minecraft:zombified_piglin",
+    "name": "Zombified Piglin",
+    "subtitle": "Spawnable entity type",
+    "hideImage": true
+  }
+}

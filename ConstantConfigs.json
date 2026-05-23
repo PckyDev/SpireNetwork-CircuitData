@@ -153,6 +153,28 @@
                 }
             }
         },
+        "entitytype": {
+            "name": "Entity Type",
+            "description": "Allows you to define a constant entity type.",
+            "output": {
+                "name": "Entity Type",
+                "types": ["entitytype"],
+                "description": "The entity type value defined in the config"
+            },
+            "fields": {
+                "id": {
+                    "title": "Entity Type",
+                    "input": "data",
+                    "type": "modalpaletteselector<entitytype>",
+                    "placeholder": "minecraft:zombie",
+                    "validation": "nonEmpty",
+                    "errorMessage": "Please enter a valid entity type.",
+                    "description": "The entity type identifier to use for this constant.",
+                    "default": "",
+                    "tags": ["required"]
+                }
+            }
+        },
         "material": {
             "name": "Material",
             "description": "Allows you to define a constant material.",

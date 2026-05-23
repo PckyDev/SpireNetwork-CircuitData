@@ -53,6 +53,12 @@
     "description": "An entity value representing a non-block world entity such as a mob or player.",
     "tags": []
   },
+  "entitytype": {
+    "name": "entity type",
+    "color": "#f6bd60",
+    "description": "An entity type value representing a Minecraft entity type identifier such as minecraft:zombie.",
+    "tags": []
+  },
   "vector3": {
     "name": "Vector3",
     "color": "#F0DB22",
