@@ -2923,6 +2923,68 @@
                 }
             ]
         },
+        "Entity Get Can Burn": {
+            "name": "Entity Get Can Burn",
+            "description": "Gets whether a specified entity is allowed to be ignited by the burn-control chips.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check for the configured burn permission."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Can Burn",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is allowed to be ignited by the burn-control chips."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Is Burning": {
+            "name": "Entity Get Is Burning",
+            "description": "Gets whether a specified entity is currently on fire.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check for the current burning state."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Burning",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is currently burning."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Entity Is Player": {
             "name": "Entity Is Player",
             "description": "Gets whether a specified entity value is a player.",
@@ -5600,6 +5662,98 @@
                                 "name": "Success",
                                 "types": ["bool"],
                                 "description": "Whether the target's invisible state was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Can Burn": {
+            "name": "Entity Set Can Burn",
+            "description": "Sets whether a specified entity is allowed to be ignited by the burn-control chips.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to update the configured burn permission."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to configure."
+                            },
+                            {
+                                "name": "Can Burn",
+                                "types": ["bool"],
+                                "description": "Whether the target should be allowed to be ignited by the burn-control chips."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the burn permission."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's configured burn permission was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Is Burning": {
+            "name": "Entity Set Is Burning",
+            "description": "Sets whether a specified entity is currently burning.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to update the current burning state."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to ignite or extinguish."
+                            },
+                            {
+                                "name": "Is Burning",
+                                "types": ["bool"],
+                                "description": "Whether the target should currently be burning."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the burning state."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's burning state was successfully updated."
                             }
                         ]
                     }
