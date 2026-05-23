@@ -2644,6 +2644,703 @@
                 }
             ]
         },
+        "Entity Get Type": {
+            "name": "Entity Get Type",
+            "description": "Gets the entity type of a specified entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to get the entity type of."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Entity Type",
+                                "types": ["entitytype"],
+                                "description": "The entity type identifier of the specified target, such as minecraft:zombie."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Health": {
+            "name": "Entity Get Health",
+            "description": "Gets the current health of a specified living entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The living entity or player to get the health of."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Health",
+                                "types": ["float"],
+                                "description": "The current health value of the specified target."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Immortal": {
+            "name": "Entity Get Immortal",
+            "description": "Gets whether a specified entity is invulnerable.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check for invulnerability."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Immortal",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is invulnerable."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Glowing": {
+            "name": "Entity Get Glowing",
+            "description": "Gets whether a specified entity is glowing.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check for the glowing state."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Glowing",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is glowing."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Custom Name": {
+            "name": "Entity Get Custom Name",
+            "description": "Gets the custom name of a specified entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to get the custom name of."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Custom Name",
+                                "types": ["string"],
+                                "description": "The custom name of the specified target, or an empty string if none is set."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Custom Name Visible": {
+            "name": "Entity Get Custom Name Visible",
+            "description": "Gets whether a specified entity's custom name is visible.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check the custom name visibility of."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Custom Name Visible",
+                                "types": ["bool"],
+                                "description": "Whether the specified target's custom name is visible."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get No Gravity": {
+            "name": "Entity Get No Gravity",
+            "description": "Gets whether a specified entity has gravity disabled.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check gravity for."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "No Gravity",
+                                "types": ["bool"],
+                                "description": "Whether the specified target has gravity disabled."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Silent": {
+            "name": "Entity Get Silent",
+            "description": "Gets whether a specified entity is silent.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check for the silent state."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Silent",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is silent."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Invisible": {
+            "name": "Entity Get Invisible",
+            "description": "Gets whether a specified entity is invisible.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check for the invisible state."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Invisible",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is invisible."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Is Player": {
+            "name": "Entity Is Player",
+            "description": "Gets whether a specified entity value is a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity value to test."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Player",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is a player."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Player From Entity": {
+            "name": "Get Player From Entity",
+            "description": "Gets a player value from an entity value when the entity is a player.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity value to convert to a player value."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The target as a player value when it is a player."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Player As Entity": {
+            "name": "Get Player As Entity",
+            "description": "Gets a player value as an entity value.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player value to treat as an entity value."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Entity",
+                                "types": ["entity"],
+                                "description": "The player as an entity value."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Is Hostile": {
+            "name": "Entity Is Hostile",
+            "description": "Gets whether a specified entity is a hostile mob.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity value to test."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Hostile",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is a hostile mob."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Is Passive": {
+            "name": "Entity Is Passive",
+            "description": "Gets whether a specified entity is a passive mob.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity value to test."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Passive",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is a passive mob."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Is Neutral": {
+            "name": "Entity Is Neutral",
+            "description": "Gets whether a specified entity is a neutral mob.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity value to test."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Is Neutral",
+                                "types": ["bool"],
+                                "description": "Whether the specified target is a neutral mob."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Get Pathfind Speed": {
+            "name": "Entity Get Pathfind Speed",
+            "description": "Gets the configured pathfinding speed multiplier for a specified mob.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The mob to get the configured pathfinding speed from."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Speed",
+                                "types": ["float"],
+                                "description": "The configured pathfinding speed multiplier for the target, or the default speed when none has been set."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get All Entities In Radius": {
+            "name": "Get All Entities In Radius",
+            "description": "Gets all entities within a radius of a specified position.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Position",
+                                "types": ["vector3"],
+                                "description": "The center position to search around."
+                            },
+                            {
+                                "name": "Radius",
+                                "types": ["float"],
+                                "description": "The search radius around the position."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Entities",
+                                "types": ["list<entity>"],
+                                "description": "All entities found within the specified radius."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Nearest Entity": {
+            "name": "Get Nearest Entity",
+            "description": "Gets the nearest entity within a radius of a specified position.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Position",
+                                "types": ["vector3"],
+                                "description": "The center position to search around."
+                            },
+                            {
+                                "name": "Radius",
+                                "types": ["float"],
+                                "description": "The search radius around the position."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Entity",
+                                "types": ["entity"],
+                                "description": "The nearest entity found within the specified radius."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Has Tag": {
+            "name": "Has Tag",
+            "description": "Gets whether a specified entity has a scoreboard tag.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to check."
+                            },
+                            {
+                                "name": "Tag",
+                                "types": ["string"],
+                                "description": "The scoreboard tag to look for."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Has Tag",
+                                "types": ["bool"],
+                                "description": "Whether the specified target has the requested scoreboard tag."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get Tags": {
+            "name": "Get Tags",
+            "description": "Gets all scoreboard tags on a specified entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to get tags from."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Tags",
+                                "types": ["list<string>"],
+                                "description": "All scoreboard tags on the specified target."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get All With Tag": {
+            "name": "Get All With Tag",
+            "description": "Gets all entities in the instance world that have a specified scoreboard tag.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Tag",
+                                "types": ["string"],
+                                "description": "The scoreboard tag to search for."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Entities",
+                                "types": ["list<entity>"],
+                                "description": "All entities in the instance world that have the requested tag."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Get First With Tag": {
+            "name": "Get First With Tag",
+            "description": "Gets the first entity in the instance world that has a specified scoreboard tag.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Tag",
+                                "types": ["string"],
+                                "description": "The scoreboard tag to search for."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Entity",
+                                "types": ["entity"],
+                                "description": "The first entity in the instance world that has the requested tag."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Execution Integer Switch": {
             "name": "Execution Integer Switch",
             "description": "Executes different outputs based on the value of an integer input.",
@@ -4449,52 +5146,696 @@
                 }
             ]
         },
-            "Entity Spawn": {
-                "name": "Entity Spawn",
-                "description": "Spawns an entity of a specified type at a position in the game world.",
-                "beta": false,
-                "deprecated": false,
-                "hidden": false,
-                "dev": false,
-                "filterPaths": [["Functions", "Entity"]],
-                "ports": [
-                    {
-                        "inputs": {
-                            "static": [
-                                {
-                                    "name": "Run",
-                                    "types": ["exec"],
-                                    "description": "The execution input to trigger the entity spawn."
-                                },
-                                {
-                                    "name": "Entity Type",
-                                    "types": ["entitytype"],
-                                    "description": "The entity type to spawn, such as a zombie or skeleton."
-                                },
-                                {
-                                    "name": "Position",
-                                    "types": ["vector3"],
-                                    "description": "The position in 3D space where the entity should be spawned."
-                                }
-                            ]
-                        },
-                        "outputs": {
-                            "static": [
-                                {
-                                    "name": "Run",
-                                    "types": ["exec"],
-                                    "description": "The execution output triggered after attempting to spawn the entity."
-                                },
-                                {
-                                    "name": "Entity",
-                                    "types": ["entity"],
-                                    "description": "The spawned entity value. If the entity could not be spawned, this output will be empty."
-                                }
-                            ]
-                        }
+        "Entity Spawn": {
+            "name": "Entity Spawn",
+            "description": "Spawns an entity of a specified type at a position in the game world.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the entity spawn."
+                            },
+                            {
+                                "name": "Entity Type",
+                                "types": ["entitytype"],
+                                "description": "The entity type to spawn, such as a zombie or skeleton."
+                            },
+                            {
+                                "name": "Position",
+                                "types": ["vector3"],
+                                "description": "The position in 3D space where the entity should be spawned."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to spawn the entity."
+                            },
+                            {
+                                "name": "Entity",
+                                "types": ["entity"],
+                                "description": "The spawned entity value. If the entity could not be spawned, this output will be empty."
+                            }
+                        ]
                     }
-                ]
-            },
+                }
+            ]
+        },
+        "Entity Set Health": {
+            "name": "Entity Set Health",
+            "description": "Sets the health of a specified living entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the health change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The living entity or player to set the health of."
+                            },
+                            {
+                                "name": "Health",
+                                "types": ["float"],
+                                "description": "The health value to set on the target."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to set the target's health."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's health was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Deal Damage": {
+            "name": "Entity Deal Damage",
+            "description": "Deals a specified amount of damage to a living entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the damage."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The living entity or player to damage."
+                            },
+                            {
+                                "name": "Damage",
+                                "types": ["float"],
+                                "description": "The amount of damage to deal to the target."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to damage the target."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether damage was successfully applied to the target."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Immortal": {
+            "name": "Entity Set Immortal",
+            "description": "Sets whether a specified entity is invulnerable.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the invulnerability change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to update."
+                            },
+                            {
+                                "name": "Immortal",
+                                "types": ["bool"],
+                                "description": "Whether the target should be invulnerable."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update invulnerability."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's invulnerability was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Glowing": {
+            "name": "Entity Set Glowing",
+            "description": "Sets whether a specified entity is glowing.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the glowing change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to update."
+                            },
+                            {
+                                "name": "Glowing",
+                                "types": ["bool"],
+                                "description": "Whether the target should glow."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the glowing state."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's glowing state was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Custom Name": {
+            "name": "Entity Set Custom Name",
+            "description": "Sets the custom name of a specified entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the custom name change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to rename."
+                            },
+                            {
+                                "name": "Custom Name",
+                                "types": ["string"],
+                                "description": "The custom name to apply to the target."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the custom name."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's custom name was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Custom Name Visible": {
+            "name": "Entity Set Custom Name Visible",
+            "description": "Sets whether a specified entity's custom name is visible.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the custom name visibility change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to update."
+                            },
+                            {
+                                "name": "Custom Name Visible",
+                                "types": ["bool"],
+                                "description": "Whether the target's custom name should be visible."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update custom name visibility."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's custom name visibility was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set No Gravity": {
+            "name": "Entity Set No Gravity",
+            "description": "Sets whether a specified entity has gravity disabled.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the gravity change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to update."
+                            },
+                            {
+                                "name": "No Gravity",
+                                "types": ["bool"],
+                                "description": "Whether the target should ignore gravity."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update gravity."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's gravity state was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Silent": {
+            "name": "Entity Set Silent",
+            "description": "Sets whether a specified entity is silent.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the silent change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to update."
+                            },
+                            {
+                                "name": "Silent",
+                                "types": ["bool"],
+                                "description": "Whether the target should be silent."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the silent state."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's silent state was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Invisible": {
+            "name": "Entity Set Invisible",
+            "description": "Sets whether a specified entity is invisible.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the invisibility change."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to update."
+                            },
+                            {
+                                "name": "Invisible",
+                                "types": ["bool"],
+                                "description": "Whether the target should be invisible."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the invisible state."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target's invisible state was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Set Pathfind Speed": {
+            "name": "Entity Set Pathfind Speed",
+            "description": "Sets the configured pathfinding speed multiplier for a specified mob.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to update the configured pathfinding speed."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The mob to configure."
+                            },
+                            {
+                                "name": "Speed",
+                                "types": ["float"],
+                                "description": "The pathfinding speed multiplier to store for the target mob."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to update the pathfinding speed."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target mob's configured pathfinding speed was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Pathfind To Location": {
+            "name": "Entity Pathfind To Location",
+            "description": "Makes a mob pathfind to a specified position.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger pathfinding."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The mob to pathfind."
+                            },
+                            {
+                                "name": "Position",
+                                "types": ["vector3"],
+                                "description": "The target position to pathfind to."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to start pathfinding."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether pathfinding was successfully started."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Entity Look At Location": {
+            "name": "Entity Look At Location",
+            "description": "Makes an entity look at a specified position.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the look-at action."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to rotate."
+                            },
+                            {
+                                "name": "Position",
+                                "types": ["vector3"],
+                                "description": "The target position to look at."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to rotate the target."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the target was successfully instructed to look at the position."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Add Tag": {
+            "name": "Add Tag",
+            "description": "Adds a scoreboard tag to a specified entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the tag add."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to tag."
+                            },
+                            {
+                                "name": "Tag",
+                                "types": ["string"],
+                                "description": "The scoreboard tag to add."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to add the tag."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the tag was successfully added to the target."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Remove Tag": {
+            "name": "Remove Tag",
+            "description": "Removes a scoreboard tag from a specified entity.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Entity"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the tag removal."
+                            },
+                            {
+                                "name": "Target",
+                                "types": ["entity", "player"],
+                                "description": "The entity or player to untag."
+                            },
+                            {
+                                "name": "Tag",
+                                "types": ["string"],
+                                "description": "The scoreboard tag to remove."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to remove the tag."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the tag was successfully removed from the target."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Velocity Add": {
             "name": "Velocity Add",
             "description": "Adds a velocity vector to an entity, causing it to move in the direction of the velocity.",
