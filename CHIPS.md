@@ -139,7 +139,7 @@ This document provides a checklist of all the chips that have been added to the 
 | [x] | [x] | [X] | Set Block Area |  |
 | [x] | [x] | [X] | Replace All Blocks In Area |  |
 | [x] | [x] | [X] | Block Get Name |  |
-| [x] | [x] | [X] | Block Get Coordinates |  |
+| [x] | [x] | [X] | Block Get Coordinates | Outputs vector coordinates and success for block values that include position data. |
 | [x] | [x] | [X] | Get Block At Position |  |
 | [x] | [x] | [ ] | Get All Blocks In Area | Outputs a list of block data objects with type, state, and position. |
 | [x] | [x] | [ ] | Get Block By Name |  |

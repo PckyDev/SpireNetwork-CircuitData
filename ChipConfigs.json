@@ -6655,6 +6655,11 @@
 								"name": "Coordinates",
 								"types": ["vector3"],
 								"description": "The output vector3 value representing the coordinates of the specified block."
+							},
+							{
+								"name": "Success",
+								"types": ["bool"],
+								"description": "Whether coordinates were available for the provided block value."
 							}
 						]
 					}
