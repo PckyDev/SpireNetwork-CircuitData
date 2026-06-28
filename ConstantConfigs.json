@@ -175,6 +175,28 @@
                 }
             }
         },
+        "gamemode": {
+            "name": "Gamemode",
+            "description": "Allows you to define a constant player gamemode.",
+            "output": {
+                "name": "Gamemode",
+                "types": ["gamemode"],
+                "description": "The normalized gamemode id defined in the config"
+            },
+            "fields": {
+                "id": {
+                    "title": "Gamemode",
+                    "input": "data",
+                    "type": "modalpaletteselector<gamemode>",
+                    "placeholder": "minecraft:survival",
+                    "validation": "nonEmpty",
+                    "errorMessage": "Please select a valid gamemode.",
+                    "description": "The gamemode identifier to use for this constant.",
+                    "default": "minecraft:survival",
+                    "tags": ["required"]
+                }
+            }
+        },
         "material": {
             "name": "Material",
             "description": "Allows you to define a constant material.",

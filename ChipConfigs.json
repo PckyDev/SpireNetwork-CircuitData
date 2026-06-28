@@ -2051,6 +2051,37 @@
                 }
             ]
         },
+        "Player Get Gamemode": {
+            "name": "Player Get Gamemode",
+            "description": "Gets a player's current gamemode as a normalized namespaced id.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose gamemode to get."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Gamemode",
+                                "types": ["gamemode"],
+                                "description": "The player's current gamemode, such as minecraft:survival."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Player Get Head Forward": {
             "name": "Player Get Head Forward",
             "description": "Gets the normalized forward direction vector of a player's head.",
@@ -2475,6 +2506,52 @@
                                 "name": "Success",
                                 "types": ["bool"],
                                 "description": "Whether the player's hunger level was successfully updated."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Set Gamemode": {
+            "name": "Player Set Gamemode",
+            "description": "Sets a player's gamemode.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the gamemode change."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose gamemode should be changed."
+                            },
+                            {
+                                "name": "Gamemode",
+                                "types": ["gamemode"],
+                                "description": "The gamemode to set, such as minecraft:creative."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to set gamemode."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the player's gamemode was successfully updated."
                             }
                         ]
                     }

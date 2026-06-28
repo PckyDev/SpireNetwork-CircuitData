@@ -1,0 +1,26 @@
+[
+  {
+    "id": "minecraft:survival",
+    "title": "Survival",
+    "subtitle": "Players gather resources, take damage, and manage hunger.",
+    "tags": ["survival"]
+  },
+  {
+    "id": "minecraft:creative",
+    "title": "Creative",
+    "subtitle": "Players can fly, build freely, and access unlimited blocks.",
+    "tags": ["creative"]
+  },
+  {
+    "id": "minecraft:adventure",
+    "title": "Adventure",
+    "subtitle": "Players interact with the world using adventure-mode restrictions.",
+    "tags": ["adventure"]
+  },
+  {
+    "id": "minecraft:spectator",
+    "title": "Spectator",
+    "subtitle": "Players can fly through the world and observe without interacting.",
+    "tags": ["spectator"]
+  }
+]

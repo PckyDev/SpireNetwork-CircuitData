@@ -592,6 +592,32 @@
         }
       ]
     },
+    "gamemodechanged": {
+      "name": "Gamemode Changed",
+      "description": "Triggered when a player's gamemode changes.",
+      "outputs": [
+        {
+          "name": "Gamemode Changed",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player's gamemode changes."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose gamemode changed."
+        },
+        {
+          "name": "Old Gamemode",
+          "types": ["gamemode"],
+          "description": "The player's previous gamemode."
+        },
+        {
+          "name": "New Gamemode",
+          "types": ["gamemode"],
+          "description": "The player's new gamemode."
+        }
+      ]
+    },
     "mobspawned": {
       "name": "Mob Spawned",
       "description": "Triggered when a mob spawns in the world.",

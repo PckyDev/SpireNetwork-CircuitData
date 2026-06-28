@@ -59,6 +59,12 @@
     "description": "An entity type value representing a Minecraft entity type identifier such as minecraft:zombie.",
     "tags": []
   },
+  "gamemode": {
+    "name": "gamemode",
+    "color": "#7dd3fc",
+    "description": "A Minecraft player gamemode value such as minecraft:survival, minecraft:creative, minecraft:adventure, or minecraft:spectator.",
+    "tags": []
+  },
   "vector3": {
     "name": "Vector3",
     "color": "#F0DB22",

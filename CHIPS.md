@@ -59,6 +59,7 @@ This document provides a checklist of all the chips that have been added to the 
 | [x] | [x] | [ ] | Player Get Is Survival |  |
 | [x] | [x] | [ ] | Player Get Is Adventure |  |
 | [x] | [x] | [ ] | Player Get Is Spectator |  |
+| [x] | [x] | [ ] | Player Get Gamemode | Outputs the player's current normalized gamemode id. |
 | [x] | [x] | [ ] | Player Get Is Jumping |  |
 | [x] | [x] | [ ] | Player Get Is Crouching |  |
 | [x] | [x] | [ ] | Player Get In Air |  |
@@ -78,6 +79,7 @@ This document provides a checklist of all the chips that have been added to the 
 | [x] | [x] | [ ] | Player Clear Inventory | Clears the player's full inventory contents. |
 | [x] | [x] | [ ] | Player Clear Slot | Slot input uses 0-35. |
 | [x] | [x] | [ ] | Player Set Hunger | Clamps the target player's food level from 0 to 20. |
+| [x] | [x] | [ ] | Player Set Gamemode | Sets the target player's gamemode from a normalized gamemode id. |
 | [x] | [ ] | [ ] | Player Set Item In Slot | Slot input uses 0-35; quantity defaults to 1 when unset or not positive; air clears the slot. |
 | [x] | [x] | [ ] | Play Audio At Position | On Complete follows the audio duration metadata when available on the audio input. |
 | [x] | [x] | [ ] | Play Audio At Position For Player | Only targets the selected player and requires that player to be in the same world as the playback position. |
@@ -226,6 +228,7 @@ This document provides a checklist of all the chips that have been added to the 
 | [x] | [x] | [X] | Player Lost Hunger | Outputs player, old hunger, new hunger, and amount. |
 | [x] | [x] | [ ] | Player Gained Experience | Outputs player, old total experience, new total experience, and amount. |
 | [x] | [x] | [ ] | Player Lost Experience | Outputs player, old total experience, new total experience, and amount. |
+| [x] | [x] | [ ] | Gamemode Changed | Cancellable; outputs player, old gamemode, and new gamemode. |
 
 ## CONSTANTS
 
@@ -235,6 +238,7 @@ This document provides a checklist of all the chips that have been added to the 
 | [x] | [x] | [ ] | API Constant | Dedicated runtime supports generic constant values; API request chip is not implemented yet. |
 | [x] | [x] | [X] | Block Constant | Parsed for block-setting chips. |
 | [x] | [x] | [ ] | Entity Type Constant | Outputs a normalized namespaced entity type id from the palette-backed selector. |
+| [x] | [x] | [ ] | Gamemode Constant | Outputs a normalized namespaced gamemode id from the palette-backed selector. |
 | [x] | [x] | [ ] | Material Constant | Parsed as a material value for inventory and variable chips. |
 | [x] | [x] | [X] | Audio Constant | Dedicated runtime supports generic constant values and audio playback chips now consume id/soundId/data plus category and duration metadata. |
 | [x] | [x] | [ ] | Resource Pack Constant | Dedicated runtime supports generic constant values; force-resource-pack chip is not implemented yet. |
