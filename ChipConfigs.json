@@ -2020,6 +2020,37 @@
                 }
             ]
         },
+        "Player Get Hunger": {
+            "name": "Player Get Hunger",
+            "description": "Gets a player's current hunger level from 0 to 20.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose hunger level to get."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Hunger",
+                                "types": ["int"],
+                                "description": "The player's current hunger level from 0 to 20."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Player Get Head Forward": {
             "name": "Player Get Head Forward",
             "description": "Gets the normalized forward direction vector of a player's head.",
@@ -2398,6 +2429,52 @@
                                 "name": "Success",
                                 "types": ["bool"],
                                 "description": "The output boolean value indicating whether the player's inventory was successfully cleared (true) or not (false)."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Player Set Hunger": {
+            "name": "Player Set Hunger",
+            "description": "Sets a player's hunger level from 0 to 20.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Player"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution input to trigger the hunger change."
+                            },
+                            {
+                                "name": "Player",
+                                "types": ["player"],
+                                "description": "The player whose hunger level should be changed."
+                            },
+                            {
+                                "name": "Hunger",
+                                "types": ["int"],
+                                "description": "The hunger level to set, clamped from 0 to 20."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Run",
+                                "types": ["exec"],
+                                "description": "The execution output triggered after attempting to set hunger."
+                            },
+                            {
+                                "name": "Success",
+                                "types": ["bool"],
+                                "description": "Whether the player's hunger level was successfully updated."
                             }
                         ]
                     }

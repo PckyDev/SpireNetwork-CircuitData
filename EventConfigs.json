@@ -306,6 +306,234 @@
         }
       ]
     },
+    "playerdied": {
+      "name": "Player Died",
+      "description": "Triggered when a player dies.",
+      "outputs": [
+        {
+          "name": "Player Died",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player dies."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who died."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The position where the player died."
+        }
+      ]
+    },
+    "playerrespawned": {
+      "name": "Player Respawned",
+      "description": "Triggered when a player respawns.",
+      "outputs": [
+        {
+          "name": "Player Respawned",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player respawns."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player who respawned."
+        },
+        {
+          "name": "Position",
+          "types": ["vector3"],
+          "description": "The respawn position."
+        }
+      ]
+    },
+    "playergainedhealth": {
+      "name": "Player Gained Health",
+      "description": "Triggered when a player gains health.",
+      "outputs": [
+        {
+          "name": "Player Gained Health",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player gains health."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose health increased."
+        },
+        {
+          "name": "Old Health",
+          "types": ["float"],
+          "description": "The player's health before the change."
+        },
+        {
+          "name": "New Health",
+          "types": ["float"],
+          "description": "The player's health after the change."
+        },
+        {
+          "name": "Amount",
+          "types": ["float"],
+          "description": "The amount of health gained."
+        }
+      ]
+    },
+    "playerlosthealth": {
+      "name": "Player Lost Health",
+      "description": "Triggered when a player loses health.",
+      "outputs": [
+        {
+          "name": "Player Lost Health",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player loses health."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose health decreased."
+        },
+        {
+          "name": "Old Health",
+          "types": ["float"],
+          "description": "The player's health before the change."
+        },
+        {
+          "name": "New Health",
+          "types": ["float"],
+          "description": "The player's health after the change."
+        },
+        {
+          "name": "Amount",
+          "types": ["float"],
+          "description": "The amount of health lost."
+        }
+      ]
+    },
+    "playergainedhunger": {
+      "name": "Player Gained Hunger",
+      "description": "Triggered when a player's hunger level increases.",
+      "outputs": [
+        {
+          "name": "Player Gained Hunger",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player gains hunger."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose hunger increased."
+        },
+        {
+          "name": "Old Hunger",
+          "types": ["int"],
+          "description": "The player's hunger level before the change."
+        },
+        {
+          "name": "New Hunger",
+          "types": ["int"],
+          "description": "The player's hunger level after the change."
+        },
+        {
+          "name": "Amount",
+          "types": ["int"],
+          "description": "The amount of hunger gained."
+        }
+      ]
+    },
+    "playerlosthunger": {
+      "name": "Player Lost Hunger",
+      "description": "Triggered when a player's hunger level decreases.",
+      "outputs": [
+        {
+          "name": "Player Lost Hunger",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player loses hunger."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose hunger decreased."
+        },
+        {
+          "name": "Old Hunger",
+          "types": ["int"],
+          "description": "The player's hunger level before the change."
+        },
+        {
+          "name": "New Hunger",
+          "types": ["int"],
+          "description": "The player's hunger level after the change."
+        },
+        {
+          "name": "Amount",
+          "types": ["int"],
+          "description": "The amount of hunger lost."
+        }
+      ]
+    },
+    "playergainedexperience": {
+      "name": "Player Gained Experience",
+      "description": "Triggered when a player gains experience.",
+      "outputs": [
+        {
+          "name": "Player Gained Experience",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player gains experience."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose experience increased."
+        },
+        {
+          "name": "Old Experience",
+          "types": ["int"],
+          "description": "The player's total experience before the change."
+        },
+        {
+          "name": "New Experience",
+          "types": ["int"],
+          "description": "The player's total experience after the change."
+        },
+        {
+          "name": "Amount",
+          "types": ["int"],
+          "description": "The amount of experience gained."
+        }
+      ]
+    },
+    "playerlostexperience": {
+      "name": "Player Lost Experience",
+      "description": "Triggered when a player loses experience.",
+      "outputs": [
+        {
+          "name": "Player Lost Experience",
+          "types": ["exec"],
+          "description": "The execution output triggered when a player loses experience."
+        },
+        {
+          "name": "Player",
+          "types": ["player"],
+          "description": "The player whose experience decreased."
+        },
+        {
+          "name": "Old Experience",
+          "types": ["int"],
+          "description": "The player's total experience before the change."
+        },
+        {
+          "name": "New Experience",
+          "types": ["int"],
+          "description": "The player's total experience after the change."
+        },
+        {
+          "name": "Amount",
+          "types": ["int"],
+          "description": "The amount of experience lost."
+        }
+      ]
+    },
     "playerjumped": {
       "name": "Player Jumped",
       "description": "Triggered when a player jumps.",
