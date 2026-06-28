@@ -274,6 +274,35 @@
         }
       ]
     },
+    "timer": {
+      "name": "Timer",
+      "description": "Triggered every configured number of seconds.",
+      "outputs": [
+        {
+          "name": "Timer",
+          "types": ["exec"],
+          "description": "The execution output triggered when the timer interval elapses."
+        },
+        {
+          "name": "Delta Time",
+          "types": ["float"],
+          "description": "The elapsed time in seconds since this timer receiver last fired."
+        }
+      ],
+      "fields": {
+        "seconds": {
+          "title": "Seconds",
+          "input": "data",
+          "type": "float",
+          "placeholder": "1.0",
+          "validation": "positive",
+          "errorMessage": "Please enter a timer interval greater than 0.",
+          "description": "How often this timer should fire, in seconds.",
+          "default": 1.0,
+          "tags": ["required"]
+        }
+      }
+    },
     "playerjoin": {
       "name": "Player Join",
       "description": "Triggered when a player joins the game.",

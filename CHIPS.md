@@ -210,6 +210,7 @@ This document provides a checklist of all the chips that have been added to the 
 | [x] | [x] | [X] | Block Placed |  |
 | [x] | [x] | [X] | Update 1 Tick |  |
 | [x] | [x] | [X] | Update 20 Ticks |  |
+| [x] | [x] | [ ] | Timer | Fires each receiver at its configured floating-point second interval and outputs delta time. |
 | [x] | [x] | [X] | Player Join |  |
 | [x] | [x] | [X] | Player Leave |  |
 | [x] | [x] | [ ] | World Loaded |  |
