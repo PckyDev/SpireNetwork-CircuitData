@@ -5285,6 +5285,42 @@
                 }
             ]
         },
+        "Get All Blocks In Area": {
+            "name": "Get All Blocks In Area",
+            "description": "Gets all blocks inside the cuboid area defined by two positions.",
+            "beta": false,
+            "deprecated": false,
+            "hidden": false,
+            "dev": false,
+            "filterPaths": [["Functions", "Block"]],
+            "ports": [
+                {
+                    "inputs": {
+                        "static": [
+                            {
+                                "name": "Start",
+                                "types": ["vector3"],
+                                "description": "The first corner of the block area."
+                            },
+                            {
+                                "name": "End",
+                                "types": ["vector3"],
+                                "description": "The opposite corner of the block area."
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "static": [
+                            {
+                                "name": "Blocks",
+                                "types": ["list<block>"],
+                                "description": "A list of block data objects. Each object contains the block type, block state, and block position."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Get Block By Name": {
             "name": "Get Block By Name",
             "description": "Gets a block value from a block name string. Supports both namespaced IDs like minecraft:stone and legacy names like stone.",
